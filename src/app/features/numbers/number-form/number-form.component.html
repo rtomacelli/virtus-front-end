@@ -37,7 +37,7 @@
       <div class="col-xs-9">{{ model?.description }}</div>
     </div>
     <div class="row">
-      <div class="col-xs-3">Power</div>
+      <div class="col-xs-3">Environment</div>
       <div class="col-xs-9" *ngFor="let environment of environments">
         <span *ngIf="environment.id == model.environmentId">
           {{ environment.name }}

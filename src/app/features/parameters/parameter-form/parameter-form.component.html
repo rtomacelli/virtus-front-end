@@ -40,7 +40,7 @@
     <div class="col-xs-9">{{ model?.description }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">Power</div>
+    <div class="col-xs-3">Context</div>
     <div class="col-xs-9" *ngFor="let context of contexts">
       <span *ngIf="context.id == model.contextId">
         {{ context.name }}
