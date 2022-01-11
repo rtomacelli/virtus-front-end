@@ -1,0 +1,10 @@
+<app-feature-menu></app-feature-menu>
+<h2>Top Features</h2>
+<app-feature-search></app-feature-search>
+<div class="features-menu">
+  <a *ngFor="let feature of features"
+      routerLink="/feature/edit/{{feature.id}}">
+      {{feature.name}}
+  </a>
+</div>
+<br/>

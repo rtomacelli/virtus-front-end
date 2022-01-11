@@ -1,0 +1,13 @@
+<app-context-menu></app-context-menu>
+<h2>My Contexts</h2>
+<app-context-search></app-context-search>
+<ul class="context-list">
+  <li *ngFor="let context of contexts">
+    <a routerLink="/context/edit/{{context.id}}">
+      <span class="badge">{{context.id}}</span> {{context.name}}
+    </a>
+    <button class="delete" title="delete context"
+      (click)="delete(context)">x</button>
+  </li>
+</ul>
+

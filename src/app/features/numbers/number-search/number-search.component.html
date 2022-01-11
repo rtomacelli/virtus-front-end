@@ -1,0 +1,11 @@
+<div id="search-component">
+    <label for="search-box">Search</label>&nbsp;
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    <ul class="search-result">
+      <li *ngFor="let number of numbers$ | async" >
+        <a routerLink="/villain/edit/{{number.id}}">
+          {{number.name}}
+        </a>
+      </li>
+    </ul>
+  </div>

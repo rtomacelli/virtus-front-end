@@ -1,0 +1,10 @@
+<app-scenario-menu></app-scenario-menu>
+<h2>Top Scenarios</h2>
+<app-scenario-search></app-scenario-search>
+<div class="scenarios-menu">
+  <a *ngFor="let scenario of scenarios"
+      routerLink="/scenario/edit/{{scenario.id}}">
+      {{scenario.name}}
+  </a>
+</div>
+<br/>

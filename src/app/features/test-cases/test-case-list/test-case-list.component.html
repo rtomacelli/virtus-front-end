@@ -1,0 +1,13 @@
+<app-test-case-menu></app-test-case-menu>
+<h2>My Test-cases</h2>
+<app-test-case-search></app-test-case-search>
+<ul class="test-case-list">
+  <li *ngFor="let testCase of testCases">
+    <a routerLink="/test-case/edit/{{testCase.id}}">
+      <span class="badge">{{testCase.id}}</span> {{testCase.name}}
+    </a>
+    <button class="delete" title="delete test-case"
+      (click)="delete(testCase)">x</button>
+  </li>
+</ul>
+

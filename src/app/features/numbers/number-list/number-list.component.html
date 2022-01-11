@@ -1,0 +1,13 @@
+<app-number-menu></app-number-menu>
+<h2>My Numbers</h2>
+<app-number-search></app-number-search>
+<ul class="number-list">
+  <li *ngFor="let number of numbers">
+    <a routerLink="/number/edit/{{number.id}}">
+      <span class="badge">{{number.id}}</span> {{number.name}}
+    </a>
+    <button class="delete" title="delete number"
+      (click)="delete(number)">x</button>
+  </li>
+</ul>
+

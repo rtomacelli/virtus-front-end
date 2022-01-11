@@ -1,0 +1,10 @@
+<app-parameter-menu></app-parameter-menu>
+<h2>Top Parameters</h2>
+<app-parameter-search></app-parameter-search>
+<div class="parameters-menu">
+  <a *ngFor="let parameter of parameters"
+      routerLink="/parameter/edit/{{parameter.id}}">
+      {{parameter.name}}
+  </a>
+</div>
+<br/>

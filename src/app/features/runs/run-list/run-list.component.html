@@ -1,0 +1,13 @@
+<app-run-menu></app-run-menu>
+<h2>My Runs</h2>
+<app-run-search></app-run-search>
+<ul class="run-list">
+  <li *ngFor="let run of runs">
+    <a routerLink="/run/edit/{{run.id}}">
+      <span class="badge">{{run.id}}</span> {{run.name}}
+    </a>
+    <button class="delete" title="delete run"
+      (click)="delete(run)">x</button>
+  </li>
+</ul>
+

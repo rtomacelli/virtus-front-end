@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+}
+
+.is-mobile .toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+h1.app-name {
+  margin-left: 8px;
+  color: #fff;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+mat-sidenav-content{
+  margin-left: 10px;
+}
+
+mat-nav-list{
+  display:block;
+  width:180px;
+ }
+
+ .mat-button{
+   font-weight: bold;
+   font-size: 1.5rem;
+ }
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.btn-toolbar{
+  flex: 1 1 auto;
+}
+
+.mat-button:hover {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: white;
+  text-decoration: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}

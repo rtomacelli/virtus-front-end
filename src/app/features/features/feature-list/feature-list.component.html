@@ -1,0 +1,13 @@
+<app-feature-menu></app-feature-menu>
+<h2>My Features</h2>
+<app-feature-search></app-feature-search>
+<ul class="feature-list">
+  <li *ngFor="let feature of features">
+    <a routerLink="/feature/edit/{{feature.id}}">
+      <span class="badge">{{feature.id}}</span> {{feature.name}}
+    </a>
+    <button class="delete" title="delete feature"
+      (click)="delete(feature)">x</button>
+  </li>
+</ul>
+

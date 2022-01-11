@@ -1,0 +1,10 @@
+<app-user-menu></app-user-menu>
+<h2>Top Users</h2>
+<app-user-search></app-user-search>
+<div class="users-menu">
+  <a *ngFor="let user of users"
+      routerLink="/user/edit/{{user.id}}">
+      {{user.name}}
+  </a>
+</div>
+<br/>

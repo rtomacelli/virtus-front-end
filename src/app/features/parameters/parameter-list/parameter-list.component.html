@@ -1,0 +1,13 @@
+<app-parameter-menu></app-parameter-menu>
+<h2>My Parameters</h2>
+<app-parameter-search></app-parameter-search>
+<ul class="parameter-list">
+  <li *ngFor="let parameter of parameters">
+    <a routerLink="/parameter/edit/{{parameter.id}}">
+      <span class="badge">{{parameter.id}}</span> {{parameter.name}}
+    </a>
+    <button class="delete" title="delete parameter"
+      (click)="delete(parameter)">x</button>
+  </li>
+</ul>
+

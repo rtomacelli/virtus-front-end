@@ -1,0 +1,10 @@
+<app-test-case-menu></app-test-case-menu>
+<h2>Top Test-cases</h2>
+<app-test-case-search></app-test-case-search>
+<div class="test-cases-menu">
+  <a *ngFor="let testCase of testCases"
+      routerLink="/test-case/edit/{{testCase.id}}">
+      {{testCase.name}}
+  </a>
+</div>
+<br/>
