@@ -69,6 +69,25 @@
             <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
           </a>
         </mat-nav-list>
+        <!--Schedules-->
+        <a mat-list-item (click)="toggleMenu('schedule')">
+          <mat-icon color="primary" mat-list-icon>schedule</mat-icon>Schedules
+          <span class="toolbar-spacer"></span>
+          <mat-icon *ngIf="!showMenu_Schedule">chevron_right</mat-icon>
+          <mat-icon *ngIf="showMenu_Schedule">expand_more</mat-icon>
+        </a>
+        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Schedule">
+          <a routerLink="/schedule/dashboard" mat-list-item>
+            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
+          </a>
+          <a routerLink="/schedule/list" mat-list-item>
+            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
+          </a>
+          <a routerLink="/schedule/add" mat-list-item>
+            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
+          </a>
+        </mat-nav-list>
+
         <!-- Features -->
         <a mat-list-item (click)="toggleMenu('feature')">
           <mat-icon color="primary" mat-list-icon>settings_applications</mat-icon>Features

@@ -40,6 +40,10 @@ import { TestCaseFormComponent } from './features/test-cases/test-case-form/test
 import { UserDashboardComponent } from './features/users/user-dashboard/user-dashboard.component';
 import { UserListComponent } from './features/users/user-list/user-list.component';
 import { UserFormComponent } from './features/users/user-form/user-form.component';
+// SCHEDULES
+import { ScheduleDashboardComponent } from './features/schedules/schedule-dashboard/schedule-dashboard.component';
+import { ScheduleListComponent } from './features/schedules/schedule-list/schedule-list.component';
+import { ScheduleFormComponent } from './features/schedules/schedule-form/schedule-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/dashboard', pathMatch: 'full' },
@@ -83,6 +87,10 @@ const routes: Routes = [
   { path: 'user/edit/:id', component: UserFormComponent },
   { path: 'user/add', component: UserFormComponent },
   { path: 'user/dashboard', component: UserDashboardComponent },
+  { path: 'schedule/list', component: ScheduleListComponent },
+  { path: 'schedule/edit/:id', component: ScheduleFormComponent },
+  { path: 'schedule/add', component: ScheduleFormComponent },
+  { path: 'schedule/dashboard', component: ScheduleDashboardComponent },
 ];
 
 @NgModule({

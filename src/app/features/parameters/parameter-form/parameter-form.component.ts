@@ -15,7 +15,7 @@ export class ParameterFormComponent {
   contexts: Array<Context> = [];
 
   public model: Parameter = new Parameter(
-    '', '', 0
+    '', '', '', 0
   );
   
   constructor(

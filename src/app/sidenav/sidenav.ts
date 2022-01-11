@@ -26,6 +26,7 @@ export class Sidenav implements OnDestroy {
   showMenu_Test_Case = false;
   showMenu_Run = false;
   showMenu_User = false;
+  showMenu_Schedule = false;
   
   private _mobileQueryListener: () => void;
 
@@ -63,6 +64,8 @@ export class Sidenav implements OnDestroy {
       this.showMenu_Run = !this.showMenu_Run;
     } else if(feature === 'user'){
       this.showMenu_User = !this.showMenu_User;
+    } else if(feature === 'schedule'){
+      this.showMenu_Schedule = !this.showMenu_Schedule;
     } else {
       this.showMenu_Power = !this.showMenu_Power;
     }

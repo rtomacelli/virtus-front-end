@@ -6,6 +6,7 @@ import { NumberDataService } from './number-data.service';
 import { ParameterDataService } from './parameter-data.service';
 import { RunDataService } from './run-data.service';
 import { ScenarioDataService } from './scenario-data.service';
+import { ScheduleDataService } from './schedule-data.service';
 import { StepDataService } from './step-data.service';
 import { TestCaseDataService } from './test-case-data.service';
 import { UserDataService } from './user-data.service';
@@ -104,6 +105,13 @@ const users = [
   { id: 4, name: 'Nithin', power: '', description: '' },
   { id: 5, name: 'Masaru Ohashi Jr', power: '', description: '' },
 ];
+const schedules = [
+  { id: 1, name: 'US Every Saturday 12:00 AM', power: '', description: '' },
+  { id: 2, name: 'EU Every Saturday 12:00 AM', power: '', description: '' },
+  { id: 3, name: 'SI Every Saturday 12:00 AM', power: '', description: '' },
+  { id: 4, name: 'CA Every Saturday 12:00 AM', power: '', description: '' },
+  { id: 5, name: 'IN Every Saturday 12:00 AM', power: '', description: '' },
+];
 export class InMemDataService implements InMemoryDbService {
   environmentDataService: EnvironmentDataService = new EnvironmentDataService()
   contextDataService: ContextDataService = new ContextDataService()
@@ -115,6 +123,7 @@ export class InMemDataService implements InMemoryDbService {
   stepDataService: StepDataService = new StepDataService()
   testCaseDataService: TestCaseDataService = new TestCaseDataService()
   userDataService: UserDataService = new UserDataService()
+  scheduleDataService: ScheduleDataService = new ScheduleDataService()
   createDb() {
     return { 
     'environment': environments, 
@@ -127,6 +136,7 @@ export class InMemDataService implements InMemoryDbService {
     'test-case': testCases,
     'run': runs,
     'user': users,
+    'schedule': schedules,
    };
   }
 
@@ -181,6 +191,8 @@ export class InMemDataService implements InMemoryDbService {
       return this.testCaseDataService.getTestCases(testCases, reqInfo);
     } else if (collectionName === 'user') {
       return this.userDataService.getUsers(users, reqInfo);
+    } else if (collectionName === 'schedule') {
+      return this.scheduleDataService.getSchedules(schedules, reqInfo);
     } else {
       return this.userDataService.getUsers(users, reqInfo);
     }

@@ -1,0 +1,11 @@
+<div id="search-component">
+    <label for="search-box">Search</label>&nbsp;
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    <ul class="search-result">
+      <li *ngFor="let schedule of schedules$ | async" >
+        <a routerLink="/villain/edit/{{schedule.id}}">
+          {{schedule.name}}
+        </a>
+      </li>
+    </ul>
+  </div>

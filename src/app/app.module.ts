@@ -58,6 +58,11 @@ import { UserDashboardComponent } from './features/users/user-dashboard/user-das
 import { UserSearchComponent } from './features/users/user-search/user-search.component';
 import { UserMenuComponent } from './features/users/user-menu/user-menu.component';
 import { UserFormComponent } from './features/users/user-form/user-form.component';
+import { ScheduleListComponent } from './features/schedules/schedule-list/schedule-list.component';
+import { ScheduleDashboardComponent } from './features/schedules/schedule-dashboard/schedule-dashboard.component';
+import { ScheduleSearchComponent } from './features/schedules/schedule-search/schedule-search.component';
+import { ScheduleMenuComponent } from './features/schedules/schedule-menu/schedule-menu.component';
+import { ScheduleFormComponent } from './features/schedules/schedule-form/schedule-form.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialExampleModule } from '../material.module';
 import { Sidenav } from './sidenav/sidenav';
@@ -67,6 +72,11 @@ import { MatNativeDateModule } from '@angular/material/core';
   declarations: [
     AppComponent,
     MessagesComponent,
+    ScheduleListComponent,
+    ScheduleDashboardComponent,
+    ScheduleSearchComponent,
+    ScheduleMenuComponent,
+    ScheduleFormComponent,
     ContextListComponent,
     ContextDashboardComponent,
     ContextSearchComponent,

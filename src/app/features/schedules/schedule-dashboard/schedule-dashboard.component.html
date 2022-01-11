@@ -1,0 +1,10 @@
+<app-schedule-menu></app-schedule-menu>
+<h2>Top Schedules</h2>
+<app-schedule-search></app-schedule-search>
+<div class="schedules-menu">
+  <a *ngFor="let schedule of schedules"
+      routerLink="/schedule/edit/{{schedule.id}}">
+      {{schedule.name}}
+  </a>
+</div>
+<br/>
