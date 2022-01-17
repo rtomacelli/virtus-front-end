@@ -98,13 +98,6 @@ const testCases = [
   { id: 2, name: 'Test 2', power: '', description: '' },
   { id: 3, name: 'Test 3', power: '', description: '' },
 ];
-const users = [
-  { id: 1, name: 'Jignesh Vasoya', power: '', description: '' },
-  { id: 2, name: 'Masoud Mazarei', power: '', description: '' },
-  { id: 3, name: 'Kanchan Mittal', power: '', description: '' },
-  { id: 4, name: 'Nithin', power: '', description: '' },
-  { id: 5, name: 'Masaru Ohashi Jr', power: '', description: '' },
-];
 const schedules = [
   { id: 1, name: 'US Every Saturday 12:00 AM', power: '', description: '' },
   { id: 2, name: 'EU Every Saturday 12:00 AM', power: '', description: '' },
@@ -135,7 +128,6 @@ export class InMemDataService implements InMemoryDbService {
     'step': steps,
     'test-case': testCases,
     'run': runs,
-    'user': users,
     'schedule': schedules,
    };
   }
@@ -160,11 +152,9 @@ export class InMemDataService implements InMemoryDbService {
       return this.stepDataService.putStep(contexts, reqInfo);
     } else if (collectionName === 'test-case') {
       return this.testCaseDataService.putTestCase(contexts, reqInfo);
-    } else if (collectionName === 'user') {
-      return this.userDataService.putUser(contexts, reqInfo);
     } else {
-      return this.userDataService.putUser(contexts, reqInfo);
-    }    
+      return null
+    }
   }
 
   get(reqInfo: RequestInfo) {
@@ -189,12 +179,10 @@ export class InMemDataService implements InMemoryDbService {
       return this.stepDataService.getSteps(steps, reqInfo);
     } else if (collectionName === 'test-case') {
       return this.testCaseDataService.getTestCases(testCases, reqInfo);
-    } else if (collectionName === 'user') {
-      return this.userDataService.getUsers(users, reqInfo);
     } else if (collectionName === 'schedule') {
       return this.scheduleDataService.getSchedules(schedules, reqInfo);
     } else {
-      return this.userDataService.getUsers(users, reqInfo);
+      return [];
     }
 
   }

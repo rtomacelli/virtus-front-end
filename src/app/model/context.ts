@@ -5,8 +5,8 @@ export class Context {
     constructor(
       public name: string,
       public description?: string,
+      public environmentName?: string,
       public environmentId: number = 0,
-      public environment?: Environment,
     ) {  }
   
   }

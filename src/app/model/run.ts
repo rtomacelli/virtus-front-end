@@ -7,6 +7,7 @@ export class Run {
   public id!: number
     constructor(
       public name: string,
+      public story?: string,
       public description?: string,
       public environmentId: number = 0,
       public environment?: Environment,

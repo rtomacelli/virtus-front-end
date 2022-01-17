@@ -10,9 +10,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class FeatureService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private featuresUrl = 'api/feature';
+  private featuresUrl = 'http://localhost:5000/feature';
 
   constructor(
     private http: HttpClient,
@@ -27,7 +32,7 @@ export class FeatureService {
 
   addFeature(feature: Feature): Observable<Feature> {
     console.log("addFeature: "+feature.name)
-    return this.http.post<Feature>(this.featuresUrl, feature, this.httpOptions).pipe(
+    return this.http.post<Feature>(this.featuresUrl, feature).pipe(
       tap((newFeature: Feature) => this.log(`added feature w/ id=${newFeature.id}`)),
       catchError(this.handleError<Feature>("addFeature"))
     );
@@ -50,7 +55,7 @@ export class FeatureService {
   }
 
   updateFeature(feature: Feature): Observable<any> {
-    return this.http.put(this.featuresUrl, feature, this.httpOptions).pipe(
+    return this.http.put(this.featuresUrl, feature).pipe(
       tap(_ => this.log(`updated feature id=${feature.id}`)),
       catchError(this.handleError<any>('updateFeature'))
     );
@@ -58,7 +63,7 @@ export class FeatureService {
 
   deleteFeature(id: number): Observable<Feature> {
     const url = `${this.featuresUrl}/${id}`;
-    return this.http.delete<Feature>(url, this.httpOptions).pipe(
+    return this.http.delete<Feature>(url).pipe(
       tap(_ => this.log(`deleted feature id=${id}`)),
       catchError(this.handleError<Feature>('deleteFeature'))
     );

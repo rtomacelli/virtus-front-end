@@ -6,8 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemDataService } from './service/in-mem-data/in-mem-data.service';
 import { ContextListComponent } from './features/contexts/context-list/context-list.component';
 import { ContextDashboardComponent } from './features/contexts/context-dashboard/context-dashboard.component';
 import { ContextSearchComponent } from './features/contexts/context-search/context-search.component';
@@ -52,6 +50,7 @@ import { RunListComponent } from './features/runs/run-list/run-list.component';
 import { RunDashboardComponent } from './features/runs/run-dashboard/run-dashboard.component';
 import { RunSearchComponent } from './features/runs/run-search/run-search.component';
 import { RunMenuComponent } from './features/runs/run-menu/run-menu.component';
+import { RunSingleFormComponent } from './features/runs/run-single-form/run-single-form.component';
 import { RunFormComponent } from './features/runs/run-form/run-form.component';
 import { UserListComponent } from './features/users/user-list/user-list.component';
 import { UserDashboardComponent } from './features/users/user-dashboard/user-dashboard.component';
@@ -63,11 +62,15 @@ import { ScheduleDashboardComponent } from './features/schedules/schedule-dashbo
 import { ScheduleSearchComponent } from './features/schedules/schedule-search/schedule-search.component';
 import { ScheduleMenuComponent } from './features/schedules/schedule-menu/schedule-menu.component';
 import { ScheduleFormComponent } from './features/schedules/schedule-form/schedule-form.component';
-import { MatSliderModule } from '@angular/material/slider';
-import { MaterialExampleModule } from '../material.module';
 import { Sidenav } from './sidenav/sidenav';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSliderModule } from '@angular/material/slider';
+import { MaterialExampleModule } from '../material.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -122,12 +125,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     RunSearchComponent,
     RunMenuComponent,
     RunFormComponent,
+    RunSingleFormComponent,
     UserListComponent,
     UserDashboardComponent,
     UserSearchComponent,
     UserMenuComponent,
     UserFormComponent,
-    Sidenav
+    Sidenav  
   ],
   imports: [
     BrowserModule,
@@ -135,13 +139,14 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemDataService, { dataEncapsulation: false },
-    ),
     MatNativeDateModule,
     MaterialExampleModule,
     MatSliderModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,6 +24,7 @@ import { ParameterFormComponent } from './features/parameters/parameter-form/par
 import { RunDashboardComponent } from './features/runs/run-dashboard/run-dashboard.component';
 import { RunListComponent } from './features/runs/run-list/run-list.component';
 import { RunFormComponent } from './features/runs/run-form/run-form.component';
+import { RunSingleFormComponent } from './features/runs/run-single-form/run-single-form.component';
 // SCENARIOS
 import { ScenarioDashboardComponent } from './features/scenarios/scenario-dashboard/scenario-dashboard.component';
 import { ScenarioListComponent } from './features/scenarios/scenario-list/scenario-list.component';
@@ -71,6 +72,7 @@ const routes: Routes = [
   { path: 'run/edit/:id', component: RunFormComponent },
   { path: 'run/add', component: RunFormComponent },
   { path: 'run/dashboard', component: RunDashboardComponent },
+  { path: 'run/single', component: RunSingleFormComponent },
   { path: 'scenario/list', component: ScenarioListComponent },
   { path: 'scenario/edit/:id', component: ScenarioFormComponent },
   { path: 'scenario/add', component: ScenarioFormComponent },

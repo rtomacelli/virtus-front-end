@@ -11,9 +11,14 @@ import { UserService } from '../user/user.service';
 })
 export class ScheduleService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private schedulesUrl = 'api/schedule';
+  private schedulesUrl = 'http://localhost:5000/schedule';
 
   constructor(
     private http: HttpClient,
@@ -29,7 +34,7 @@ export class ScheduleService {
 
   addSchedule(schedule: Schedule): Observable<Schedule> {
     console.log("addSchedule: "+schedule.name)
-    return this.http.post<Schedule>(this.schedulesUrl, schedule, this.httpOptions).pipe(
+    return this.http.post<Schedule>(this.schedulesUrl, schedule).pipe(
       tap((newSchedule: Schedule) => this.log(`added schedule w/ id=${newSchedule.id}`)),
       catchError(this.handleError<Schedule>("addSchedule"))
     );
@@ -52,7 +57,7 @@ export class ScheduleService {
   }
 
   updateSchedule(schedule: Schedule): Observable<any> {
-    return this.http.put(this.schedulesUrl, schedule, this.httpOptions).pipe(
+    return this.http.put(this.schedulesUrl, schedule).pipe(
       tap(_ => this.log(`updated schedule id=${schedule.id}`)),
       catchError(this.handleError<any>('updateSchedule'))
     );
@@ -60,7 +65,7 @@ export class ScheduleService {
 
   deleteSchedule(id: number): Observable<Schedule> {
     const url = `${this.schedulesUrl}/${id}`;
-    return this.http.delete<Schedule>(url, this.httpOptions).pipe(
+    return this.http.delete<Schedule>(url).pipe(
       tap(_ => this.log(`deleted schedule id=${id}`)),
       catchError(this.handleError<Schedule>('deleteSchedule'))
     );

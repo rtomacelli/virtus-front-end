@@ -35,8 +35,6 @@ export class UserFormComponent {
       this.userService.addUser(this.model).subscribe(user => this.model = user)
     } else {
       this.userService.updateUser(this.model).subscribe(user => {
-        // this.model = user
-        // console.log("onSubmit user.id: "+user.id)
       })
     }
     this.submitted = true; 
@@ -54,6 +52,7 @@ export class UserFormComponent {
 
   goBack(){
     this.submitted = false; 
+    console.log("goBack: "+this.model.id)
     this.getUser(this.model.id)
   }
 

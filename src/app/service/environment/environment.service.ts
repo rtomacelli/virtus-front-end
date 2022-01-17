@@ -10,9 +10,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class EnvironmentService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private environmentsUrl = 'api/environment';
+  private environmentsUrl = 'http://localhost:5000/environment';
 
   constructor(
     private http: HttpClient,
@@ -27,7 +32,7 @@ export class EnvironmentService {
 
   addEnvironment(environment: Environment): Observable<Environment> {
     console.log("addEnvironment: "+environment.name)
-    return this.http.post<Environment>(this.environmentsUrl, environment, this.httpOptions).pipe(
+    return this.http.post<Environment>(this.environmentsUrl, environment).pipe(
       tap((newEnvironment: Environment) => this.log(`added environment w/ id=${newEnvironment.id}`)),
       catchError(this.handleError<Environment>("addEnvironment"))
     );
@@ -50,7 +55,7 @@ export class EnvironmentService {
   }
 
   updateEnvironment(environment: Environment): Observable<any> {
-    return this.http.put(this.environmentsUrl, environment, this.httpOptions).pipe(
+    return this.http.put(this.environmentsUrl, environment).pipe(
       tap(_ => this.log(`updated environment id=${environment.id}`)),
       catchError(this.handleError<any>('updateEnvironment'))
     );
@@ -58,7 +63,7 @@ export class EnvironmentService {
 
   deleteEnvironment(id: number): Observable<Environment> {
     const url = `${this.environmentsUrl}/${id}`;
-    return this.http.delete<Environment>(url, this.httpOptions).pipe(
+    return this.http.delete<Environment>(url).pipe(
       tap(_ => this.log(`deleted environment id=${id}`)),
       catchError(this.handleError<Environment>('deleteEnvironment'))
     );

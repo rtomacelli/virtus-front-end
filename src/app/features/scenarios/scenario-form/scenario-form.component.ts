@@ -12,10 +12,11 @@ import { ScenarioService } from '../../../service/scenario/scenario.service';
 })
 export class ScenarioFormComponent {
 
-  features: Array<Feature> = [];
+  features: Array<Feature> = []
+  featureName: string 
 
   public model: Scenario = new Scenario(
-    '', '', 0
+    '', '', '', '', 0
   );
 
   constructor(
@@ -33,22 +34,21 @@ export class ScenarioFormComponent {
 
   submitted = false;
   ngOnInit(): void {
-    this.loadFeatures();
+    this.loadFeatures()
   }
   loadFeatures(): void {
-    this.featureService.getFeatures().subscribe(features => this.features = features);
+    this.featureService.getFeatures().subscribe(features => this.features = features)
   }
   onSubmit() {
     if (!this.model.id) {
       this.scenarioService.addScenario(this.model).subscribe(scenario => this.model = scenario)
     } else {
-      this.scenarioService.updateScenario(this.model).subscribe(scenario => {
-      })
+      this.scenarioService.updateScenario(this.model).subscribe(scenario => {})
     }
     this.submitted = true;
   }
   newScenario() {
-    this.model = new Scenario('', '');
+    this.model = new Scenario('', '', '', '', 0);
   }
   getScenario(id: number): void {
     this.scenarioService.getScenario(id).subscribe(scenario => this.model = scenario)
@@ -60,6 +60,7 @@ export class ScenarioFormComponent {
 
   goBack() {
     this.submitted = false;
+    console.log("goBack: "+this.model.id)
     this.getScenario(this.model.id)
   }
 

@@ -10,9 +10,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class NumberService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private numbersUrl = 'api/number';
+  private numbersUrl = 'http://localhost:5000/number';
 
   constructor(
     private http: HttpClient,
@@ -27,7 +32,7 @@ export class NumberService {
 
   addNumber(number: PhoneNumber): Observable<PhoneNumber> {
     console.log("addNumber: "+number.name)
-    return this.http.post<PhoneNumber>(this.numbersUrl, number, this.httpOptions).pipe(
+    return this.http.post<PhoneNumber>(this.numbersUrl, number).pipe(
       tap((newNumber: PhoneNumber) => this.log(`added number w/ id=${newNumber.id}`)),
       catchError(this.handleError<PhoneNumber>("addNumber"))
     );
@@ -50,7 +55,7 @@ export class NumberService {
   }
 
   updateNumber(number: PhoneNumber): Observable<any> {
-    return this.http.put(this.numbersUrl, number, this.httpOptions).pipe(
+    return this.http.put(this.numbersUrl, number).pipe(
       tap(_ => this.log(`updated number id=${number.id}`)),
       catchError(this.handleError<any>('updateNumber'))
     );
@@ -58,7 +63,7 @@ export class NumberService {
 
   deleteNumber(id: number): Observable<PhoneNumber> {
     const url = `${this.numbersUrl}/${id}`;
-    return this.http.delete<PhoneNumber>(url, this.httpOptions).pipe(
+    return this.http.delete<PhoneNumber>(url).pipe(
       tap(_ => this.log(`deleted number id=${id}`)),
       catchError(this.handleError<PhoneNumber>('deleteNumber'))
     );

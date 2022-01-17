@@ -10,9 +10,14 @@ import { TestCase } from 'src/app/model/test-case';
 })
 export class TestCaseService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private testCasesUrl = 'api/test-case';
+  private testCasesUrl = 'http://localhost:5000/testCase';
 
   constructor(
     private http: HttpClient,
@@ -27,7 +32,7 @@ export class TestCaseService {
 
   addTestCase(testCase: TestCase): Observable<TestCase> {
     console.log("addTestCase: "+testCase.name)
-    return this.http.post<TestCase>(this.testCasesUrl, testCase, this.httpOptions).pipe(
+    return this.http.post<TestCase>(this.testCasesUrl, testCase).pipe(
       tap((newTestCase: TestCase) => this.log(`added testCase w/ id=${newTestCase.id}`)),
       catchError(this.handleError<TestCase>("addTestCase"))
     );
@@ -50,7 +55,7 @@ export class TestCaseService {
   }
 
   updateTestCase(testCase: TestCase): Observable<any> {
-    return this.http.put(this.testCasesUrl, testCase, this.httpOptions).pipe(
+    return this.http.put(this.testCasesUrl, testCase).pipe(
       tap(_ => this.log(`updated testCase id=${testCase.id}`)),
       catchError(this.handleError<any>('updateTestCase'))
     );
@@ -58,7 +63,7 @@ export class TestCaseService {
 
   deleteTestCase(id: number): Observable<TestCase> {
     const url = `${this.testCasesUrl}/${id}`;
-    return this.http.delete<TestCase>(url, this.httpOptions).pipe(
+    return this.http.delete<TestCase>(url).pipe(
       tap(_ => this.log(`deleted testCase id=${id}`)),
       catchError(this.handleError<TestCase>('deleteTestCase'))
     );

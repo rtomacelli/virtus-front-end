@@ -10,15 +10,25 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class RunService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private runsUrl = 'api/run';
+  private runsUrl = 'http://localhost:5000/run';
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  getRuns(): Observable<Run[]> {
+    run(model: Run): Observable<Run> {
+      console.log("RUNNING")
+      throw new Error('Method not implemented.');
+    }
+
+    getRuns(): Observable<Run[]> {
     return this.http.get<Run[]>(this.runsUrl)
       .pipe(
         catchError(this.handleError<Run[]>("getRuns", []))
@@ -27,7 +37,7 @@ export class RunService {
 
   addRun(run: Run): Observable<Run> {
     console.log("addRun: "+run.name)
-    return this.http.post<Run>(this.runsUrl, run, this.httpOptions).pipe(
+    return this.http.post<Run>(this.runsUrl, run).pipe(
       tap((newRun: Run) => this.log(`added run w/ id=${newRun.id}`)),
       catchError(this.handleError<Run>("addRun"))
     );
@@ -50,7 +60,7 @@ export class RunService {
   }
 
   updateRun(run: Run): Observable<any> {
-    return this.http.put(this.runsUrl, run, this.httpOptions).pipe(
+    return this.http.put(this.runsUrl, run).pipe(
       tap(_ => this.log(`updated run id=${run.id}`)),
       catchError(this.handleError<any>('updateRun'))
     );
@@ -58,7 +68,7 @@ export class RunService {
 
   deleteRun(id: number): Observable<Run> {
     const url = `${this.runsUrl}/${id}`;
-    return this.http.delete<Run>(url, this.httpOptions).pipe(
+    return this.http.delete<Run>(url).pipe(
       tap(_ => this.log(`deleted run id=${id}`)),
       catchError(this.handleError<Run>('deleteRun'))
     );

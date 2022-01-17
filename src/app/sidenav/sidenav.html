@@ -34,6 +34,9 @@
       fixedTopGap="56">
       <mat-nav-list>
         <!-- Runs -->
+        <a routerLink="/run/single" mat-list-item >
+          <mat-icon color="primary" mat-list-icon>play_circle_outline</mat-icon>Run a Single Test
+        </a>
         <a mat-list-item (click)="toggleMenu('run')">
           <mat-icon color="primary" mat-list-icon>play_circle_filled</mat-icon>Runs
           <span class="toolbar-spacer"></span>

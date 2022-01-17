@@ -10,10 +10,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class StepService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private stepsUrl = 'api/step';
-
+  private stepsUrl = 'http://localhost:5000/step';
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
@@ -27,7 +31,7 @@ export class StepService {
 
   addStep(step: Step): Observable<Step> {
     console.log("addStep: "+step.name)
-    return this.http.post<Step>(this.stepsUrl, step, this.httpOptions).pipe(
+    return this.http.post<Step>(this.stepsUrl, step).pipe(
       tap((newStep: Step) => this.log(`added step w/ id=${newStep.id}`)),
       catchError(this.handleError<Step>("addStep"))
     );
@@ -50,7 +54,7 @@ export class StepService {
   }
 
   updateStep(step: Step): Observable<any> {
-    return this.http.put(this.stepsUrl, step, this.httpOptions).pipe(
+    return this.http.put(this.stepsUrl, step).pipe(
       tap(_ => this.log(`updated step id=${step.id}`)),
       catchError(this.handleError<any>('updateStep'))
     );
@@ -58,7 +62,7 @@ export class StepService {
 
   deleteStep(id: number): Observable<Step> {
     const url = `${this.stepsUrl}/${id}`;
-    return this.http.delete<Step>(url, this.httpOptions).pipe(
+    return this.http.delete<Step>(url).pipe(
       tap(_ => this.log(`deleted step id=${id}`)),
       catchError(this.handleError<Step>('deleteStep'))
     );

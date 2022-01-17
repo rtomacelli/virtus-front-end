@@ -10,9 +10,15 @@ import { Context } from 'src/app/model/context';
 })
 export class ContextService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+    })
   };
-  private contextsUrl = 'api/context';
+  private contextsUrl = 'http://mohashi21.ngrok.io/context';
+  private environmentsUrl = 'http://mohashi21.ngrok.io/environment';
 
   constructor(
     private http: HttpClient,
@@ -24,10 +30,18 @@ export class ContextService {
         catchError(this.handleError<Context[]>("getContexts", []))
       )
   }
+  getContextsByEnvironmentId(environmentId: number): Observable<Context[]> {
+    const url = `${this.environmentsUrl}/${environmentId}/context`;
+    return this.http.get<Context[]>(url)
+      .pipe(
+        catchError(this.handleError<Context[]>("getContextsByEnvironmentId", []))
+      )
+  }
 
   addContext(context: Context): Observable<Context> {
-    console.log("addContext: "+context.name)
-    return this.http.post<Context>(this.contextsUrl, context, this.httpOptions).pipe(
+    console.log("addContext: " + context.name)
+    console.log("addContext - environmentId: " + context.environmentId)
+    return this.http.post<Context>(this.contextsUrl, context).pipe(
       tap((newContext: Context) => this.log(`added context w/ id=${newContext.id}`)),
       catchError(this.handleError<Context>("addContext"))
     );
@@ -50,7 +64,7 @@ export class ContextService {
   }
 
   updateContext(context: Context): Observable<any> {
-    return this.http.put(this.contextsUrl, context, this.httpOptions).pipe(
+    return this.http.put(this.contextsUrl, context).pipe(
       tap(_ => this.log(`updated context id=${context.id}`)),
       catchError(this.handleError<any>('updateContext'))
     );
@@ -58,7 +72,7 @@ export class ContextService {
 
   deleteContext(id: number): Observable<Context> {
     const url = `${this.contextsUrl}/${id}`;
-    return this.http.delete<Context>(url, this.httpOptions).pipe(
+    return this.http.delete<Context>(url).pipe(
       tap(_ => this.log(`deleted context id=${id}`)),
       catchError(this.handleError<Context>('deleteContext'))
     );

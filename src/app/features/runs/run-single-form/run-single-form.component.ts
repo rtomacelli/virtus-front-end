@@ -8,14 +8,14 @@ import { ContextService } from 'src/app/service/context/context.service';
 import { EnvironmentService } from 'src/app/service/environment/environment.service';
 import { TestCaseService } from 'src/app/service/test-case/test-case.service';
 import { UserService } from 'src/app/service/user/user.service';
-import { Run } from '../../../model/run';
-import { RunService } from '../../../service/run/run.service';
+import { Run } from 'src/app/model/run';
+import { RunService } from 'src/app/service/run/run.service';
 @Component({
-  selector: 'app-run-form',
-  templateUrl: './run-form.component.html',
-  styleUrls: ['./run-form.component.css']
+  selector: 'app-run-single-form',
+  templateUrl: './run-single-form.component.html',
+  styleUrls: ['./run-single-form.component.css']
 })
-export class RunFormComponent {
+export class RunSingleFormComponent {
 
   environments: Array<Environment> = [];
   contexts: Array<Context> = [];
@@ -55,6 +55,10 @@ export class RunFormComponent {
   loadContexts(): void {
     this.contextService.getContexts().subscribe(contexts=>this.contexts = contexts);
   }
+  loadContextsByEnvironment(): void {
+    console.log("loadContextsByEnvironment - "+this.model.environmentId)
+    this.contextService.getContextsByEnvironmentId(this.model.environmentId).subscribe(contexts=>this.contexts = contexts);
+  }
   loadTestCases(): void {
     this.testCaseService.getTestCases().subscribe(testCases=>this.testCases = testCases);
   }
@@ -72,6 +76,9 @@ export class RunFormComponent {
   }
   newRun() {
     this.model = new Run('', '');
+  }
+  run() {
+    this.runService.run(this.model).subscribe(run => this.model = run)
   }
   getRun(id:number): void {
     this.runService.getRun(id).subscribe(run => this.model = run)

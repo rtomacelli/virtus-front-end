@@ -15,7 +15,7 @@ export class ContextFormComponent {
   environments: Array<Environment> = [];
 
   public model: Context = new Context(
-    '', '', 0
+    '', '', '', 0
   );
   
   constructor(

@@ -10,9 +10,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class UserService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private usersUrl = 'api/user';
+  private usersUrl = 'http://localhost:5000/user';
 
   constructor(
     private http: HttpClient,
@@ -27,7 +32,8 @@ export class UserService {
 
   addUser(user: User): Observable<User> {
     console.log("addUser: "+user.name)
-    return this.http.post<User>(this.usersUrl, user, this.httpOptions).pipe(
+    const data = JSON.stringify(user);
+    return this.http.post<User>(this.usersUrl, data).pipe(
       tap((newUser: User) => this.log(`added user w/ id=${newUser.id}`)),
       catchError(this.handleError<User>("addUser"))
     );
@@ -50,7 +56,8 @@ export class UserService {
   }
 
   updateUser(user: User): Observable<any> {
-    return this.http.put(this.usersUrl, user, this.httpOptions).pipe(
+    const data = JSON.stringify(user);
+    return this.http.put(this.usersUrl, data).pipe(
       tap(_ => this.log(`updated user id=${user.id}`)),
       catchError(this.handleError<any>('updateUser'))
     );
@@ -58,9 +65,9 @@ export class UserService {
 
   deleteUser(id: number): Observable<User> {
     const url = `${this.usersUrl}/${id}`;
-    return this.http.delete<User>(url, this.httpOptions).pipe(
+    return this.http.delete<User>(url).pipe(
       tap(_ => this.log(`deleted user id=${id}`)),
-      catchError(this.handleError<User>('deleteUser'))
+      catchError(this.handleError<User>(`deteletedUser id=${id}`))
     );
   }
 

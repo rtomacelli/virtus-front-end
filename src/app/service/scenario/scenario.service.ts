@@ -4,15 +4,21 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from '../message/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { FeatureService } from '../feature/feature.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScenarioService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+    })
   };
-  private scenariosUrl = 'api/scenario';
+  private scenariosUrl = 'http://mohashi21.ngrok.io/scenario';
 
   constructor(
     private http: HttpClient,
@@ -26,8 +32,10 @@ export class ScenarioService {
   }
 
   addScenario(scenario: Scenario): Observable<Scenario> {
-    console.log("addScenario: "+scenario.name)
-    return this.http.post<Scenario>(this.scenariosUrl, scenario, this.httpOptions).pipe(
+    console.log("addScenario: " + scenario.name)
+    console.log("addScenario - featureId: " + scenario.featureId)
+    const data = JSON.stringify(scenario);
+    return this.http.post<Scenario>(this.scenariosUrl, data).pipe(
       tap((newScenario: Scenario) => this.log(`added scenario w/ id=${newScenario.id}`)),
       catchError(this.handleError<Scenario>("addScenario"))
     );
@@ -50,15 +58,16 @@ export class ScenarioService {
   }
 
   updateScenario(scenario: Scenario): Observable<any> {
-    return this.http.put(this.scenariosUrl, scenario, this.httpOptions).pipe(
-      tap(_ => this.log(`updated scenario id=${scenario.id}`)),
-      catchError(this.handleError<any>('updateScenario'))
-    );
+    console.log("updatedScenario: " + scenario.name)
+    console.log("updatedScenario - featureId: " + scenario.featureId)
+    let data = JSON.stringify(scenario);
+    console.log("updatedScenario: " + data)
+    return this.http.put<any>(this.scenariosUrl, data);
   }
 
   deleteScenario(id: number): Observable<Scenario> {
     const url = `${this.scenariosUrl}/${id}`;
-    return this.http.delete<Scenario>(url, this.httpOptions).pipe(
+    return this.http.delete<Scenario>(url).pipe(
       tap(_ => this.log(`deleted scenario id=${id}`)),
       catchError(this.handleError<Scenario>('deleteScenario'))
     );

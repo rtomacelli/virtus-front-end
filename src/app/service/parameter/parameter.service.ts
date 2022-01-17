@@ -10,9 +10,14 @@ import { Parameter } from 'src/app/model/parameter';
 })
 export class ParameterService {
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 
+      "Access-Control-Allow-Origin": "*",    
+      "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type": "text/plain,application/json",
+   })
   };
-  private parametersUrl = 'api/parameter';
+  private parametersUrl = 'http://localhost:5000/parameter';
 
   constructor(
     private http: HttpClient,
@@ -27,7 +32,7 @@ export class ParameterService {
 
   addParameter(parameter: Parameter): Observable<Parameter> {
     console.log("addParameter: "+parameter.name)
-    return this.http.post<Parameter>(this.parametersUrl, parameter, this.httpOptions).pipe(
+    return this.http.post<Parameter>(this.parametersUrl, parameter).pipe(
       tap((newParameter: Parameter) => this.log(`added parameter w/ id=${newParameter.id}`)),
       catchError(this.handleError<Parameter>("addParameter"))
     );
@@ -50,7 +55,7 @@ export class ParameterService {
   }
 
   updateParameter(parameter: Parameter): Observable<any> {
-    return this.http.put(this.parametersUrl, parameter, this.httpOptions).pipe(
+    return this.http.put(this.parametersUrl, parameter).pipe(
       tap(_ => this.log(`updated parameter id=${parameter.id}`)),
       catchError(this.handleError<any>('updateParameter'))
     );
@@ -58,7 +63,7 @@ export class ParameterService {
 
   deleteParameter(id: number): Observable<Parameter> {
     const url = `${this.parametersUrl}/${id}`;
-    return this.http.delete<Parameter>(url, this.httpOptions).pipe(
+    return this.http.delete<Parameter>(url).pipe(
       tap(_ => this.log(`deleted parameter id=${id}`)),
       catchError(this.handleError<Parameter>('deleteParameter'))
     );
