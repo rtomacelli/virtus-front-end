@@ -17,8 +17,8 @@ export class ContextService {
       "Content-Type": "text/plain,application/json",
     })
   };
-  private contextsUrl = 'http://mohashi21.ngrok.io/context';
-  private environmentsUrl = 'http://mohashi21.ngrok.io/environment';
+  private contextsUrl = 'http://localhost:5002/context';
+  private environmentsUrl = 'http://localhost:5002/environment';
 
   constructor(
     private http: HttpClient,
@@ -41,7 +41,8 @@ export class ContextService {
   addContext(context: Context): Observable<Context> {
     console.log("addContext: " + context.name)
     console.log("addContext - environmentId: " + context.environmentId)
-    return this.http.post<Context>(this.contextsUrl, context).pipe(
+    const data = JSON.stringify(context);
+    return this.http.post<Context>(this.contextsUrl, data).pipe(
       tap((newContext: Context) => this.log(`added context w/ id=${newContext.id}`)),
       catchError(this.handleError<Context>("addContext"))
     );
@@ -64,7 +65,8 @@ export class ContextService {
   }
 
   updateContext(context: Context): Observable<any> {
-    return this.http.put(this.contextsUrl, context).pipe(
+    const data = JSON.stringify(context);
+    return this.http.put(this.contextsUrl, data).pipe(
       tap(_ => this.log(`updated context id=${context.id}`)),
       catchError(this.handleError<any>('updateContext'))
     );

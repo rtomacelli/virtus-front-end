@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Zarbat</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -10,8 +10,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script language="javascript" type="text/javascript">
+    let hour = 0
+    let minute = 0
+    let second = 0
+    let run = false
+    function chronometer() {
+      if (second == 60) {
+        minute++
+        second = 0
+      }
+      if (minute == 60) {
+        hour++
+        minute = 0
+      }
+      let padToSecond = (second < 10) ? "0" + second : second
+      let padToMinute = (minute < 10) ? "0" + minute : minute
+      let padToHour = (hour < 10) ? "0" + hour : hour
+      document.title = "Running for " + padToHour + ":" + padToMinute + ":" + padToSecond
+      if (run) {
+        setTimeout(chronometer, 1000)
+        second++
+      }
+    }
+  </script>
 </head>
-<body class="mat-typography">
+
+<body class="mat-typography" onLoad="run=true;chronometer()">
+  <button onclick="run=run?false:true;chronometer()"></button>
   <app-root></app-root>
 </body>
+
 </html>

@@ -18,7 +18,7 @@ export class ScenarioService {
       "Content-Type": "text/plain,application/json",
     })
   };
-  private scenariosUrl = 'http://mohashi21.ngrok.io/scenario';
+  private scenariosUrl = 'http://localhost:5002/scenario';
 
   constructor(
     private http: HttpClient,

@@ -46,6 +46,7 @@ import { TestCaseDashboardComponent } from './features/test-cases/test-case-dash
 import { TestCaseSearchComponent } from './features/test-cases/test-case-search/test-case-search.component';
 import { TestCaseMenuComponent } from './features/test-cases/test-case-menu/test-case-menu.component';
 import { TestCaseFormComponent } from './features/test-cases/test-case-form/test-case-form.component';
+import { TestCaseScenariosTableComponent } from './features/test-cases/test-case-scenarios-table/test-case-scenarios-table.component';
 import { RunListComponent } from './features/runs/run-list/run-list.component';
 import { RunDashboardComponent } from './features/runs/run-dashboard/run-dashboard.component';
 import { RunSearchComponent } from './features/runs/run-search/run-search.component';
@@ -64,13 +65,21 @@ import { ScheduleMenuComponent } from './features/schedules/schedule-menu/schedu
 import { ScheduleFormComponent } from './features/schedules/schedule-form/schedule-form.component';
 import { Sidenav } from './sidenav/sidenav';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table'
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSelectModule } from "@angular/material/select";
 import { MaterialExampleModule } from '../material.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CircleProgressDialog } from './features/runs/run-single-form/circle-progress-dialog/circle-progress-dialog';
+import { ScenarioDialogBoxComponent } from './features/test-cases/scenario-dialog-box/scenario-dialog-box.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,18 +129,24 @@ import { MaterialExampleModule } from '../material.module';
     TestCaseSearchComponent,
     TestCaseMenuComponent,
     TestCaseFormComponent,
+    TestCaseScenariosTableComponent,
     RunListComponent,
     RunDashboardComponent,
     RunSearchComponent,
     RunMenuComponent,
     RunFormComponent,
     RunSingleFormComponent,
+    CircleProgressDialog,
     UserListComponent,
     UserDashboardComponent,
     UserSearchComponent,
     UserMenuComponent,
     UserFormComponent,
-    Sidenav  
+    Sidenav,
+    ScenarioDialogBoxComponent
+  ],
+  entryComponents: [
+    ScenarioDialogBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -146,7 +161,12 @@ import { MaterialExampleModule } from '../material.module';
     MatToolbarModule,
     MatButtonModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

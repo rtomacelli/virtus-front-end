@@ -17,7 +17,7 @@ export class TestCaseService {
       "Content-Type": "text/plain,application/json",
    })
   };
-  private testCasesUrl = 'http://localhost:5000/testCase';
+  private testCasesUrl = 'http://localhost:5002/testCase';
 
   constructor(
     private http: HttpClient,
@@ -32,7 +32,8 @@ export class TestCaseService {
 
   addTestCase(testCase: TestCase): Observable<TestCase> {
     console.log("addTestCase: "+testCase.name)
-    return this.http.post<TestCase>(this.testCasesUrl, testCase).pipe(
+    const data = JSON.stringify(testCase);
+    return this.http.post<TestCase>(this.testCasesUrl, data).pipe(
       tap((newTestCase: TestCase) => this.log(`added testCase w/ id=${newTestCase.id}`)),
       catchError(this.handleError<TestCase>("addTestCase"))
     );
@@ -55,7 +56,9 @@ export class TestCaseService {
   }
 
   updateTestCase(testCase: TestCase): Observable<any> {
-    return this.http.put(this.testCasesUrl, testCase).pipe(
+    console.log("updateTestCase: "+testCase.name)
+    const data = JSON.stringify(testCase);
+    return this.http.put(this.testCasesUrl, data).pipe(
       tap(_ => this.log(`updated testCase id=${testCase.id}`)),
       catchError(this.handleError<any>('updateTestCase'))
     );

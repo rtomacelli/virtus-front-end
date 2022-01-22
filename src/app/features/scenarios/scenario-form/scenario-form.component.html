@@ -15,8 +15,8 @@
     </div>
 
     <div class="form-group">
-        <label for="story">Story</label>
-        <textarea type="text" rows=10 class="form-control" id="story" [ngModel]="model?.story" (ngModelChange)="model.story = $event" name="story">
+        <label for="listOfSteps">List of Steps</label>
+        <textarea type="text" rows=10 class="form-control" id="listOfSteps" [ngModel]="model?.listOfSteps" (ngModelChange)="model.listOfSteps = $event" name="listOfSteps">
         </textarea>
     </div>
 
@@ -43,8 +43,8 @@
       <div class="col-xs-9">{{ model?.description }}</div>
     </div>
     <div class="row">
-      <div class="col-xs-3">Story</div>
-      <div class="col-xs-9">{{ model?.story }}</div>
+      <div class="col-xs-3">List of Steps</div>
+      <div class="col-xs-9">{{ model?.listOfSteps }}</div>
     </div>    
     <br>
     <button class="btn btn-primary" (click)="goBack()">Go Back</button>

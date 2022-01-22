@@ -15,45 +15,71 @@
     </div>
 
     <div class="form-group">
-        <label for="description">Story</label>
-        <textarea type="text" rows=10 class="form-control" id="story" [ngModel]="model?.story" (ngModelChange)="model.story = $event" name="story">
+        <label for="listOfSteps">List Of Steps</label>
+        <textarea type="text" rows=10 class="form-control" id="listOfSteps" [ngModel]="model?.listOfSteps" (ngModelChange)="model.listOfSteps = $event" name="listOfSteps">
           </textarea>
     </div>
-
+    <div class="form-group">
+      <label for="featureId">Feature</label>
+      <select class="form-control" [ngModel]="model?.featureId" (ngModelChange)="model.featureId = $event" id="featureId" required name="featureId">
+          <option *ngFor="let feature of features" [value]="feature.id">{{feature.name}}</option>
+      </select>
+  </div>
     <div class="form-group">
         <label for="environmentId">Environment</label>
         <select class="form-control"  
           [ngModel]="model?.environmentId" 
           (ngModelChange)="model.environmentId = $event" 
-          (change)="loadContextsByEnvironment();"
+          (change)="loadContextsByEnvironment()"
+          (click)="loadContextsByEnvironment()"
           id="environmentId" required name="environmentId">
             <option *ngFor="let environment of environments" [value]="environment.id">{{environment.name}}</option>
         </select>
     </div>
     <div class="form-group">
         <label for="contextId">Context</label>
-        <select class="form-control" [disabled]="model?.environmentId == 0"  [ngModel]="model?.contextId" (ngModelChange)="model.contextId = $event" id="contextId" required name="contextId">
+        <select class="form-control" [disabled]="!model?.environmentId || model?.environmentId == 0" 
+          [ngModel]="model?.contextId" 
+          (ngModelChange)="model.contextId = $event" id="contextId" 
+          required name="contextId">
             <option *ngFor="let context of contexts" [value]="context.id">{{context.name}}</option>
         </select>
     </div>
     <div class="form-group">
         <label for="userId">Tester</label>
-        <select class="form-control"  [ngModel]="model?.userId" (ngModelChange)="model.userId = $event" id="userId" required name="userId">
+        <select class="form-control"  [ngModel]="model?.userId" (ngModelChange)="model.userId = $event" id="userId" 
+          required name="userId">
             <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
         </select>
     </div>
-
-    <button type="button" class="btn btn-default" (click)="newRun(); runSingleForm.reset()">New Run</button>
+    <button type="button" class="btn btn-default" (click)="newRun()">New Run</button>
     <button type="submit" class="btn btn-success" [disabled]="!runSingleForm.form.valid">Save</button>
-    <button type="button" class="btn btn-success" [disabled]="!runSingleForm.form.valid" (click)="run();">Run Now</button>
+    <button type="button" class="btn btn-success" [disabled]="!runSingleForm.form.valid" (click)="openDialog();run()">Run Now</button>
 </form>
 </div>
-
+<br>
+<div [hidden]="!executed">
+  <label for="logs">Test Result</label>
+  <div [hidden]="!passed">
+    <h3 style="font-size: 24px; color:green; float: left;">
+      PASSED&nbsp;&nbsp;&nbsp;
+      <mat-icon style="font-size: 24px; color:green;float: right;">check_circle_outline</mat-icon>
+    </h3>
+  </div>
+  <div [hidden]="!failed">
+    <h3 style="font-size: 24px; color:red; float: left;">
+      FAILED&nbsp;&nbsp;&nbsp;
+      <mat-icon style="font-size: 24px; color:red;float: right;">error_outline</mat-icon>
+    </h3>
+  </div>
+  <textarea type="text" rows=10 class="form-control" id="logs" [ngModel]="model?.logs" (ngModelChange)="model.logs = $event" name="logs">
+    </textarea>
+</div>
 <div [hidden]="!submitted">
     <h2>You submitted the following:</h2>
     <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model?.name }}</div>
+      <div class="col-xs-3">Scenario</div>
+      <div class="col-xs-9">{{ model?.scenarioId }}</div>
     </div>
     <div class="row">
       <div class="col-xs-3">Description</div>

@@ -7,12 +7,9 @@ export class TestCase {
     constructor(
       public name: string,
       public description?: string,
-      public featureId: number = 0,
-      public feature?: Feature,
+      public scenarioId: number = 0,
       public environmentId: number = 0,
-      public environment?: Environment,
       public contextId: number = 0,
-      public context?: Context,
     ) {  }
   
   }

@@ -17,7 +17,7 @@ export class StepService {
       "Content-Type": "text/plain,application/json",
    })
   };
-  private stepsUrl = 'http://localhost:5000/step';
+  private stepsUrl = 'http://localhost:5002/step';
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }

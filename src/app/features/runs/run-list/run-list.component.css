@@ -3,7 +3,7 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 98%;
 }
 
 input {
@@ -74,9 +74,16 @@ input {
 }
 
 
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+button.delete {
+  position: absolute;
+  left: 95%;
+  top: -2px;
+  background-color: white;
+  color:  #525252;
+  font-size: 1.1rem;
+  padding: 1px 10px 0px 10px;
+}
+button.delete:hover {
+  background-color: #525252;
+  color: white;
+}

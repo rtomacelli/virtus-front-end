@@ -17,7 +17,8 @@ export class FeatureService {
       "Content-Type": "text/plain,application/json",
    })
   };
-  private featuresUrl = 'http://localhost:5000/feature';
+  private featuresUrl = 'http://localhost:5002/feature';
+  private scenarioUrl = 'http://localhost:5002/scenario';
 
   constructor(
     private http: HttpClient,
@@ -66,6 +67,15 @@ export class FeatureService {
     return this.http.delete<Feature>(url).pipe(
       tap(_ => this.log(`deleted feature id=${id}`)),
       catchError(this.handleError<Feature>('deleteFeature'))
+    );
+  }
+
+  getFeatureByScenarioId(scenarioId: number): Observable<Feature> {
+    const url = `${this.scenarioUrl}/${scenarioId}/feature`;
+    return this.http.get<Feature>(url)
+    .pipe(
+      tap(_ => this.log(`get feature by scenario id=${scenarioId}`)),
+      catchError(this.handleError<Feature>('getFeatureByScenarioId'))
     );
   }
 

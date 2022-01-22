@@ -4,31 +4,41 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from '../message/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Arguments } from 'src/app/model/arguments';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RunService {
   httpOptions = {
-    headers: new HttpHeaders({ 
-      "Access-Control-Allow-Origin": "*",    
+    headers: new HttpHeaders({
+      "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "DELETE,GET,POST,OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "text/plain,application/json",
-   })
+    })
   };
-  private runsUrl = 'http://localhost:5000/run';
+  private runsUrl = 'http://localhost:5002/run';
+  private runSingleUrl = 'http://localhost:5003/intern/run';
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
 
-    run(model: Run): Observable<Run> {
-      console.log("RUNNING")
-      throw new Error('Method not implemented.');
-    }
+  run(model: Run): Observable<Run> {
+    model.args = new Arguments()
+    const data = JSON.stringify(model);
+    console.log("data: " + data)
+    return this.http.post<Run>(this.runSingleUrl, data).pipe(
+      tap((newRun: Run) => {
+        this.log(`run a single test w/ logs: ${newRun?.result}`)
+        model.logs = newRun.logs
+      }),
+      catchError(this.handleError<Run>("runSingleTest"))
+    );
+  }
 
-    getRuns(): Observable<Run[]> {
+  getRuns(): Observable<Run[]> {
     return this.http.get<Run[]>(this.runsUrl)
       .pipe(
         catchError(this.handleError<Run[]>("getRuns", []))
@@ -36,8 +46,11 @@ export class RunService {
   }
 
   addRun(run: Run): Observable<Run> {
-    console.log("addRun: "+run.name)
-    return this.http.post<Run>(this.runsUrl, run).pipe(
+    console.log("addRun scenarioId: " + run.scenarioId)
+    const data = JSON.stringify(run);
+    console.log("PREPARA:\n")
+    console.log(data)
+    return this.http.post<Run>(this.runsUrl, data).pipe(
       tap((newRun: Run) => this.log(`added run w/ id=${newRun.id}`)),
       catchError(this.handleError<Run>("addRun"))
     );
@@ -60,7 +73,8 @@ export class RunService {
   }
 
   updateRun(run: Run): Observable<any> {
-    return this.http.put(this.runsUrl, run).pipe(
+    const data = JSON.stringify(run);
+    return this.http.put(this.runsUrl, data).pipe(
       tap(_ => this.log(`updated run id=${run.id}`)),
       catchError(this.handleError<any>('updateRun'))
     );

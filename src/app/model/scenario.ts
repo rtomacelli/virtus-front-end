@@ -8,9 +8,9 @@ export class Scenario {
     constructor(
       public name: string,
       public description: string,
-      public story: string,
-      public featureName?: string,
+      public listOfSteps: string,
       public featureId?: number,
+      public featureName?: string,
     ) {  }
   
   }

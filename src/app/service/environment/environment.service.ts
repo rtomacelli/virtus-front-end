@@ -17,7 +17,7 @@ export class EnvironmentService {
       "Content-Type": "text/plain,application/json",
    })
   };
-  private environmentsUrl = 'http://localhost:5000/environment';
+  private environmentsUrl = 'http://localhost:5002/environment';
 
   constructor(
     private http: HttpClient,

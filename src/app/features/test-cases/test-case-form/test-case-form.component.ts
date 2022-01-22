@@ -7,6 +7,7 @@ import { Feature } from 'src/app/model/feature';
 import { ContextService } from 'src/app/service/context/context.service';
 import { EnvironmentService } from 'src/app/service/environment/environment.service';
 import { FeatureService } from 'src/app/service/feature/feature.service';
+import { ScenarioService } from 'src/app/service/scenario/scenario.service';
 import { TestCase } from '../../../model/test-case';
 import { TestCaseService } from '../../../service/test-case/test-case.service';
 @Component({
@@ -16,7 +17,7 @@ import { TestCaseService } from '../../../service/test-case/test-case.service';
 })
 export class TestCaseFormComponent {
 
-  features: Array<Feature> = [];
+  scenarios: Array<Feature> = [];
   environments: Array<Environment> = [];
   contexts: Array<Context> = [];
 
@@ -27,7 +28,7 @@ export class TestCaseFormComponent {
   constructor(
     private route: ActivatedRoute,    
     private testCaseService: TestCaseService,
-    private featureService: FeatureService,
+    private scenarioService: ScenarioService,
     private environmentService: EnvironmentService,
     private contextService: ContextService
   ) { 
@@ -41,15 +42,18 @@ export class TestCaseFormComponent {
 
   submitted = false;
   ngOnInit(): void {
-    this.loadFeatures();
+    this.loadScenarios();
     this.loadEnvironments();
     this.loadContexts();
   }
-  loadFeatures(): void {
-    this.featureService.getFeatures().subscribe(features=>this.features = features);
+  loadScenarios(): void {
+    this.scenarioService.getScenarios().subscribe(scenarios=>this.scenarios = scenarios);
   }
   loadEnvironments(): void {
     this.environmentService.getEnvironments().subscribe(environments=>this.environments = environments);
+  }
+  loadContextsByEnvironment(): void {
+    this.contextService.getContextsByEnvironmentId(this.model.environmentId).subscribe(contexts=>this.contexts = contexts);
   }
   loadContexts(): void {
     this.contextService.getContexts().subscribe(contexts=>this.contexts = contexts);

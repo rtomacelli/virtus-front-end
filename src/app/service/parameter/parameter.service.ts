@@ -17,7 +17,7 @@ export class ParameterService {
       "Content-Type": "text/plain,application/json",
    })
   };
-  private parametersUrl = 'http://localhost:5000/parameter';
+  private parametersUrl = 'http://localhost:5002/parameter';
 
   constructor(
     private http: HttpClient,

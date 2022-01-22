@@ -1,22 +1,21 @@
-import { Context } from "./context";
-import { Environment } from "./environment";
-import { TestCase } from "./test-case";
-import { User } from "./user";
+import { Arguments } from "./arguments";
 
 export class Run {
   public id!: number
     constructor(
       public name: string,
-      public story?: string,
+      public scenarioId?: number,
+      public listOfSteps?: string,
       public description?: string,
-      public environmentId: number = 0,
-      public environment?: Environment,
-      public contextId: number = 0,
-      public context?: Context,
-      public testCaseId: number = 0,
-      public testCase?: TestCase,
-      public userId: number = 0,
-      public user?: User,
+      public result?: string,
+      public logs?: string,
+      public featureId?: number,
+      public featureName?: string,
+      public environmentId?: number,
+      public contextId?: number,
+      public userId?: number,
+      public runAt?: string,
+      public args?: Arguments,
     ) {  }
   
   }

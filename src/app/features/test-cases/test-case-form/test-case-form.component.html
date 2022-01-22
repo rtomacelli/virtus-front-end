@@ -15,34 +15,29 @@
         (ngModelChange)="model.description = $event" name="description">
           </textarea>
     </div>
-
-    <div class="form-group">
-      <label for="featureId">Feature</label>
-      <select class="form-control" [ngModel]="model?.featureId" (ngModelChange)="model.featureId = $event"
-        id="featureId" required name="featureId">
-        <option *ngFor="let feature of features" [value]="feature.id">{{feature.name}}</option>
-      </select>
-    </div>
-
+    
     <div class="form-group">
       <label for="environmentId">Environment</label>
-      <select class="form-control" [ngModel]="model?.environmentId" (ngModelChange)="model.environmentId = $event"
-        id="environmentId" required name="environmentId">
+      <select class="form-control" [ngModel]="model?.environmentId" (change)="loadContextsByEnvironment();"
+        (ngModelChange)="model.environmentId = $event" id="environmentId" required name="environmentId">
         <option *ngFor="let environment of environments" [value]="environment.id">{{environment.name}}</option>
       </select>
     </div>
+  
+  <div class="form-group">
+    <label for="contextId">Context</label>
+    <select class="form-control" [disabled]="model?.environmentId == 0" [ngModel]="model?.contextId" (ngModelChange)="model.contextId = $event"
+    id="contextId" required name="contextId">
+    <option *ngFor="let context of contexts" [value]="context.id">{{context.name}}</option>
+  </select>
+</div>
+<br>
+<app-test-case-scenarios-table></app-test-case-scenarios-table>
+<br>
 
-    <div class="form-group">
-      <label for="contextId">Context</label>
-      <select class="form-control" [ngModel]="model?.contextId" (ngModelChange)="model.contextId = $event"
-        id="contextId" required name="contextId">
-        <option *ngFor="let context of contexts" [value]="context.id">{{context.name}}</option>
-      </select>
-    </div>
-
-    <button type="button" class="btn btn-default" (click)="newTestCase(); testCaseForm.reset()">New Test Case</button>
-    <button type="submit" class="btn btn-success" [disabled]="!testCaseForm.form.valid">Submit</button>
-  </form>
+<button type="button" class="btn btn-default" (click)="newTestCase(); testCaseForm.reset()">New Test Case</button>
+<button type="submit" class="btn btn-success" [disabled]="!testCaseForm.form.valid">Submit</button>
+</form>
 </div>
 
 <div [hidden]="!submitted">
@@ -56,10 +51,10 @@
     <div class="col-xs-9">{{ model?.description }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">Feature</div>
-    <div class="col-xs-9" *ngFor="let feature of features">
-      <span *ngIf="feature.id == model.featureId">
-        {{ feature.name }}
+    <div class="col-xs-3">Scenario</div>
+    <div class="col-xs-9" *ngFor="let scenario of scenarios">
+      <span *ngIf="scenario.id == model.scenarioId">
+        {{ scenario.name }}
       </span>
     </div>
   <div class="row">

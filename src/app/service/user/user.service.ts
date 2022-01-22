@@ -17,7 +17,7 @@ export class UserService {
       "Content-Type": "text/plain,application/json",
    })
   };
-  private usersUrl = 'http://localhost:5000/user';
+  private usersUrl = 'http://localhost:5002/user';
 
   constructor(
     private http: HttpClient,

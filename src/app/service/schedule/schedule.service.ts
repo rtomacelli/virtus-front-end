@@ -18,7 +18,7 @@ export class ScheduleService {
       "Content-Type": "text/plain,application/json",
    })
   };
-  private schedulesUrl = 'http://localhost:5000/schedule';
+  private schedulesUrl = 'http://localhost:5002/schedule';
 
   constructor(
     private http: HttpClient,
