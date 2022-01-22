@@ -15,29 +15,30 @@
         (ngModelChange)="model.description = $event" name="description">
           </textarea>
     </div>
-    
+
     <div class="form-group">
       <label for="environmentId">Environment</label>
-      <select class="form-control" [ngModel]="model?.environmentId" (change)="loadContextsByEnvironment();"
-        (ngModelChange)="model.environmentId = $event" id="environmentId" required name="environmentId">
+      <select class="form-control" [ngModel]="model?.environmentId" (ngModelChange)="model.environmentId = $event"
+        (change)="loadContextsByEnvironment()" (click)="loadContextsByEnvironment()" id="environmentId" required
+        name="environmentId">
         <option *ngFor="let environment of environments" [value]="environment.id">{{environment.name}}</option>
       </select>
     </div>
-  
-  <div class="form-group">
-    <label for="contextId">Context</label>
-    <select class="form-control" [disabled]="model?.environmentId == 0" [ngModel]="model?.contextId" (ngModelChange)="model.contextId = $event"
-    id="contextId" required name="contextId">
-    <option *ngFor="let context of contexts" [value]="context.id">{{context.name}}</option>
-  </select>
-</div>
-<br>
-<app-test-case-scenarios-table></app-test-case-scenarios-table>
-<br>
+    <div class="form-group">
+      <label for="contextId">Context</label>
+      <select class="form-control" [disabled]="!model?.environmentId || model?.environmentId == 0"
+        [ngModel]="model?.contextId" (ngModelChange)="model.contextId = $event" id="contextId" required
+        name="contextId">
+        <option *ngFor="let context of contexts" [value]="context.id">{{context.name}}</option>
+      </select>
+    </div>
+    <br>
+    <app-test-case-scenarios-table></app-test-case-scenarios-table>
+    <br>
 
-<button type="button" class="btn btn-default" (click)="newTestCase(); testCaseForm.reset()">New Test Case</button>
-<button type="submit" class="btn btn-success" [disabled]="!testCaseForm.form.valid">Submit</button>
-</form>
+    <button type="button" class="btn btn-default" (click)="newTestCase(); testCaseForm.reset()">New Test Case</button>
+    <button type="submit" class="btn btn-success" [disabled]="!testCaseForm.form.valid">Submit</button>
+  </form>
 </div>
 
 <div [hidden]="!submitted">
@@ -57,21 +58,21 @@
         {{ scenario.name }}
       </span>
     </div>
-  <div class="row">
-    <div class="col-xs-3">Environment</div>
-    <div class="col-xs-9" *ngFor="let environment of environments">
-      <span *ngIf="environment.id == model.environmentId">
-        {{ environment.name }}
-      </span>
+    <div class="row">
+      <div class="col-xs-3">Environment</div>
+      <div class="col-xs-9" *ngFor="let environment of environments">
+        <span *ngIf="environment.id == model.environmentId">
+          {{ environment.name }}
+        </span>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Context</div>
+        <div class="col-xs-9" *ngFor="let context of contexts">
+          <span *ngIf="context.id == model.contextId">
+            {{ context.name }}
+          </span>
+        </div>
+      </div>
+      <br>
+      <button class="btn btn-primary" (click)="goBack()">Go Back</button>
     </div>
-  <div class="row">
-    <div class="col-xs-3">Context</div>
-    <div class="col-xs-9" *ngFor="let context of contexts">
-      <span *ngIf="context.id == model.contextId">
-        {{ context.name }}
-      </span>
-    </div>
-  </div>
-  <br>
-  <button class="btn btn-primary" (click)="goBack()">Go Back</button>
-</div>
