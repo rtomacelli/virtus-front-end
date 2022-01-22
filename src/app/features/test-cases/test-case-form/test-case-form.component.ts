@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Context } from 'src/app/model/context';
 import { Environment } from 'src/app/model/environment';
@@ -10,6 +10,7 @@ import { FeatureService } from 'src/app/service/feature/feature.service';
 import { ScenarioService } from 'src/app/service/scenario/scenario.service';
 import { TestCase } from '../../../model/test-case';
 import { TestCaseService } from '../../../service/test-case/test-case.service';
+import { TestCaseScenariosTableComponent } from '../test-case-scenarios-table/test-case-scenarios-table.component';
 @Component({
   selector: 'app-test-case-form',
   templateUrl: './test-case-form.component.html',
@@ -39,7 +40,7 @@ export class TestCaseFormComponent {
       this.newTestCase();
     }
   }
-
+  @ViewChild(TestCaseScenariosTableComponent, {static: false}) childRef: TestCaseScenariosTableComponent;
   submitted = false;
   ngOnInit(): void {
     this.loadScenarios();
@@ -67,7 +68,8 @@ export class TestCaseFormComponent {
     this.submitted = true; 
   }
   newTestCase() {
-    this.model = new TestCase('', '');
+    this.model = new TestCase('', '');    
+    this.destroyScenarios()
   }
   getTestCase(id:number): void {
     this.testCaseService.getTestCase(id).subscribe(testCase => this.model = testCase)
@@ -76,7 +78,11 @@ export class TestCaseFormComponent {
     this.testCaseService.getTestCase(id).subscribe(testCase => this.model = testCase)
     this.submitted = true; 
   }
-
+  destroyScenarios() {
+    if (this.childRef) {
+      this.childRef.ngOnDestroy();
+    }
+  }
   goBack(){
     this.submitted = false; 
     this.getTestCase(this.model.id)

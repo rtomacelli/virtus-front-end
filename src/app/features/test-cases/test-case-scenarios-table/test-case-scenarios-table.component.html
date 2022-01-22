@@ -22,7 +22,11 @@
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element" class="action-link"> 
           <a (click)="openDialog('Update',element)">Edit</a> | 
-          <a (click)="openDialog('Delete',element)">Delete</a>  
+          <a (click)="openDialog('Delete',element)">Delete</a> |   
+          <a (click)="log('up')">Up</a> | 
+          <a (click)="log('first')">First</a> |
+          <a (click)="log('last')">Last</a> |
+          <a (click)="log('down')">Down</a>  
         </td>
       </ng-container>
   

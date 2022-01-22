@@ -13,6 +13,9 @@ import { Scenario } from 'src/app/model/scenario';
   styleUrls: ['./test-case-scenarios-table.component.css']
 })
 export class TestCaseScenariosTableComponent implements OnInit {
+  ngOnDestroy() {
+    this.dataSource = []
+  }
   displayedColumns: string[] = ['id', 'name', 'action']
   scenarios: Scenario[]
 
@@ -64,5 +67,9 @@ export class TestCaseScenariosTableComponent implements OnInit {
     this.dataSource = this.dataSource.filter((value, key) => {
       return value.id != row_obj.id
     });
+  }
+
+  log(txt:string):void{
+    console.log(txt)
   }
 }
