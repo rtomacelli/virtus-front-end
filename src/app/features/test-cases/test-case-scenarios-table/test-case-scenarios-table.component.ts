@@ -29,6 +29,8 @@ export class TestCaseScenariosTableComponent implements OnInit {
     this.scenarioService.getScenarios().subscribe(scenarios => this.scenarios = scenarios)
   }
 
+  openRunDialog(selectedScenario) {
+  }
   openDialog(action, selectedScenario) {
     const dialogRef = this.dialog.open(ScenarioDialogBoxComponent, {
       width: '250px',
@@ -69,6 +71,27 @@ export class TestCaseScenariosTableComponent implements OnInit {
     });
   }
 
+  move(direction,element):void{
+    let fromIndex = this.dataSource.indexOf(element)
+    let toIndex = 0
+    if('Up'==direction){
+      toIndex = fromIndex - 1
+    } else if ('Down'==direction){
+      toIndex = fromIndex + 1
+    } else if ('First'==direction){
+      toIndex = 0
+    } else if ('Last'==direction){
+      toIndex = this.dataSource.length-1
+    }
+    if(-1==toIndex){
+      toIndex = this.dataSource.length-1
+    } else if (toIndex==this.dataSource.length){
+      toIndex = 0
+    }
+    this.dataSource.splice(fromIndex, 1)
+    this.dataSource.splice(toIndex, 0, element)
+    this.table.renderRows();
+  }
   log(txt:string):void{
     console.log(txt)
   }
