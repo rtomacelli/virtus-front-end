@@ -10,6 +10,9 @@ import { FeatureService } from '../feature/feature.service';
   providedIn: 'root'
 })
 export class ScenarioService {
+  myMethod(dataSource: Scenario[]) {
+    throw new Error('Method not implemented.');
+  }
   httpOptions = {
     headers: new HttpHeaders({
       "Access-Control-Allow-Origin": "*",

@@ -33,6 +33,7 @@ export class TestCaseService {
   addTestCase(testCase: TestCase): Observable<TestCase> {
     console.log("addTestCase: "+testCase.name)
     const data = JSON.stringify(testCase);
+    console.log("data: "+data)
     return this.http.post<TestCase>(this.testCasesUrl, data).pipe(
       tap((newTestCase: TestCase) => this.log(`added testCase w/ id=${newTestCase.id}`)),
       catchError(this.handleError<TestCase>("addTestCase"))
@@ -58,6 +59,7 @@ export class TestCaseService {
   updateTestCase(testCase: TestCase): Observable<any> {
     console.log("updateTestCase: "+testCase.name)
     const data = JSON.stringify(testCase);
+    console.log("data: "+data)
     return this.http.put(this.testCasesUrl, data).pipe(
       tap(_ => this.log(`updated testCase id=${testCase.id}`)),
       catchError(this.handleError<any>('updateTestCase'))

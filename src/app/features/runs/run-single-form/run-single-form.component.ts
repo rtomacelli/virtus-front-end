@@ -122,7 +122,7 @@ export class RunSingleFormComponent {
     const listOfSteps = this.model.listOfSteps
     const featureId = this.model.featureId
     const featureName = this.model.featureName
-    this.newScenario = new Scenario(scenarioName,description,listOfSteps,featureId,featureName)
+    this.newScenario = new Scenario(scenarioName,description,listOfSteps,''+featureId,featureName)
     let date = DateTime.now().setLocale('en-ca').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
     this.model.runAt = date    
     this.model.name = this.newScenario.name+' - '+date    

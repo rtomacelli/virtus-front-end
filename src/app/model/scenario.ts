@@ -9,8 +9,9 @@ export class Scenario {
       public name: string,
       public description: string,
       public listOfSteps: string,
-      public featureId?: number,
+      public featureId?: string,
       public featureName?: string,
+      public position?: string,
     ) {  }
   
   }

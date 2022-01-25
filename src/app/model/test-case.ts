@@ -1,15 +1,13 @@
-import { Context } from "./context";
-import { Environment } from "./environment";
-import { Feature } from "./feature";
+import { Scenario } from "./scenario";
 
 export class TestCase {
   public id!: number
     constructor(
       public name: string,
       public description?: string,
-      public scenarioId: number = 0,
-      public environmentId: number = 0,
-      public contextId: number = 0,
+      public environmentId?: number,
+      public contextId?: string,
+      public scenarios?: Scenario[],
     ) {  }
   
   }

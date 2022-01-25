@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ScenarioDialogBoxComponent } from '../scenario-dialog-box/scenario-dialog-box.component';
 import { ScenarioService } from 'src/app/service/scenario/scenario.service';
 import { Scenario } from 'src/app/model/scenario';
+import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-test-case-scenarios-table',
@@ -19,8 +20,8 @@ export class TestCaseScenariosTableComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'action']
   scenarios: Scenario[]
 
-  @ViewChild(MatTable, { static: true }) table: MatTable<any>;
-  dataSource: Scenario[]=[]
+  @ViewChild(MatTable, { static: true }) table: MatTable<any>
+  dataSource: Scenario[] = []
   selectedScenario: Scenario
   action: string
 
@@ -48,12 +49,16 @@ export class TestCaseScenariosTableComponent implements OnInit {
     });
   }
 
-  addRowData(row_obj:Scenario) {
+  addRowData(row_obj: Scenario) {
+    if(!this.dataSource){
+      this.dataSource = []
+    }
     this.dataSource.push({
       id: row_obj.id,
       name: row_obj.name,
-      description: '',
-      listOfSteps: '',
+      description: row_obj.description,
+      listOfSteps: row_obj.listOfSteps,
+      position: ''+this.dataSource.length
     });
     this.table.renderRows();
   }
@@ -61,38 +66,48 @@ export class TestCaseScenariosTableComponent implements OnInit {
     this.dataSource = this.dataSource.filter((value, key) => {
       if (value.id == row_obj.id) {
         value.name = row_obj.name
+        value.description = row_obj.description
+        value.listOfSteps = row_obj.listOfSteps
       }
       return true;
     });
   }
   deleteRowData(row_obj) {
-    this.dataSource = this.dataSource.filter((value, key) => {
-      return value.id != row_obj.id
-    });
+    if(!this.dataSource){
+      this.dataSource = []
+    } else {
+      this.dataSource = this.dataSource.filter((value, key) => {
+        return value.id != row_obj.id
+      });
+      this.dataSource.forEach(function(element, index){element.position = ''+index})
+      console.log(this.dataSource)
+    }
   }
 
-  move(direction,element):void{
+  move(direction, element): void {
     let fromIndex = this.dataSource.indexOf(element)
     let toIndex = 0
-    if('Up'==direction){
+    if ('Up' == direction) {
       toIndex = fromIndex - 1
-    } else if ('Down'==direction){
+    } else if ('Down' == direction) {
       toIndex = fromIndex + 1
-    } else if ('First'==direction){
+    } else if ('First' == direction) {
       toIndex = 0
-    } else if ('Last'==direction){
-      toIndex = this.dataSource.length-1
+    } else if ('Last' == direction) {
+      toIndex = this.dataSource.length - 1
     }
-    if(-1==toIndex){
-      toIndex = this.dataSource.length-1
-    } else if (toIndex==this.dataSource.length){
+    if (-1 == toIndex) {
+      toIndex = this.dataSource.length - 1
+    } else if (toIndex == this.dataSource.length) {
       toIndex = 0
     }
     this.dataSource.splice(fromIndex, 1)
     this.dataSource.splice(toIndex, 0, element)
+    this.dataSource.forEach(function(element, index){element.position = ''+index})
     this.table.renderRows();
+    console.log(this.dataSource)
   }
-  log(txt:string):void{
+  log(txt: string): void {
     console.log(txt)
   }
 }

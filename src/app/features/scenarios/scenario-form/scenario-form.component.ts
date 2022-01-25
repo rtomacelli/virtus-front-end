@@ -16,7 +16,7 @@ export class ScenarioFormComponent {
   featureName: string 
 
   public model: Scenario = new Scenario(
-    '', '', '', 0, ''
+    '', '', '', '', ''
   );
 
   constructor(
@@ -48,7 +48,7 @@ export class ScenarioFormComponent {
     this.submitted = true;
   }
   newScenario() {
-    this.model = new Scenario('', '', '', 0, '');
+    this.model = new Scenario('', '', '', '', '');
   }
   getScenario(id: number): void {
     this.scenarioService.getScenario(id).subscribe(scenario => this.model = scenario)
