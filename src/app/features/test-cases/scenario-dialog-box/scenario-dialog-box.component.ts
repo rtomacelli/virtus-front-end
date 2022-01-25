@@ -28,16 +28,23 @@ export class ScenarioDialogBoxComponent implements OnInit {
     ) {
       this.scenarios = dialogData.scenarios
       this.action = dialogData.action
-      this.selectedScenario = dialogData.selectedScenario
+      if(dialogData.selectedScenario){
+        this.selectedScenario = dialogData.selectedScenario
+        this.selectedScenario.position = dialogData.selectedScenario.position
+        console.log('dialogRef position1: '+dialogData.selectedScenario.position)
+        console.log('dialogRef position2: '+this.selectedScenario.position)
+      }
   }
 
   doAction(){
-    this.selectedScenario = this.scenarios.filter(s=>{return s.id == this.selectedScenario.id})[0]
+    if(this.action == 'Add'){
+      this.selectedScenario = this.scenarios.filter(value=>{return value.id == this.selectedScenario.id} )[0]
+    }
     this.dialogRef.close({event:this.action,data:this.selectedScenario});
   }
 
   closeDialog(){
-    this.dialogRef.close({event:'Cancel',data:this.scenarios.filter(s=>{return s.id == this.selectedScenario.id})});
+    this.dialogRef.close({event:'Cancel',data:this.selectedScenario});
   }
 
 }

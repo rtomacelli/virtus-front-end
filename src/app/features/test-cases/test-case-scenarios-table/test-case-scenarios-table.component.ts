@@ -6,7 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { ScenarioDialogBoxComponent } from '../scenario-dialog-box/scenario-dialog-box.component';
 import { ScenarioService } from 'src/app/service/scenario/scenario.service';
 import { Scenario } from 'src/app/model/scenario';
-import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-test-case-scenarios-table',
@@ -27,7 +26,10 @@ export class TestCaseScenariosTableComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private scenarioService: ScenarioService) { }
   ngOnInit(): void {
-    this.scenarioService.getScenarios().subscribe(scenarios => this.scenarios = scenarios)
+    this.scenarioService.getScenarios().subscribe(scenarios => {      
+      this.scenarios = scenarios
+      console.log(this.scenarios)
+    })
   }
 
   openRunDialog(selectedScenario) {
@@ -40,10 +42,22 @@ export class TestCaseScenariosTableComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result.event == 'Add') {
+        console.log('Add result.data: ')
+        console.log(result.data.id)
+        console.log(result.data.name)
+        console.log(result.data.description)
+        console.log(result.data.listOfSteps)        
+        console.log(result.data.position)        
         this.addRowData(result.data)
       } else if (result.event == 'Update') {
         this.updateRowData(result.data)
       } else if (result.event == 'Delete') {
+        console.log('Delete result.data: ')
+        console.log(result.data.id)
+        console.log(result.data.name)
+        console.log(result.data.description)
+        console.log(result.data.listOfSteps)        
+        console.log(result.data.position)        
         this.deleteRowData(result.data)
       }
     });
@@ -53,6 +67,11 @@ export class TestCaseScenariosTableComponent implements OnInit {
     if(!this.dataSource){
       this.dataSource = []
     }
+    console.log("Add Row")
+    console.log("id: "+ row_obj.id)
+    console.log("description: "+ row_obj.description)
+    console.log("listOfSteps: "+ row_obj.listOfSteps)
+    console.log("position: "+ row_obj.position)
     this.dataSource.push({
       id: row_obj.id,
       name: row_obj.name,
@@ -64,7 +83,7 @@ export class TestCaseScenariosTableComponent implements OnInit {
   }
   updateRowData(row_obj) {
     this.dataSource = this.dataSource.filter((value, key) => {
-      if (value.id == row_obj.id) {
+      if (value.id == row_obj.id && value.position == row_obj.position) {
         value.name = row_obj.name
         value.description = row_obj.description
         value.listOfSteps = row_obj.listOfSteps
@@ -76,8 +95,15 @@ export class TestCaseScenariosTableComponent implements OnInit {
     if(!this.dataSource){
       this.dataSource = []
     } else {
-      this.dataSource = this.dataSource.filter((value, key) => {
-        return value.id != row_obj.id
+      this.dataSource = this.dataSource.filter((value) => {
+        console.log("ids: "+value.id + ' - '+ row_obj.id)
+        console.log("positions: "+value.position +' - '+ row_obj.position)
+        let ret1 = value.id != row_obj.id 
+        let ret2 = value.position != row_obj.position 
+        console.log("ret1: "+ret1)
+        console.log("ret2: "+ret2)
+        let ret = ret1 || ret2
+        return ret 
       });
       this.dataSource.forEach(function(element, index){element.position = ''+index})
       console.log(this.dataSource)
