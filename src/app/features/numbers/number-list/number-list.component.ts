@@ -22,10 +22,10 @@ export class NumberListComponent implements OnInit {
     this.selectedNumber = number;
     this.messageService.add(`NumbersComponent: Selected number id=${number.id}`);
   }
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.numberService.addNumber({ name } as PhoneNumber)
+  add(phoneNumber: string): void {
+    phoneNumber = phoneNumber.trim();
+    if (!phoneNumber) { return; }
+    this.numberService.addNumber({ phoneNumber } as PhoneNumber)
       .subscribe(number => {
         this.numbers.push(number);
       });

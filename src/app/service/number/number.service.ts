@@ -31,7 +31,7 @@ export class NumberService {
   }
 
   addNumber(number: PhoneNumber): Observable<PhoneNumber> {
-    console.log("addNumber: "+number.name)
+    console.log("addNumber: "+number.phoneNumber)
     return this.http.post<PhoneNumber>(this.numbersUrl, number).pipe(
       tap((newNumber: PhoneNumber) => this.log(`added number w/ id=${newNumber.id}`)),
       catchError(this.handleError<PhoneNumber>("addNumber"))

@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Run } from '../../model/run';
-import { Observable, of } from 'rxjs';
+import { ArgumentOutOfRangeError, Observable, of } from 'rxjs';
 import { MessageService } from '../message/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Arguments } from 'src/app/model/arguments';
+import { MatChipsModule } from '@angular/material/chips';
+import { ContextService } from '../context/context.service';
+import { textChangeRangeIsUnchanged } from 'typescript';
 
 @Injectable({
   providedIn: 'root'
@@ -23,12 +26,15 @@ export class RunService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private contextService: ContextService) { }
 
   run(model: Run): Observable<Run> {
-    model.args = new Arguments()
+    model.args = new Arguments()    
+    this.contextService.getContext(parseInt(model.contextId)).subscribe(
+      ctx=>model.context = ctx
+    )
     const data = JSON.stringify(model);
-    console.log("data: " + data)
     return this.http.post<Run>(this.runSingleUrl, data).pipe(
       tap((newRun: Run) => {
         this.log(`run a single test w/ logs: ${newRun?.result}`)
@@ -64,9 +70,8 @@ export class RunService {
     );
   }
 
-  private handleError<T>(operation = "operation", result?: T) {
+  private handleError<T>(operation = "operation", result?: T) {    
     return (error: any): Observable<T> => {
-      console.error(error);
       this.log("${operation} failed: ${error.message}");
       return of(result as T);
     };

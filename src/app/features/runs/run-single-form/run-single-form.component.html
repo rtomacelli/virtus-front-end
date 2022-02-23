@@ -1,61 +1,76 @@
 <app-run-menu></app-run-menu>
 <!--{{ model | json }}-->
 <div [hidden]="submitted">
-<form (ngSubmit)="onSubmit()" #runSingleForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #runSingleForm="ngForm">
+    <br>
     <label for="name">Scenario</label>
-    <input type="text" class="form-control" id="name" required [ngModel]="model?.name" (ngModelChange)="model.name = $event" name="name" #name="ngModel">
+    <input type="text" class="form-control" id="name" required [ngModel]="model?.name"
+      (ngModelChange)="model.name = $event" name="name" #name="ngModel">
     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-        Scenario is required
+      Scenario is required
     </div>
+    <br>
+    <mat-form-field class="tags-chip-list" style="width: 100%;" appearance="fill">
+      <mat-label>Tags</mat-label>
+      <mat-chip-list #chipList aria-label="Tags">
+        <mat-chip *ngFor="let tag of tags" (removed)="remove(tag)">
+          {{tag}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input placeholder="New Tag..." #fruitInput [formControl]="tagCtrl" [matAutocomplete]="auto"
+          [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+          {{tag}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
 
     <div class="form-group">
-        <label for="description">Description</label>
-        <textarea type="text" class="form-control" id="description" [ngModel]="model?.description" (ngModelChange)="model.description = $event" name="description">
+      <label for="description">Description</label>
+      <textarea type="text" class="form-control" id="description" [ngModel]="model?.description"
+        (ngModelChange)="model.description = $event" name="description">
           </textarea>
     </div>
 
     <div class="form-group">
-        <label for="listOfSteps">List Of Steps</label>
-        <textarea type="text" rows=10 class="form-control" id="listOfSteps" [ngModel]="model?.listOfSteps" (ngModelChange)="model.listOfSteps = $event" name="listOfSteps">
+      <label for="listOfSteps">List Of Steps</label>
+      <textarea type="text" rows=10 class="form-control" id="listOfSteps" [ngModel]="model?.listOfSteps"
+        (ngModelChange)="model.listOfSteps = $event" name="listOfSteps">
           </textarea>
     </div>
     <div class="form-group">
-      <label for="featureId">Feature</label>
-      <select class="form-control" [ngModel]="model?.featureId" (ngModelChange)="model.featureId = $event" id="featureId" required name="featureId">
-          <option *ngFor="let feature of features" [value]="feature.id">{{feature.name}}</option>
+      <label for="environmentId">Environment</label>
+      <select class="form-control" [ngModel]="model?.environmentId" (ngModelChange)="model.environmentId = $event"
+        (change)="loadContextsByEnvironment()" (click)="loadContextsByEnvironment()" id="environmentId" required
+        name="environmentId">
+        <option *ngFor="let environment of environments" [value]="environment.id">{{environment.name}}</option>
       </select>
-  </div>
-    <div class="form-group">
-        <label for="environmentId">Environment</label>
-        <select class="form-control"  
-          [ngModel]="model?.environmentId" 
-          (ngModelChange)="model.environmentId = $event" 
-          (change)="loadContextsByEnvironment()"
-          (click)="loadContextsByEnvironment()"
-          id="environmentId" required name="environmentId">
-            <option *ngFor="let environment of environments" [value]="environment.id">{{environment.name}}</option>
-        </select>
     </div>
     <div class="form-group">
-        <label for="contextId">Context</label>
-        <select class="form-control" [disabled]="!model?.environmentId || model?.environmentId == 0" 
-          [ngModel]="model?.contextId" 
-          (ngModelChange)="model.contextId = $event" id="contextId" 
-          required name="contextId">
-            <option *ngFor="let context of contexts" [value]="context.id">{{context.name}}</option>
-        </select>
+      <label for="contextId">Context</label>
+      <select class="form-control" [disabled]="!model?.environmentId || model?.environmentId == '0'"
+        [ngModel]="model?.contextId" (ngModelChange)="model.contextId = $event" id="contextId" required
+        name="contextId">
+        <option *ngFor="let context of contexts" [value]="context.id">{{context.name}}</option>
+      </select>
     </div>
     <div class="form-group">
-        <label for="userId">Tester</label>
-        <select class="form-control"  [ngModel]="model?.userId" (ngModelChange)="model.userId = $event" id="userId" 
-          required name="userId">
-            <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
-        </select>
+      <label for="userId">Tester</label>
+      <select class="form-control" [ngModel]="model?.userId" (ngModelChange)="model.userId = $event" id="userId"
+        required name="userId">
+        <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
+      </select>
     </div>
     <button type="button" class="btn btn-default" (click)="newRun()">New Run</button>
     <button type="submit" class="btn btn-success" [disabled]="!runSingleForm.form.valid">Save</button>
-    <button type="button" class="btn btn-success" [disabled]="!runSingleForm.form.valid" (click)="openDialog();run()">Run Now</button>
-</form>
+    <button type="button" class="btn btn-success" [disabled]="!runSingleForm.form.valid"
+      (click)="openDialog();run()">Run Now</button>
+  </form>
 </div>
 <br>
 <div [hidden]="!executed">
@@ -72,43 +87,44 @@
       <mat-icon style="font-size: 24px; color:red;float: right;">error_outline</mat-icon>
     </h3>
   </div>
-  <textarea type="text" rows=10 class="form-control" id="logs" [ngModel]="model?.logs" (ngModelChange)="model.logs = $event" name="logs">
+  <textarea type="text" rows=10 class="form-control" id="logs" [ngModel]="model?.logs"
+    (ngModelChange)="model.logs = $event" name="logs">
     </textarea>
 </div>
 <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Scenario</div>
-      <div class="col-xs-9">{{ model?.scenarioId }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Description</div>
-      <div class="col-xs-9">{{ model?.description }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Environment</div>
-      <div class="col-xs-9" *ngFor="let environment of environments">
-        <span *ngIf="environment.id == model.environmentId">
-          {{ environment.name }}
-        </span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Context</div>
-      <div class="col-xs-9" *ngFor="let context of contexts">
-        <span *ngIf="context.id == model.contextId">
-          {{ context.name }}
-        </span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">User</div>
-      <div class="col-xs-9" *ngFor="let user of users">
-        <span *ngIf="user.id == model.userId">
-          {{ user.name }}
-        </span>
-      </div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="goBack()">Go Back</button>
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">Scenario</div>
+    <div class="col-xs-9">{{ model?.scenarioId }}</div>
   </div>
+  <div class="row">
+    <div class="col-xs-3">Description</div>
+    <div class="col-xs-9">{{ model?.description }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Environment</div>
+    <div class="col-xs-9" *ngFor="let environment of environments">
+      <span *ngIf="''+environment.id == model.environmentId">
+        {{ environment.name }}
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Context</div>
+    <div class="col-xs-9" *ngFor="let context of contexts">
+      <span *ngIf="''+context.id == model.contextId">
+        {{ context.name }}
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">User</div>
+    <div class="col-xs-9" *ngFor="let user of users">
+      <span *ngIf="''+user.id == model.userId">
+        {{ user.name }}
+      </span>
+    </div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="goBack()">Go Back</button>
+</div>

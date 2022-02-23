@@ -4,7 +4,7 @@
     <ul class="search-result">
       <li *ngFor="let number of numbers$ | async" >
         <a routerLink="/villain/edit/{{number.id}}">
-          {{number.name}}
+          {{number.phoneNumber}}
         </a>
       </li>
     </ul>

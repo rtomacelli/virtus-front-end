@@ -8,10 +8,6 @@ import { EnvironmentFormComponent } from './features/environments/environment-fo
 import { ContextDashboardComponent } from './features/contexts/context-dashboard/context-dashboard.component';
 import { ContextListComponent } from './features/contexts/context-list/context-list.component';
 import { ContextFormComponent } from './features/contexts/context-form/context-form.component';
-// FEATURES
-import { FeatureDashboardComponent } from './features/features/feature-dashboard/feature-dashboard.component';
-import { FeatureListComponent } from './features/features/feature-list/feature-list.component';
-import { FeatureFormComponent } from './features/features/feature-form/feature-form.component';
 // NUMBERS
 import { NumberDashboardComponent } from './features/numbers/number-dashboard/number-dashboard.component';
 import { NumberListComponent } from './features/numbers/number-list/number-list.component';
@@ -56,10 +52,6 @@ const routes: Routes = [
   { path: 'environment/edit/:id', component: EnvironmentFormComponent },
   { path: 'environment/add', component: EnvironmentFormComponent },
   { path: 'environment/dashboard', component: EnvironmentDashboardComponent },
-  { path: 'feature/list', component: FeatureListComponent },
-  { path: 'feature/edit/:id', component: FeatureFormComponent },
-  { path: 'feature/add', component: FeatureFormComponent },
-  { path: 'feature/dashboard', component: FeatureDashboardComponent },
   { path: 'number/list', component: NumberListComponent },
   { path: 'number/edit/:id', component: NumberFormComponent },
   { path: 'number/add', component: NumberFormComponent },

@@ -30,7 +30,7 @@ export class ContextService {
         catchError(this.handleError<Context[]>("getContexts", []))
       )
   }
-  getContextsByEnvironmentId(environmentId: number): Observable<Context[]> {
+  getContextsByEnvironmentId(environmentId: string): Observable<Context[]> {
     const url = `${this.environmentsUrl}/${environmentId}/context`;
     return this.http.get<Context[]>(url)
       .pipe(
@@ -66,6 +66,7 @@ export class ContextService {
 
   updateContext(context: Context): Observable<any> {
     const data = JSON.stringify(context);
+    console.log("updateContext: " + data)
     return this.http.put(this.contextsUrl, data).pipe(
       tap(_ => this.log(`updated context id=${context.id}`)),
       catchError(this.handleError<any>('updateContext'))

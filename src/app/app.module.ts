@@ -16,11 +16,6 @@ import { EnvironmentDashboardComponent } from './features/environments/environme
 import { EnvironmentSearchComponent } from './features/environments/environment-search/environment-search.component';
 import { EnvironmentMenuComponent } from './features/environments/environment-menu/environment-menu.component';
 import { EnvironmentFormComponent } from './features/environments/environment-form/environment-form.component';
-import { FeatureListComponent } from './features/features/feature-list/feature-list.component';
-import { FeatureDashboardComponent } from './features/features/feature-dashboard/feature-dashboard.component';
-import { FeatureSearchComponent } from './features/features/feature-search/feature-search.component';
-import { FeatureMenuComponent } from './features/features/feature-menu/feature-menu.component';
-import { FeatureFormComponent } from './features/features/feature-form/feature-form.component';
 import { NumberListComponent } from './features/numbers/number-list/number-list.component';
 import { NumberDashboardComponent } from './features/numbers/number-dashboard/number-dashboard.component';
 import { NumberSearchComponent } from './features/numbers/number-search/number-search.component';
@@ -77,8 +72,13 @@ import { MatSelectModule } from "@angular/material/select";
 import { MaterialExampleModule } from '../material.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { CircleProgressDialog } from './features/runs/run-single-form/circle-progress-dialog/circle-progress-dialog';
+import { CircleProgressDialog } from './features/circle-progress-dialog/circle-progress-dialog';
 import { ScenarioDialogBoxComponent } from './features/test-cases/scenario-dialog-box/scenario-dialog-box.component';
+import { MessageDialogBoxComponent } from './features/message-dialog-box/message-dialog-box.component';
+import { ContextParametersTableComponent } from './features/contexts/context-parameters-table/context-parameters-table.component';
+import { ParameterDialogBox } from './features/contexts/parameter-dialog-box/parameter-dialog-box.component';
+import { ContextNumbersTableComponent } from './features/contexts/context-numbers-table/context-numbers-table.component';
+import { NumberDialogBox } from './features/contexts/number-dialog-box/number-dialog-box.component';
 
 @NgModule({
   declarations: [
@@ -99,11 +99,6 @@ import { ScenarioDialogBoxComponent } from './features/test-cases/scenario-dialo
     EnvironmentSearchComponent,
     EnvironmentMenuComponent,
     EnvironmentFormComponent,    
-    FeatureListComponent,
-    FeatureDashboardComponent,
-    FeatureSearchComponent,
-    FeatureMenuComponent,
-    FeatureFormComponent,
     NumberListComponent,
     NumberDashboardComponent,
     NumberSearchComponent,
@@ -143,7 +138,12 @@ import { ScenarioDialogBoxComponent } from './features/test-cases/scenario-dialo
     UserMenuComponent,
     UserFormComponent,
     Sidenav,
-    ScenarioDialogBoxComponent
+    ScenarioDialogBoxComponent,
+    MessageDialogBoxComponent,
+    ContextParametersTableComponent,
+    ParameterDialogBox,
+    ContextNumbersTableComponent,
+    NumberDialogBox
   ],
   entryComponents: [
     ScenarioDialogBoxComponent

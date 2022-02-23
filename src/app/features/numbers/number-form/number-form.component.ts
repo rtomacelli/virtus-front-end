@@ -15,7 +15,7 @@ export class NumberFormComponent {
   environments: Array<Environment> = [];
 
   public model: PhoneNumber = new PhoneNumber(
-    '', '', 0
+    '', '', '', 0
   );
   
   constructor(

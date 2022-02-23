@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from '../message/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { FeatureService } from '../feature/feature.service';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +35,6 @@ export class ScenarioService {
 
   addScenario(scenario: Scenario): Observable<Scenario> {
     console.log("addScenario: " + scenario.name)
-    console.log("addScenario - featureId: " + scenario.featureId)
     const data = JSON.stringify(scenario);
     return this.http.post<Scenario>(this.scenariosUrl, data).pipe(
       tap((newScenario: Scenario) => this.log(`added scenario w/ id=${newScenario.id}`)),
@@ -44,7 +42,7 @@ export class ScenarioService {
     );
   }
 
-  getScenario(id: number): Observable<Scenario> {
+  getScenario(id: string): Observable<Scenario> {
     const url = `${this.scenariosUrl}/${id}`;
     return this.http.get<Scenario>(url).pipe(
       tap(_ => this.log(`fetched scenario id=${id}`)),
@@ -62,7 +60,6 @@ export class ScenarioService {
 
   updateScenario(scenario: Scenario): Observable<any> {
     console.log("updatedScenario: " + scenario.name)
-    console.log("updatedScenario - featureId: " + scenario.featureId)
     let data = JSON.stringify(scenario);
     console.log("updatedScenario: " + data)
     return this.http.put<any>(this.scenariosUrl, data);

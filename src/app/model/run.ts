@@ -1,20 +1,21 @@
 import { Arguments } from "./arguments";
+import { Context } from "./context";
 
 export class Run {
   public id!: number
     constructor(
       public name: string,
-      public scenarioId?: number,
+      public scenarioId?: string,
       public listOfSteps?: string,
       public description?: string,
       public result?: string,
       public logs?: string,
-      public featureId?: number,
-      public featureName?: string,
-      public environmentId?: number,
-      public contextId?: number,
-      public userId?: number,
+      public environmentId?: string,
+      public contextId?: string,
+      public userId?: string,
       public runAt?: string,
+      public tags?: string,
+      public context?: Context,
       public args?: Arguments,
     ) {  }
   

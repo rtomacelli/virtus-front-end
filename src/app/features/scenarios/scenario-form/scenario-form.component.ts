@@ -1,8 +1,5 @@
-import { Location } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Feature } from 'src/app/model/feature';
-import { FeatureService } from 'src/app/service/feature/feature.service';
 import { Scenario } from '../../../model/scenario';
 import { ScenarioService } from '../../../service/scenario/scenario.service';
 @Component({
@@ -12,9 +9,6 @@ import { ScenarioService } from '../../../service/scenario/scenario.service';
 })
 export class ScenarioFormComponent {
 
-  features: Array<Feature> = []
-  featureName: string 
-
   public model: Scenario = new Scenario(
     '', '', '', '', ''
   );
@@ -22,7 +16,6 @@ export class ScenarioFormComponent {
   constructor(
     private route: ActivatedRoute,
     private scenarioService: ScenarioService,
-    private featureService: FeatureService,
   ) {
     const id = Number(this.route.snapshot.paramMap.get('id'))
     if (id != 0) {
@@ -34,10 +27,6 @@ export class ScenarioFormComponent {
 
   submitted = false;
   ngOnInit(): void {
-    this.loadFeatures()
-  }
-  loadFeatures(): void {
-    this.featureService.getFeatures().subscribe(features => this.features = features)
   }
   onSubmit() {
     if (!this.model.id) {
@@ -51,10 +40,10 @@ export class ScenarioFormComponent {
     this.model = new Scenario('', '', '', '', '');
   }
   getScenario(id: number): void {
-    this.scenarioService.getScenario(id).subscribe(scenario => this.model = scenario)
+    this.scenarioService.getScenario(''+id).subscribe(scenario => this.model = scenario)
   }
   editScenario(id: number): void {
-    this.scenarioService.getScenario(id).subscribe(scenario => this.model = scenario)
+    this.scenarioService.getScenario(''+id).subscribe(scenario => this.model = scenario)
     this.submitted = true;
   }
 

@@ -91,24 +91,6 @@
           </a>
         </mat-nav-list>
 
-        <!-- Features -->
-        <a mat-list-item (click)="toggleMenu('feature')">
-          <mat-icon color="primary" mat-list-icon>settings_applications</mat-icon>Features
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Feature">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Feature">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Feature">
-          <a routerLink="/feature/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/feature/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/feature/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>            
         <!-- Scenarios -->
         <a mat-list-item (click)="toggleMenu('scenario')">
           <mat-icon color="primary" mat-list-icon>wb_iridescent</mat-icon>Scenarios

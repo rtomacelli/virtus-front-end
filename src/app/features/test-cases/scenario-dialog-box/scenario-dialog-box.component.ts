@@ -31,14 +31,20 @@ export class ScenarioDialogBoxComponent implements OnInit {
       if(dialogData.selectedScenario){
         this.selectedScenario = dialogData.selectedScenario
         this.selectedScenario.position = dialogData.selectedScenario.position
-        console.log('dialogRef position1: '+dialogData.selectedScenario.position)
-        console.log('dialogRef position2: '+this.selectedScenario.position)
+        console.log('dialogData: ' + dialogData)
+        console.log('dialogData.selectedScenario: ' + dialogData.selectedScenario)
+        console.log('dialogData.selectedScenario.position: ' + dialogData.selectedScenario.position)
+        console.log('this.selectedScenario.position: ' + this.selectedScenario.position)
       }
   }
 
   doAction(){
     if(this.action == 'Add'){
       this.selectedScenario = this.scenarios.filter(value=>{return value.id == this.selectedScenario.id} )[0]
+    } else if (this.action == 'Update'){
+      let position = this.selectedScenario.position
+      this.selectedScenario = this.scenarios.filter(value=>{return value.id == this.selectedScenario.id} )[0]
+      this.selectedScenario.position = position
     }
     this.dialogRef.close({event:this.action,data:this.selectedScenario});
   }

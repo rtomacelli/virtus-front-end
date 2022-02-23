@@ -1,49 +1,52 @@
 <app-number-menu></app-number-menu>
 <!--{{ model | json }}-->
 <div [hidden]="submitted">
-<form (ngSubmit)="onSubmit()" #numberForm="ngForm">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" required [ngModel]="model?.name" (ngModelChange)="model.name = $event" name="name" #name="ngModel">
+  <form (ngSubmit)="onSubmit()" #numberForm="ngForm">
+    <div class="form-group">
+      <label for="environmentId">Environment</label>
+      <select class="form-control" [ngModel]="model?.environmentId" (ngModelChange)="model.environmentId = $event"
+        id="environmentId" required name="environmentId">
+        <option *ngFor="let environment of environments" [value]="environment.id">{{environment.name}}</option>
+      </select>
+    </div>
+    <label for="name">Phone Number</label>
+    <input type="text" class="form-control" id="name" required [ngModel]="model?.phoneNumber"
+      (ngModelChange)="model.phoneNumber = $event" name="name" #name="ngModel">
+
     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-        Name is required
+      Phone Number is required
     </div>
 
     <div class="form-group">
-        <label for="description">Description</label>
-        <textarea type="text" class="form-control" id="description" [ngModel]="model?.description" (ngModelChange)="model.description = $event" name="description">
+      <label for="description">Description</label>
+      <textarea type="text" class="form-control" id="description" [ngModel]="model?.description"
+        (ngModelChange)="model.description = $event" name="description">
           </textarea>
-    </div>
-
-    <div class="form-group">
-        <label for="environmentId">Environment</label>
-        <select class="form-control"  [ngModel]="model?.environmentId" (ngModelChange)="model.environmentId = $event" id="environmentId" required name="environmentId">
-            <option *ngFor="let environment of environments" [value]="environment.id">{{environment.name}}</option>
-        </select>
     </div>
 
     <button type="button" class="btn btn-default" (click)="newNumber(); numberForm.reset()">New Number</button>
     <button type="submit" class="btn btn-success" [disabled]="!numberForm.form.valid">Submit</button>
-</form>
+  </form>
 </div>
 
 <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model?.name }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Description</div>
-      <div class="col-xs-9">{{ model?.description }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Environment</div>
-      <div class="col-xs-9" *ngFor="let environment of environments">
-        <span *ngIf="environment.id == model.environmentId">
-          {{ environment.name }}
-        </span>
-      </div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="goBack()">Go Back</button>
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">Name</div>
+    <div class="col-xs-9">{{ model?.phoneNumber }}</div>
   </div>
+  <div class="row">
+    <div class="col-xs-3">Description</div>
+    <div class="col-xs-9">{{ model?.description }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Environment</div>
+    <div class="col-xs-9" *ngFor="let environment of environments">
+      <span *ngIf="environment.id == model.environmentId">
+        {{ environment.name }}
+      </span>
+    </div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="goBack()">Go Back</button>
+</div>

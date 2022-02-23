@@ -1,4 +1,6 @@
 import { Environment } from "./environment";
+import { Parameter } from "./parameter";
+import { PhoneNumber } from "./phonenumber";
 
 export class Context {
   public id!: number
@@ -7,6 +9,8 @@ export class Context {
       public description?: string,
       public environmentName?: string,
       public environmentId: number = 0,
+      public phoneNumbers?: PhoneNumber[],
+      public parameters?: Parameter[],
     ) {  }
   
   }

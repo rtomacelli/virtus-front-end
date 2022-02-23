@@ -1,12 +1,17 @@
 import { Environment } from "./environment";
 
 export class PhoneNumber {
-  public id!: number
+  public id: number = 0
     constructor(
-      public name: string,
+      public phoneNumber: string,
       public description?: string,
-      public environmentId: number = 0,
-      public environment?: Environment,
+      public alias?: string,
+      public sid?: string,
+      public environmentId?: number,
+      public environmentName?: string,
+      public contextId?: number,
+      public contextName?: string,
+      public position?: string,
     ) {  }
   
   }

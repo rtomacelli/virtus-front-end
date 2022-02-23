@@ -14,13 +14,6 @@
         </textarea>
     </div>
 
-    <div class="form-group">
-        <label for="featureId">Feature</label>
-        <select class="form-control"  [ngModel]="model?.featureId" (ngModelChange)="model.featureId = $event" id="featureId" required name="featureId">
-            <option *ngFor="let feature of features" [value]="feature.id">{{feature.name}}</option>
-        </select>
-    </div>
-
     <button type="button" class="btn btn-default" (click)="newStep(); stepForm.reset()">New Step</button>
     <button type="submit" class="btn btn-success" [disabled]="!stepForm.form.valid">Submit</button>
 </form>
@@ -35,14 +28,6 @@
     <div class="row">
       <div class="col-xs-3">Description</div>
       <div class="col-xs-9">{{ model?.description }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Feature</div>
-      <div class="col-xs-9" *ngFor="let feature of features">
-        <span *ngIf="feature.id == model.featureId">
-          {{ feature.name }}
-        </span>
-      </div>
     </div>
     <br>
     <button class="btn btn-primary" (click)="goBack()">Go Back</button>

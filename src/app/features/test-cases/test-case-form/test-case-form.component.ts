@@ -3,7 +3,7 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Context } from 'src/app/model/context';
 import { Environment } from 'src/app/model/environment';
-import { Feature } from 'src/app/model/feature';
+import { Scenario } from 'src/app/model/scenario';
 import { ContextService } from 'src/app/service/context/context.service';
 import { EnvironmentService } from 'src/app/service/environment/environment.service';
 import { ScenarioService } from 'src/app/service/scenario/scenario.service';
@@ -17,27 +17,27 @@ import { TestCaseScenariosTableComponent } from '../test-case-scenarios-table/te
 })
 export class TestCaseFormComponent {
 
-  scenarios: Array<Feature> = [];
   environments: Array<Environment> = [];
   contexts: Array<Context> = [];
 
-  public model: TestCase = new TestCase('','',0);
-  
+  public model: TestCase = new TestCase('', '', '');
+  scenarios: Scenario[];
+
   constructor(
-    private route: ActivatedRoute,    
+    private route: ActivatedRoute,
     private testCaseService: TestCaseService,
     private scenarioService: ScenarioService,
     private environmentService: EnvironmentService,
     private contextService: ContextService
-  ) {     
+  ) {
     const id = Number(this.route.snapshot.paramMap.get('id'))
-    if(id!=0){
+    if (id != 0) {
       this.getTestCase(id);
     } else {
       this.newTestCase();
     }
   }
-  @ViewChild(TestCaseScenariosTableComponent, {static: false}) childRef: TestCaseScenariosTableComponent;
+  @ViewChild(TestCaseScenariosTableComponent, { static: false }) childRef: TestCaseScenariosTableComponent;
   submitted = false;
   ngOnInit(): void {
     this.loadScenarios();
@@ -45,50 +45,58 @@ export class TestCaseFormComponent {
     this.loadContexts();
   }
   loadScenarios(): void {
-    this.scenarioService.getScenarios().subscribe(scenarios=>this.scenarios = scenarios);
+    this.scenarioService.getScenarios().subscribe(scenarios => this.scenarios = scenarios);
   }
   loadEnvironments(): void {
-    this.environmentService.getEnvironments().subscribe(environments=>this.environments = environments);
+    this.environmentService.getEnvironments().subscribe(environments => this.environments = environments);
   }
   loadContextsByEnvironment(): void {
-    this.contextService.getContextsByEnvironmentId(this.model.environmentId).subscribe(contexts=>this.contexts = contexts);
-    if(this.contexts.length>0){
-      this.model.contextId = ""+this.contexts[0].id
-    }
+    this.contextService.getContextsByEnvironmentId(this.model.environmentId).subscribe(contexts => {
+      this.contexts = contexts
+      if (this.contexts.length > 0 && this.contexts[0].id != 0) {
+        this.model.contextId = "" + this.contexts[0].id
+      } else {
+        this.model.contextId = undefined
+      }
+    });
   }
   loadContexts(): void {
-    this.contextService.getContexts().subscribe(contexts=>this.contexts = contexts);
+    this.contextService.getContexts().subscribe(contexts => this.contexts = contexts);
   }
-  onSubmit() { 
-    this.model.scenarios = this.childRef.dataSource
-    if(!this.model.id){
+  onSubmit() {
+    this.model.scenarios = this.childRef.dataSource.data
+    if (!this.model.id) {
       this.testCaseService.addTestCase(this.model).subscribe(testCase => this.model = testCase)
     } else {
-      this.testCaseService.updateTestCase(this.model).subscribe(testCase => {})
+      this.testCaseService.updateTestCase(this.model).subscribe(testCase => { })
     }
-    this.submitted = true; 
+    this.submitted = true;
   }
   newTestCase() {
-    this.model = new TestCase('','',0);
+    this.model = new TestCase('', '', '');
     this.destroyScenarios()
   }
-  getTestCase(id:number): void {
+  getTestCase(id: number): void {
     this.testCaseService.getTestCase(id).subscribe(testCase => {
       this.model = testCase
-      this.childRef.dataSource = testCase.scenarios
-    } )
+      if (testCase.scenarios == null) {
+        this.childRef.dataSource.data = []
+      } else {
+        this.childRef.dataSource.data = testCase.scenarios
+      }
+    })
   }
-  editTestCase(id:number): void {
+  editTestCase(id: number): void {
     this.testCaseService.getTestCase(id).subscribe(testCase => this.model = testCase)
-    this.submitted = true; 
+    this.submitted = true;
   }
   destroyScenarios() {
     if (this.childRef) {
       this.childRef.ngOnDestroy();
     }
   }
-  goBack(){
-    this.submitted = false; 
+  goBack() {
+    this.submitted = false;
     this.getTestCase(this.model.id)
   }
 

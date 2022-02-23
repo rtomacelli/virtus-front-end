@@ -20,13 +20,6 @@
         </textarea>
     </div>
 
-    <div class="form-group">
-        <label for="featureId">Feature</label>
-        <select class="form-control"  [ngModel]="model?.featureId" (ngModelChange)="model.featureId = $event" id="featureId" required name="featureId">
-            <option *ngFor="let feature of features" [value]="feature.id">{{feature.name}}</option>
-        </select>
-    </div>
-
     <button type="button" class="btn btn-default" (click)="newScenario(); scenarioForm.reset()">New Scenario</button>
     <button type="submit" class="btn btn-success" [disabled]="!scenarioForm.form.valid">Submit</button>
 </form>

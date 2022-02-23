@@ -2,13 +2,12 @@
 <!--{{ model | json }}-->
 <div [hidden]="submitted">
   <form (ngSubmit)="onSubmit()" #runForm="ngForm">
-
+    <br>
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="description" disabled [ngModel]="model?.name"
         (ngModelChange)="model.name = $event" name="name">
-    </div>    
-
+    </div>
     <div class="form-group">
       <label for="environmentId">Scenario</label>
       <select class="form-control" [ngModel]="model?.scenarioId" (ngModelChange)="model.scenarioId = $event"
@@ -16,6 +15,26 @@
         <option *ngFor="let scenario of scenarios" [value]="scenario.id">{{scenario.name}}</option>
       </select>
     </div>
+    <br>
+    <mat-form-field class="tags-chip-list" style="width: 100%;" appearance="fill">
+      <mat-label>Tags</mat-label>
+      <mat-chip-list #chipList aria-label="Tags">
+        <mat-chip *ngFor="let tag of tags" (removed)="remove(tag)">
+          {{tag}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input placeholder="New Tag..." #fruitInput [formControl]="tagCtrl" [matAutocomplete]="auto"
+          [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+          {{tag}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
 
     <div class="form-group">
       <label for="description">Description</label>
@@ -30,27 +49,19 @@
         (ngModelChange)="model.listOfSteps = $event" name="listOfSteps">
       </textarea>
     </div>
-
-    <div class="form-group">
-      <label for="environmentId">Feature</label>
-      <select class="form-control" [ngModel]="model?.featureId" (ngModelChange)="model.featureId = $event"
-        (change)="loadFeaturesByScenario();" id="featureId" required name="featureId">
-        <option *ngFor="let feature of features" [value]="feature.id">{{feature.name}}</option>
-      </select>
-    </div>
-
     <div class="form-group">
       <label for="environmentId">Environment</label>
       <select class="form-control" [ngModel]="model?.environmentId" (ngModelChange)="model.environmentId = $event"
-        (change)="loadContextsByEnvironment();" id="environmentId" required name="environmentId">
+        (change)="loadContextsByEnvironment()" (click)="loadContextsByEnvironment()" id="environmentId" required
+        name="environmentId">
         <option *ngFor="let environment of environments" [value]="environment.id">{{environment.name}}</option>
       </select>
     </div>
-
     <div class="form-group">
       <label for="contextId">Context</label>
-      <select class="form-control" [disabled]="model?.environmentId == 0" [ngModel]="model?.contextId"
-        (ngModelChange)="model.contextId = $event" id="contextId" required name="contextId">
+      <select class="form-control" [disabled]="!model?.environmentId || model?.environmentId == '0'"
+        [ngModel]="model?.contextId" (ngModelChange)="model.contextId = $event" id="contextId" required
+        name="contextId">
         <option *ngFor="let context of contexts" [value]="context.id">{{context.name}}</option>
       </select>
     </div>
@@ -65,9 +76,29 @@
 
     <button type="button" class="btn btn-default" (click)="newRun(); runForm.reset()">New Run</button>
     <button type="submit" class="btn btn-success" [disabled]="!runForm.form.valid">Submit</button>
+    <button type="button" class="btn btn-success" [disabled]="!runForm.form.valid" (click)="openDialog();run()">Run
+      Now</button>
   </form>
 </div>
-
+<br>
+<div [hidden]="!executed">
+  <label for="logs">Test Result</label>
+  <div [hidden]="!passed">
+    <h3 style="font-size: 24px; color:green; float: left;">
+      PASSED&nbsp;&nbsp;&nbsp;
+      <mat-icon style="font-size: 24px; color:green;float: right;">check_circle_outline</mat-icon>
+    </h3>
+  </div>
+  <div [hidden]="!failed">
+    <h3 style="font-size: 24px; color:red; float: left;">
+      FAILED&nbsp;&nbsp;&nbsp;
+      <mat-icon style="font-size: 24px; color:red;float: right;">error_outline</mat-icon>
+    </h3>
+  </div>
+  <textarea type="text" rows=10 class="form-control" id="logs" [ngModel]="model?.logs"
+    (ngModelChange)="model.logs = $event" name="logs">
+    </textarea>
+</div>
 <div [hidden]="!submitted">
   <h2>You submitted the following:</h2>
   <div class="row">
@@ -81,7 +112,7 @@
   <div class="row">
     <div class="col-xs-3">Environment</div>
     <div class="col-xs-9" *ngFor="let environment of environments">
-      <span *ngIf="environment.id == model.environmentId">
+      <span *ngIf="''+environment.id == model.environmentId">
         {{ environment.name }}
       </span>
     </div>
@@ -89,7 +120,7 @@
   <div class="row">
     <div class="col-xs-3">Context</div>
     <div class="col-xs-9" *ngFor="let context of contexts">
-      <span *ngIf="context.id == model.contextId">
+      <span *ngIf="''+context.id == model.contextId">
         {{ context.name }}
       </span>
     </div>
@@ -97,7 +128,7 @@
   <div class="row">
     <div class="col-xs-3">User</div>
     <div class="col-xs-9" *ngFor="let user of users">
-      <span *ngIf="user.id == model.userId">
+      <span *ngIf="''+user.id == model.userId">
         {{ user.name }}
       </span>
     </div>

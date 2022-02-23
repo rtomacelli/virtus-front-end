@@ -4,7 +4,7 @@
 <ul class="number-list">
   <li *ngFor="let number of numbers">
     <a routerLink="/number/edit/{{number.id}}">
-      <span class="badge">{{number.id}}</span> {{number.name}}
+      <span class="badge">{{number.id}}</span> {{number.phoneNumber}}
     </a>
     <button class="delete" title="delete number"
       (click)="delete(number)">x</button>

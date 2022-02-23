@@ -15,14 +15,13 @@ export class ParameterFormComponent {
   contexts: Array<Context> = [];
 
   public model: Parameter = new Parameter(
-    '', '', '', 0
+    '', ''
   );
   
   constructor(
     private route: ActivatedRoute,    
     private router: Router,
     private parameterService: ParameterService,
-    private contextService: ContextService
   ) { 
     const id = Number(this.route.snapshot.paramMap.get('id'))
     if(id!=0){
@@ -34,10 +33,6 @@ export class ParameterFormComponent {
 
   submitted = false;
   ngOnInit(): void {
-    this.loadContexts();
-  }
-  loadContexts(): void {
-    this.contextService.getContexts().subscribe(contexts=>this.contexts = contexts);
   }
   onSubmit() { 
     if(!this.model.id){
@@ -58,7 +53,6 @@ export class ParameterFormComponent {
     this.parameterService.getParameter(id).subscribe(parameter => this.model = parameter)
     this.submitted = true; 
   }
-
   goBack(){
     this.submitted = false; 
     this.getParameter(this.model.id)
