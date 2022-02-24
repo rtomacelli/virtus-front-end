@@ -17,6 +17,14 @@
       Phone Number is required
     </div>
 
+    <label for="sid">SID</label>
+    <input type="text" class="form-control" id="sid" required [ngModel]="model?.sid"
+      (ngModelChange)="model.sid = $event" name="sid" #sid="ngModel">
+
+    <div [hidden]="sid.valid || sid.pristine" class="alert alert-danger">
+      SID is required
+    </div>
+
     <div class="form-group">
       <label for="description">Description</label>
       <textarea type="text" class="form-control" id="description" [ngModel]="model?.description"
@@ -32,8 +40,12 @@
 <div [hidden]="!submitted">
   <h2>You submitted the following:</h2>
   <div class="row">
-    <div class="col-xs-3">Name</div>
+    <div class="col-xs-3">Phone Number</div>
     <div class="col-xs-9">{{ model?.phoneNumber }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">SID</div>
+    <div class="col-xs-9">{{ model?.sid }}</div>
   </div>
   <div class="row">
     <div class="col-xs-3">Description</div>
