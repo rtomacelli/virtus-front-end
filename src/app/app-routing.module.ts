@@ -1,96 +1,81 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-//ENVIRONMENTS
-import { EnvironmentDashboardComponent } from './features/environments/environment-dashboard/environment-dashboard.component';
-import { EnvironmentListComponent } from './features/environments/environment-list/environment-list.component';
-import { EnvironmentFormComponent } from './features/environments/environment-form/environment-form.component';
-// CONTEXTS
-import { ContextDashboardComponent } from './features/contexts/context-dashboard/context-dashboard.component';
-import { ContextListComponent } from './features/contexts/context-list/context-list.component';
-import { ContextFormComponent } from './features/contexts/context-form/context-form.component';
-// NUMBERS
-import { NumberDashboardComponent } from './features/numbers/number-dashboard/number-dashboard.component';
-import { NumberListComponent } from './features/numbers/number-list/number-list.component';
-import { NumberFormComponent } from './features/numbers/number-form/number-form.component';
-// PARAMETERS
-import { ParameterDashboardComponent } from './features/parameters/parameter-dashboard/parameter-dashboard.component';
-import { ParameterListComponent } from './features/parameters/parameter-list/parameter-list.component';
-import { ParameterFormComponent } from './features/parameters/parameter-form/parameter-form.component';
-// RUNS
-import { RunDashboardComponent } from './features/runs/run-dashboard/run-dashboard.component';
-import { RunListComponent } from './features/runs/run-list/run-list.component';
-import { RunFormComponent } from './features/runs/run-form/run-form.component';
-import { RunSingleFormComponent } from './features/runs/run-single-form/run-single-form.component';
-// SCENARIOS
-import { ScenarioDashboardComponent } from './features/scenarios/scenario-dashboard/scenario-dashboard.component';
-import { ScenarioListComponent } from './features/scenarios/scenario-list/scenario-list.component';
-import { ScenarioFormComponent } from './features/scenarios/scenario-form/scenario-form.component';
-// STEPS
-import { StepDashboardComponent } from './features/steps/step-dashboard/step-dashboard.component';
-import { StepListComponent } from './features/steps/step-list/step-list.component';
-import { StepFormComponent } from './features/steps/step-form/step-form.component';
-// TEST-CASES
-import { TestCaseDashboardComponent } from './features/test-cases/test-case-dashboard/test-case-dashboard.component';
-import { TestCaseListComponent } from './features/test-cases/test-case-list/test-case-list.component';
-import { TestCaseFormComponent } from './features/test-cases/test-case-form/test-case-form.component';
-// USERS
-import { UserDashboardComponent } from './features/users/user-dashboard/user-dashboard.component';
-import { UserListComponent } from './features/users/user-list/user-list.component';
-import { UserFormComponent } from './features/users/user-form/user-form.component';
-// SCHEDULES
-import { ScheduleDashboardComponent } from './features/schedules/schedule-dashboard/schedule-dashboard.component';
-import { ScheduleListComponent } from './features/schedules/schedule-list/schedule-list.component';
-import { ScheduleFormComponent } from './features/schedules/schedule-form/schedule-form.component';
+import { Routes, RouterModule } from '@angular/router';
+
+import { HomeComponent } from './home/home.component';
+
+import { DashboardActionComponent } from './action/dashboard/dashboard.component';
+import { AddActionComponent } from './action/add-action/add-action.component';
+import { EditActionComponent } from './action/edit-action/edit-action.component';
+import { ListActionComponent } from './action/list-action/list-action.component';
+
+import { DashboardFeatureComponent } from './feature/dashboard/dashboard.component';
+import { AddFeatureComponent } from './feature/add-feature/add-feature.component';
+import { EditFeatureComponent } from './feature/edit-feature/edit-feature.component';
+import { ListFeatureComponent } from './feature/list-feature/list-feature.component';
+
+import { DashboardOfficeComponent } from './office/dashboard/dashboard.component';
+import { AddOfficeComponent } from './office/add-office/add-office.component';
+import { EditOfficeComponent } from './office/edit-office/edit-office.component';
+import { ListOfficeComponent } from './office/list-office/list-office.component';
+
+import { DashboardStatusComponent } from './status/dashboard/dashboard.component';
+import { AddStatusComponent } from './status/add-status/add-status.component';
+import { EditStatusComponent } from './status/edit-status/edit-status.component';
+import { ListStatusComponent } from './status/list-status/list-status.component';
+
+import { DashboardUserComponent } from './user/dashboard/dashboard.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { ListUserComponent } from './user/list-user/list-user.component';
+
+import { DashboardWorkflowComponent } from './workflow/dashboard/dashboard.component';
+import { AddWorkflowComponent } from './workflow/add-workflow/add-workflow.component';
+import { EditWorkflowComponent } from './workflow/edit-workflow/edit-workflow.component';
+import { ListWorkflowComponent } from './workflow/list-workflow/list-workflow.component';
+
+
 
 const routes: Routes = [
-  { path: '', redirectTo: '/user/dashboard', pathMatch: 'full' },
-  { path: 'context/list', component: ContextListComponent },
-  { path: 'context/edit/:id', component: ContextFormComponent },
-  { path: 'context/add', component: ContextFormComponent },
-  { path: 'context/dashboard', component: ContextDashboardComponent },
-  { path: 'environment/list', component: EnvironmentListComponent },
-  { path: 'environment/edit/:id', component: EnvironmentFormComponent },
-  { path: 'environment/add', component: EnvironmentFormComponent },
-  { path: 'environment/dashboard', component: EnvironmentDashboardComponent },
-  { path: 'number/list', component: NumberListComponent },
-  { path: 'number/edit/:id', component: NumberFormComponent },
-  { path: 'number/add', component: NumberFormComponent },
-  { path: 'number/dashboard', component: NumberDashboardComponent },
-  { path: 'parameter/list', component: ParameterListComponent },
-  { path: 'parameter/edit/:id', component: ParameterFormComponent },
-  { path: 'parameter/add', component: ParameterFormComponent },
-  { path: 'parameter/dashboard', component: ParameterDashboardComponent },
-  { path: 'run/list', component: RunListComponent },  
-  { path: 'run/edit/:id', component: RunFormComponent },
-  { path: 'run/add', component: RunFormComponent },
-  { path: 'run/dashboard', component: RunDashboardComponent },
-  { path: 'run/single', component: RunSingleFormComponent },
-  { path: 'scenario/list', component: ScenarioListComponent },
-  { path: 'scenario/edit/:id', component: ScenarioFormComponent },
-  { path: 'scenario/add', component: ScenarioFormComponent },
-  { path: 'scenario/dashboard', component: ScenarioDashboardComponent },
-  { path: 'step/list', component: StepListComponent },
-  { path: 'step/edit/:id', component: StepFormComponent },
-  { path: 'step/add', component: StepFormComponent },
-  { path: 'step/dashboard', component: StepDashboardComponent },
-  { path: 'test-case/list', component: TestCaseListComponent },
-  { path: 'test-case/edit/:id', component: TestCaseFormComponent },
-  { path: 'test-case/add', component: TestCaseFormComponent },
-  { path: 'test-case/dashboard', component: TestCaseDashboardComponent },
-  { path: 'user/list', component: UserListComponent },
-  { path: 'user/edit/:id', component: UserFormComponent },
-  { path: 'user/add', component: UserFormComponent },
-  { path: 'user/dashboard', component: UserDashboardComponent },
-  { path: 'schedule/list', component: ScheduleListComponent },
-  { path: 'schedule/edit/:id', component: ScheduleFormComponent },
-  { path: 'schedule/add', component: ScheduleFormComponent },
-  { path: 'schedule/dashboard', component: ScheduleDashboardComponent },
+  
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+
+  { path: 'home', component: HomeComponent },
+
+  { path: 'action/dashboard', component: DashboardActionComponent },
+  { path: 'action/add', component: AddActionComponent },
+  { path: 'action/edit/:id', component: EditActionComponent },
+  { path: 'action/list', component: ListActionComponent },
+
+  { path: 'feature/dashboard', component: DashboardFeatureComponent },
+  { path: 'feature/add', component: AddFeatureComponent },
+  { path: 'feature/edit/:id', component: EditFeatureComponent },
+  { path: 'feature/list', component: ListFeatureComponent },
+
+  { path: 'office/dashboard', component: DashboardOfficeComponent },
+  { path: 'office/add', component: AddOfficeComponent },
+  { path: 'office/edit/:id', component: EditOfficeComponent },
+  { path: 'office/list', component: ListOfficeComponent },
+
+  { path: 'status/dashboard', component: DashboardStatusComponent },
+  { path: 'status/add', component: AddStatusComponent },
+  { path: 'status/edit/:id', component: EditStatusComponent },
+  { path: 'status/list', component: ListStatusComponent },
+
+  { path: 'user/dashboard', component: DashboardUserComponent },
+  { path: 'user/add', component: AddUserComponent },
+  { path: 'user/edit/:id', component: EditUserComponent },
+  { path: 'user/list', component: ListUserComponent },
+
+  { path: 'workflow/dashboard', component: DashboardWorkflowComponent },
+  { path: 'workflow/add', component: AddWorkflowComponent },
+  { path: 'workflow/edit/:id', component: EditWorkflowComponent },
+  { path: 'workflow/list', component: ListWorkflowComponent },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

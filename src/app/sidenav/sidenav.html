@@ -1,227 +1,82 @@
 <div class="container" [class.is-mobile]="mobileQuery.matches">
+
   <mat-toolbar color="primary" class="toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
+
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+
     <h1 class="app-name">{{title}}</h1>        
+    
     <span class="toolbar-spacer"></span>
-    <button mat-icon-button aria-label="User">
-      <mat-icon>person</mat-icon>
-    </button>
-    <button mat-icon-button aria-label="Options">
-      <mat-icon>settings</mat-icon>
-    </button>
-    <button mat-icon-button aria-label="Help">
-      <mat-icon>help</mat-icon>
-    </button>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="More">
-      <mat-icon>more_vert</mat-icon>
-    </button>
+    <a routerLink="home" mat-list-item><button mat-icon-button aria-label="Home" placeholder="Início"><mat-icon>home</mat-icon></button></a>
+    <a routerLink="home" mat-list-item><button mat-icon-button aria-label="User" placeholder="Usuário"><mat-icon>person</mat-icon></button></a>
+    <a routerLink="home" mat-list-item><button mat-icon-button aria-label="Options" placeholder="Configurações"><mat-icon>settings</mat-icon></button></a>
+    <a routerLink="home" mat-list-item><button mat-icon-button aria-label="Help" placeholder="Ajuda"><mat-icon>help</mat-icon></button></a>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="More" placeholder="Mais"><mat-icon>more_vert</mat-icon></button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>
         <mat-icon>people</mat-icon>
-        <span>About us</span>
+        <span>Sobre nós</span>
       </button>
       <button mat-menu-item>
         <mat-icon>notifications_off</mat-icon>
-        <span>Disable alerts</span>
+        <span>Desabilitar alertas</span>
       </button>
     </mat-menu>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0" #navcontainer>
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-      fixedTopGap="56">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
-        <!-- Runs -->
-        <a routerLink="/run/single" mat-list-item >
-          <mat-icon color="primary" mat-list-icon>play_circle_outline</mat-icon>Run a Single Test
-        </a>
-        <a mat-list-item (click)="toggleMenu('run')">
-          <mat-icon color="primary" mat-list-icon>play_circle_filled</mat-icon>Runs
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Run">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Run">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Run">
-          <a routerLink="/run/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
+          <a mat-list-item (click)="toggleMenu('administracao')">
+            <mat-icon color="primary" mat-list-icon>settings</mat-icon>Administração
+            <mat-icon *ngIf="!showMenu_administracao">chevron_right</mat-icon>
+            <mat-icon *ngIf="showMenu_administracao">expand_more</mat-icon>
           </a>
-          <a routerLink="/run/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/run/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>
-        <!-- Test-cases -->
-        <a mat-list-item (click)="toggleMenu('test-case')">
-          <mat-icon color="primary" mat-list-icon>assignment</mat-icon>Test-cases
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Test_Case">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Test_Case">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Test_Case">
-          <a routerLink="/test-case/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/test-case/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/test-case/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>
-        <!--Schedules-->
-        <a mat-list-item (click)="toggleMenu('schedule')">
-          <mat-icon color="primary" mat-list-icon>schedule</mat-icon>Schedules
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Schedule">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Schedule">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Schedule">
-          <a routerLink="/schedule/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/schedule/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/schedule/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>
+          <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_administracao">
+            <a routerLink="/user/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>people</mat-icon>Usuários</a>
+            <a routerLink="/office/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>corporate_fare</mat-icon>Escritórios</a>
+            <a routerLink="/user/list" mat-list-item><mat-icon color="primary" mat-list-icon>badge</mat-icon>Perfis</a>
+            <a routerLink="/feature/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Funcionalidades</a>
+            <a routerLink="/status/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>view_list</mat-icon>Status</a>
+            <a routerLink="/action/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>outbound</mat-icon>Ações</a>
+            <a routerLink="/workflow/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>schema</mat-icon>Workflow</a>
+          </mat-nav-list>
 
-        <!-- Scenarios -->
-        <a mat-list-item (click)="toggleMenu('scenario')">
-          <mat-icon color="primary" mat-list-icon>wb_iridescent</mat-icon>Scenarios
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Scenario">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Scenario">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Scenario">
-          <a routerLink="/scenario/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
+          <hr />
+          <!-- Test-cases -->
+          <a mat-list-item (click)="toggleMenu('Configuracao')">
+            <mat-icon color="primary" mat-list-icon>tune</mat-icon>Configuração<span class="toolbar-spacer"></span>
+            <mat-icon *ngIf="!showMenu_Configuracao">chevron_right</mat-icon>
+            <mat-icon *ngIf="showMenu_Configuracao">expand_more</mat-icon>
           </a>
-          <a routerLink="/scenario/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
+          <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Configuracao">
+            <a routerLink="/user/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard</a>
+          </mat-nav-list>
+          
+          <hr />
+          <!-- Test-cases -->
+          <a mat-list-item (click)="toggleMenu('Coordenacao')">
+            <mat-icon color="primary" mat-list-icon>spatial_audio_off</mat-icon>Coordenação<span class="toolbar-spacer"></span>
+            <mat-icon *ngIf="!showMenu_Coordenacao">chevron_right</mat-icon>
+            <mat-icon *ngIf="showMenu_Coordenacao">expand_more</mat-icon>
           </a>
-          <a routerLink="/scenario/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
+          <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Coordenacao">
+            <a routerLink="/user/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard</a>
+          </mat-nav-list>
+
+          <hr />
+          <!-- Test-cases -->
+          <a mat-list-item (click)="toggleMenu('Avaliacao')">
+            <mat-icon color="primary" mat-list-icon>stars</mat-icon>Avaliação<span class="toolbar-spacer"></span>
+            <mat-icon *ngIf="!showMenu_Avaliacao">chevron_right</mat-icon>
+            <mat-icon *ngIf="showMenu_Avaliacao">expand_more</mat-icon>
           </a>
+          <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Avaliacao">
+            <a routerLink="/user/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard</a>
+          </mat-nav-list>
+
         </mat-nav-list>
-        <!-- Steps -->
-        <a mat-list-item (click)="toggleMenu('step')">
-          <mat-icon color="primary" mat-list-icon>trending_up</mat-icon>Steps
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Step">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Step">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Step">
-          <a routerLink="/step/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/step/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/step/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>
-        <!-- Environments -->
-        <a mat-list-item (click)="toggleMenu('environment')">
-          <mat-icon color="primary" mat-list-icon>bubble_chart</mat-icon>Environments
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Environment">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Environment">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Environment">
-          <a routerLink="/environment/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/environment/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/environment/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>
-        <!-- Contexts -->
-        <a mat-list-item (click)="toggleMenu('context')">
-          <mat-icon color="primary" mat-list-icon>note_alt</mat-icon>Contexts
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Context">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Context">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Context">
-          <a routerLink="/context/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/context/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/context/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>    
-        <!-- Numbers -->
-        <a mat-list-item (click)="toggleMenu('number')">
-          <mat-icon color="primary" mat-list-icon>phone_android</mat-icon>Numbers
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Number">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Number">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Number">
-          <a routerLink="/number/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/number/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/number/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>            
-        <!-- Parameters -->
-        <a mat-list-item (click)="toggleMenu('parameter')">
-          <mat-icon color="primary" mat-list-icon>settings_input_component</mat-icon>Parameters
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_Parameter">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_Parameter">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_Parameter">
-          <a routerLink="/parameter/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/parameter/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/parameter/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>
-        <!-- Users -->
-        <a mat-list-item (click)="toggleMenu('user')">
-          <mat-icon color="primary" mat-list-icon>people</mat-icon>Users
-          <span class="toolbar-spacer"></span>
-          <mat-icon *ngIf="!showMenu_User">chevron_right</mat-icon>
-          <mat-icon *ngIf="showMenu_User">expand_more</mat-icon>
-        </a>
-        <mat-nav-list class="sidenav-submenu" *ngIf="showMenu_User">
-          <a routerLink="/user/dashboard" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>dashboard</mat-icon>Dashboard
-          </a>
-          <a routerLink="/user/list" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>view_list</mat-icon>List
-          </a>
-          <a routerLink="/user/add" mat-list-item>
-            <mat-icon color="primary" mat-list-icon>add_circle</mat-icon>Add New
-          </a>
-        </mat-nav-list>                                              
-      </mat-nav-list>
       </mat-sidenav>
-      <mat-sidenav-content>
-        <router-outlet></router-outlet>
-        <app-messages></app-messages>
-    </mat-sidenav-content>
+      <router-outlet></router-outlet>
   </mat-sidenav-container>
 </div>

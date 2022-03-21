@@ -1,0 +1,35 @@
+<div class="container" style="max-width: 500px;">
+    <h3 class="mb-3 mt-5 text-center">Editar status</h3>
+  
+    <div class="form-group">
+        <input type="text" [(ngModel)]="statusObj.statusname" class="form-control" placeholder="Username">
+    </div>
+
+    <div class="form-group">
+        <input type="password" [(ngModel)]="statusObj.password" class="form-control" placeholder="Password">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="statusObj.email" class="form-control" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="statusObj.mobile" class="form-control" placeholder="Mobile">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="statusObj.name" class="form-control" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="statusObj.role_id" class="form-control" placeholder="Role id">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="statusObj.author_id" class="form-control" placeholder="Author id">
+    </div>
+  
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateStatus(statusObj.id, statusObj)">Atualizar Status</button>
+    </div>  
+</div>

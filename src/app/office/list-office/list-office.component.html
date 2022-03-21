@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <div class="d-flex flex-row-reverse bd-highlight">
+      <button class="btn btn-primary" routerLink="/add">Adicionar Usuario</button>
+    </div>
+    <h2 class="mb-3 text-center">Usuarios</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#Id</th>
+          <th scope="col">Officename</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Name</th>
+          <th scope="col">Papel</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Criado em</th>
+          <th scope="col">Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let office of Office">
+          <td>{{ office.id }}</td>
+          <td>{{ office.officename }}</td>
+          <td>{{ office.email }}</td>
+          <td>{{ office.mobile }}</td>
+          <td>{{ office.name }}</td>
+          <td>{{ office.role_id }}</td>
+          <td>{{ office.author_id }}</td>
+          <td>{{ office.criado_em | date:"dd/MM/yyyy hh:mm":"pt"}}</td>
+          <td>
+            <span class="material-icons" (click)="delete(office.id)">delete</span>
+            <span class="material-icons" routerLink="/edit/{{ office.id }}" style="float: right;">edit</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="d-flex flex-row-reverse bd-highlight">
+      <button class="btn btn-primary" routerLink="/add">Adicionar Workflow</button>
+    </div>
+    <h2 class="mb-3 text-center">Workflows</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#Id</th>
+          <th scope="col">name</th>
+          <th scope="col">description</th>
+          <th scope="col">author_id</th>
+          <th scope="col">created_at</th>
+          <th scope="col">id_versao_origem</th>
+          <th scope="col">status_id</th>
+          <th scope="col">stereotype</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let workflow of Workflow">
+          <td>{{ workflow.id }}</td>
+          <td>{{ workflow.name }}</td>
+          <td>{{ workflow.description }}</td>
+          <td>{{ workflow.author_id }}</td>
+          <td>{{ workflow.id_versao_origem }}</td>
+          <td>{{ workflow.status_id }}</td>
+          <td>{{ workflow.stereotype }}</td>
+          <td>
+            <span class="material-icons" (click)="delete(workflow.id)">delete</span>
+            <span class="material-icons" routerLink="/edit/{{ workflow.id }}" style="float: right;">edit</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

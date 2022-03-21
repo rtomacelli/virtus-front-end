@@ -11,22 +11,14 @@ import { MatSidenavContainer } from '@angular/material/sidenav';
 export class Sidenav implements OnDestroy {
   
   mobileQuery: MediaQueryList;
-  title = 'Zarbat Tester';
+  title = 'Virtus';
 
   events: string[] = [];
   opened!: boolean;
-  showMenu_Context = false;
-  showMenu_Number = false;
-  showMenu_Power = false;
-  showMenu_Environment = false;
-  showMenu_Feature = false;
-  showMenu_Parameter = false;
-  showMenu_Scenario = false;
-  showMenu_Step = false;
-  showMenu_Test_Case = false;
-  showMenu_Run = false;
-  showMenu_User = false;
-  showMenu_Schedule = false;
+  showMenu_administracao = false;
+  showMenu_Configuracao = false;
+  showMenu_Coordenacao = false;
+  showMenu_Avaliacao = false;
   
   private _mobileQueryListener: () => void;
 
@@ -44,30 +36,14 @@ export class Sidenav implements OnDestroy {
   }
   
   toggleMenu(feature:string) {
-    if(feature === 'environment'){
-      this.showMenu_Environment = !this.showMenu_Environment;
-    } else if(feature === 'context'){
-      this.showMenu_Context = !this.showMenu_Context;
-    } else if(feature === 'feature'){
-      this.showMenu_Feature = !this.showMenu_Feature;
-    } else if(feature === 'number'){
-      this.showMenu_Number = !this.showMenu_Number;
-    } else if(feature === 'parameter'){
-      this.showMenu_Parameter = !this.showMenu_Parameter;
-    } else if(feature === 'scenario'){
-      this.showMenu_Scenario = !this.showMenu_Scenario;
-    } else if(feature === 'step'){
-      this.showMenu_Step = !this.showMenu_Step;
-    } else if(feature === 'test-case'){
-      this.showMenu_Test_Case = !this.showMenu_Test_Case;
-    } else if(feature === 'run'){
-      this.showMenu_Run = !this.showMenu_Run;
-    } else if(feature === 'user'){
-      this.showMenu_User = !this.showMenu_User;
-    } else if(feature === 'schedule'){
-      this.showMenu_Schedule = !this.showMenu_Schedule;
-    } else {
-      this.showMenu_Power = !this.showMenu_Power;
+    if(feature === 'administracao'){
+      this.showMenu_administracao = !this.showMenu_administracao;
+    } else if(feature === 'configuracao'){
+      this.showMenu_Configuracao = !this.showMenu_Configuracao;
+    } else if(feature === 'coordenacao'){
+      this.showMenu_Coordenacao = !this.showMenu_Coordenacao;
+    } else if(feature === 'avaliacao'){
+      this.showMenu_Avaliacao = !this.showMenu_Avaliacao;
     }
     setTimeout(() => this.navcontainer.updateContentMargins());
   }

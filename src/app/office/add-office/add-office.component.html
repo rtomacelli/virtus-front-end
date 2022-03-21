@@ -1,0 +1,42 @@
+<div class="container" style="max-width: 500px;">
+    <h1 class="mb-3 mt-5 text-center">Adicionar Escritório</h1>
+
+    <div class="form-group">
+      <label for="nome">Usuário</label>
+      <input type="text" [(ngModel)]="officeObj.nome" class="form-control" placeholder="Digite o nome do usuário">
+    </div>
+
+    <div class="form-group">
+      <label for="abreviatura">Abreviatura</label>
+      <input type="text" [(ngModel)]="officeObj.abreviatura" class="form-control" placeholder="Digite a abreviatura">
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descricao</label>
+      <input type="text" [(ngModel)]="officeObj.descricao" class="form-control" placeholder="Informe a descricao">
+    </div>
+
+    <div class="form-group">
+      <label for="chefe_id">chefe_id</label>
+      <input type="text" [(ngModel)]="officeObj.chefe_id" class="form-control" placeholder="Informe o chefe_id">
+    </div>
+
+    <div class="form-group">
+      <label for="author_id">author_id</label>
+      <input type="text" [(ngModel)]="officeObj.author_id" class="form-control" placeholder="Informe o author_id">
+    </div>
+
+    <div class="form-group">
+      <label for="id_versao_origem">id_versao_origem</label>
+      <input type="text" [(ngModel)]="officeObj.id_versao_origem" class="form-control" placeholder="Informe o id_versao_origem">
+    </div>
+
+    <div class="form-group">
+      <label for="status_id">status_id</label>
+      <input type="text" [(ngModel)]="officeObj.status_id" class="form-control" placeholder="Informe o status_id">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addOffice(officeObj)">Enviar</button>
+    </div>
+</div>

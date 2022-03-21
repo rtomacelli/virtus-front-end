@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="d-flex flex-row-reverse bd-highlight">
+      <button class="btn btn-primary" routerLink="/add">Adicionar Ação</button>
+    </div>
+    <h2 class="mb-3 text-center">Ações</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#Id</th>
+          <th scope="col">name</th>
+          <th scope="col">origin_status_id</th>
+          <th scope="col">destination_status_id</th>
+          <th scope="col">other_than</th>
+          <th scope="col">description</th>
+          <th scope="col">author_id</th>
+          <th scope="col">Criado em</th>
+          <th scope="col">id_versao_origem</th>
+          <th scope="col">status_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let action of Actions">
+          <td>{{ action.id }}</td>
+          <td>{{ action.name }}</td>
+          <td>{{ action.origin_status_id }}</td>
+          <td>{{ action.destination_status_id }}</td>
+          <td>{{ action.other_than }}</td>
+          <td>{{ action.description }}</td>
+          <td>{{ action.author_id }}</td>
+          <td>{{ action.criado_em | date:"dd/MM/yyyy hh:mm":"pt"}}</td>
+          <td>{{ action.id_versao_origem }}</td>
+          <td>{{ action.status_id }}</td>
+          <td>
+            <span class="material-icons" (click)="delete(action.id)">delete</span>
+            <span class="material-icons" routerLink="/edit/{{ action.id }}" style="float: right;">edit</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

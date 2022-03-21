@@ -1,0 +1,35 @@
+<div class="container" style="max-width: 500px;">
+    <h3 class="mb-3 mt-5 text-center">Editar feature</h3>
+  
+    <div class="form-group">
+        <input type="text" [(ngModel)]="featureObj.featurename" class="form-control" placeholder="Username">
+    </div>
+
+    <div class="form-group">
+        <input type="password" [(ngModel)]="featureObj.password" class="form-control" placeholder="Password">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="featureObj.email" class="form-control" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="featureObj.mobile" class="form-control" placeholder="Mobile">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="featureObj.name" class="form-control" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="featureObj.role_id" class="form-control" placeholder="Role id">
+    </div>
+
+    <div class="form-group">
+        <input type="text" [(ngModel)]="featureObj.author_id" class="form-control" placeholder="Author id">
+    </div>
+  
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateFeature(featureObj.id, featureObj)">Atualizar Feature</button>
+    </div>  
+</div>
