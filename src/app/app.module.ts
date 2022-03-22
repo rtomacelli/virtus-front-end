@@ -20,7 +20,6 @@ import { MaterialModule } from '../material.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
-import { UserMenuComponent } from './user/user-menu/user-menu.component';
 import { DashboardUserComponent } from './user/dashboard/dashboard.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
@@ -51,7 +50,9 @@ import { AddActionComponent } from './action/add-action/add-action.component';
 import { EditActionComponent } from './action/edit-action/edit-action.component';
 import { ListActionComponent } from './action/list-action/list-action.component';
 import { DeleteActionComponent } from './action/delete-action/delete-action.component';
+
 import { HomeComponent } from './home/home.component';
+import { SearchUserComponent } from './user/search-user/search-user.component';
 
 @NgModule({
   declarations: [
@@ -82,8 +83,8 @@ import { HomeComponent } from './home/home.component';
     ListActionComponent,
     DeleteActionComponent,
     HomeComponent,
-    UserMenuComponent,
     DashboardUserComponent,
+    SearchUserComponent,
   ],
   entryComponents: [
 

@@ -27,7 +27,7 @@ export class EditUserComponent implements OnInit {
   updateUser(id: any, data: any) {
     if (window.confirm('Confirma a atualização dos dados?')) {
       this.userService.updateUser(this.id, data).subscribe((res) => {
-        this.router.navigate(['/list']);
+        this.router.navigate(['/user/list']);
       });
     }
   }

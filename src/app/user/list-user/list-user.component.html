@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="d-flex flex-row-reverse bd-highlight">
-      <button class="btn btn-primary" routerLink="/add">Adicionar Usuario</button>
+      <button class="btn btn-primary" routerLink="/user/add">Adicionar Usuario</button>
     </div>
     <h2 class="mb-3 text-center">Usuarios</h2>
     <table class="table table-bordered">
@@ -29,7 +29,7 @@
           <td>{{ user.criado_em | date:"dd/MM/yyyy hh:mm":"pt" }}</td>
           <td>
             <span class="material-icons" (click)="delete(user.id)">delete</span>
-            <span class="material-icons" routerLink="user/edit/{{ user.id }}" style="float: right;">edit</span>
+            <span class="material-icons" routerLink="/user/edit/{{ user.id }}" style="float: right;">edit</span>
           </td>
         </tr>
       </tbody>

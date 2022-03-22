@@ -27,6 +27,7 @@ import { DashboardUserComponent } from './user/dashboard/dashboard.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ListUserComponent } from './user/list-user/list-user.component';
+import { SearchUserComponent } from './user/search-user/search-user.component';
 
 import { DashboardWorkflowComponent } from './workflow/dashboard/dashboard.component';
 import { AddWorkflowComponent } from './workflow/add-workflow/add-workflow.component';
@@ -65,6 +66,7 @@ const routes: Routes = [
   { path: 'user/add', component: AddUserComponent },
   { path: 'user/edit/:id', component: EditUserComponent },
   { path: 'user/list', component: ListUserComponent },
+  { path: 'user/search', component: SearchUserComponent },
 
   { path: 'workflow/dashboard', component: DashboardWorkflowComponent },
   { path: 'workflow/add', component: AddWorkflowComponent },
