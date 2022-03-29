@@ -1,21 +1,21 @@
 <div class="container mt-5">
     <div class="d-flex flex-row-reverse bd-highlight">
-      <button class="btn btn-primary" routerLink="/add">Adicionar Ação</button>
+      <button class="btn btn-primary" routerLink="/action/add">Adicionar Ação</button>
     </div>
     <h2 class="mb-3 text-center">Ações</h2>
     <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">#Id</th>
-          <th scope="col">name</th>
-          <th scope="col">origin_status_id</th>
-          <th scope="col">destination_status_id</th>
-          <th scope="col">other_than</th>
-          <th scope="col">description</th>
-          <th scope="col">author_id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Status origem</th>
+          <th scope="col">Status da destinação</th>
+          <th scope="col">Outro</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Autor</th>
           <th scope="col">Criado em</th>
-          <th scope="col">id_versao_origem</th>
-          <th scope="col">status_id</th>
+          <th scope="col">Versão origem</th>
+          <th scope="col">Status</th>
         </tr>
       </thead>
       <tbody>
@@ -32,7 +32,7 @@
           <td>{{ action.status_id }}</td>
           <td>
             <span class="material-icons" (click)="delete(action.id)">delete</span>
-            <span class="material-icons" routerLink="/edit/{{ action.id }}" style="float: right;">edit</span>
+            <span class="material-icons" routerLink="/action/edit/{{ action.id }}" style="float: right;">edit</span>
           </td>
         </tr>
       </tbody>

@@ -2,32 +2,29 @@
     <h3 class="mb-3 mt-5 text-center">Editar status</h3>
   
     <div class="form-group">
-        <input type="text" [(ngModel)]="statusObj.statusname" class="form-control" placeholder="Username">
-    </div>
-
-    <div class="form-group">
-        <input type="password" [(ngModel)]="statusObj.password" class="form-control" placeholder="Password">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="statusObj.email" class="form-control" placeholder="Email">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="statusObj.mobile" class="form-control" placeholder="Mobile">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="statusObj.name" class="form-control" placeholder="Name">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="statusObj.role_id" class="form-control" placeholder="Role id">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="statusObj.author_id" class="form-control" placeholder="Author id">
-    </div>
+        <label for="name">Status</label>
+        <input type="text" [(ngModel)]="statusObj.name" class="form-control" placeholder="Digite o nome do usuário">
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Descrição</label>
+        <input type="text" [(ngModel)]="statusObj.description" class="form-control" placeholder="Digite a Descrição">
+      </div>
+  
+      <div class="form-group">
+        <label for="author_id">Autor</label>
+        <input type="text" [(ngModel)]="statusObj.author_id" class="form-control" placeholder="Informe o Autor">
+      </div>
+  
+      <div class="form-group">
+        <label for="name">id_versao_origem</label>
+        <input type="text" [(ngModel)]="statusObj.id_versao_origem" class="form-control" placeholder="Informe o id_versao_origem">
+      </div>
+  
+      <div class="form-group">
+        <label for="stereotype">stereotype</label>
+        <input type="text" [(ngModel)]="statusObj.stereotype" class="form-control" placeholder="stereotype">
+      </div>
   
     <div class="form-group">
       <button class="btn btn-success btn-lg btn-block" (click)="updateStatus(statusObj.id, statusObj)">Atualizar Status</button>

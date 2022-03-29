@@ -1,32 +1,31 @@
 <div class="container mt-5">
     <div class="d-flex flex-row-reverse bd-highlight">
-      <button class="btn btn-primary" routerLink="/add">Adicionar Feature</button>
+      <button class="btn btn-primary" routerLink="/feature/add">Adicionar Feature</button>
     </div>
     <h2 class="mb-3 text-center">Features</h2>
     <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">#Id</th>
-          <th scope="col">Featurename</th>
-          <th scope="col">Email</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Name</th>
-          <th scope="col">Papel</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Código</th>
+          <th scope="col">Descrição</th>
           <th scope="col">Autor</th>
-          <th scope="col">Criado em</th>
-          <th scope="col">Ação</th>
+          <th scope="col">Dt Criação</th>
+          <th scope="col">Versão</th>
+          <th scope="col">Status</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let feature of Feature">
           <td>{{ feature.id }}</td>
-          <td>{{ feature.featurename }}</td>
-          <td>{{ feature.email }}</td>
-          <td>{{ feature.mobile }}</td>
           <td>{{ feature.name }}</td>
-          <td>{{ feature.role_id }}</td>
+          <td>{{ feature.code }}</td>
+          <td>{{ feature.description }}</td>
           <td>{{ feature.author_id }}</td>
-          <td>{{ feature.criado_em | date:"dd/MM/yyyy hh:mm":"pt" }}</td>
+          <td>{{ feature.created_at | date:"dd/MM/yyyy hh:mm":"pt" }}</td>
+          <td>{{ feature.id_versao_origem }}</td>
+          <td>{{ feature.status_id }}</td>
           <td>
             <span class="material-icons" (click)="delete(feature.id)">delete</span>
             <span class="material-icons" routerLink="/edit/{{ feature.id }}" style="float: right;">edit</span>
