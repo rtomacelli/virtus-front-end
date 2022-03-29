@@ -1,40 +1,38 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './administration/home/home.component';
 
-import { DashboardActionComponent } from './action/dashboard/dashboard.component';
-import { AddActionComponent } from './action/add-action/add-action.component';
-import { EditActionComponent } from './action/edit-action/edit-action.component';
-import { ListActionComponent } from './action/list-action/list-action.component';
+import { DashboardActionComponent } from './administration/action/dashboard-action/dashboard-action.component';
+import { AddActionComponent } from './administration/action/add-action/add-action.component';
+import { EditActionComponent } from './administration/action/edit-action/edit-action.component';
+import { ListActionComponent } from './administration/action/list-action/list-action.component';
 
-import { DashboardFeatureComponent } from './feature/dashboard/dashboard.component';
-import { AddFeatureComponent } from './feature/add-feature/add-feature.component';
-import { EditFeatureComponent } from './feature/edit-feature/edit-feature.component';
-import { ListFeatureComponent } from './feature/list-feature/list-feature.component';
+import { DashboardFeatureComponent } from './administration/feature/dashboard-feature/dashboard-feature.component';
+import { AddFeatureComponent } from './administration/feature/add-feature/add-feature.component';
+import { EditFeatureComponent } from './administration/feature/edit-feature/edit-feature.component';
+import { ListFeatureComponent } from './administration/feature/list-feature/list-feature.component';
 
-import { DashboardOfficeComponent } from './office/dashboard/dashboard.component';
-import { AddOfficeComponent } from './office/add-office/add-office.component';
-import { EditOfficeComponent } from './office/edit-office/edit-office.component';
-import { ListOfficeComponent } from './office/list-office/list-office.component';
+import { DashboardOfficeComponent } from './administration/office/dashboard-office/dashboard-office.component';
+import { AddOfficeComponent } from './administration/office/add-office/add-office.component';
+import { EditOfficeComponent } from './administration/office/edit-office/edit-office.component';
+import { ListOfficeComponent } from './administration/office/list-office/list-office.component';
 
-import { DashboardStatusComponent } from './status/dashboard/dashboard.component';
-import { AddStatusComponent } from './status/add-status/add-status.component';
-import { EditStatusComponent } from './status/edit-status/edit-status.component';
-import { ListStatusComponent } from './status/list-status/list-status.component';
+import { DashboardStatusComponent } from './administration/status/dashboard-status/dashboard-status.component';
+import { AddStatusComponent } from './administration/status/add-status/add-status.component';
+import { EditStatusComponent } from './administration/status/edit-status/edit-status.component';
+import { ListStatusComponent } from './administration/status/list-status/list-status.component';
 
-import { DashboardUserComponent } from './user/dashboard/dashboard.component';
-import { AddUserComponent } from './user/add-user/add-user.component';
-import { EditUserComponent } from './user/edit-user/edit-user.component';
-import { ListUserComponent } from './user/list-user/list-user.component';
-import { SearchUserComponent } from './user/search-user/search-user.component';
+import { DashboardUserComponent } from './administration/user/dashboard-user/dashboard-user.component';
+import { AddUserComponent } from './administration/user/add-user/add-user.component';
+import { EditUserComponent } from './administration/user/edit-user/edit-user.component';
+import { ListUserComponent } from './administration/user/list-user/list-user.component';
+import { SearchUserComponent } from './administration/user/search-user/search-user.component';
 
-import { DashboardWorkflowComponent } from './workflow/dashboard/dashboard.component';
-import { AddWorkflowComponent } from './workflow/add-workflow/add-workflow.component';
-import { EditWorkflowComponent } from './workflow/edit-workflow/edit-workflow.component';
-import { ListWorkflowComponent } from './workflow/list-workflow/list-workflow.component';
-
-
+import { DashboardWorkflowComponent } from './administration/workflow/dashboard-workflow/dashboard-workflow.component';
+import { AddWorkflowComponent } from './administration/workflow/add-workflow/add-workflow.component';
+import { EditWorkflowComponent } from './administration/workflow/edit-workflow/edit-workflow.component';
+import { ListWorkflowComponent } from './administration/workflow/list-workflow/list-workflow.component';
 
 const routes: Routes = [
   

@@ -3,10 +3,6 @@ import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
-
 export class Status {
 name?: string;
 description?: string;
@@ -16,6 +12,10 @@ id_versao_origem?: number;
 status_id?: number;
 stereotype?: string;
 }
+
+@Injectable({
+  providedIn: 'root'
+})
 
 export class StatusService {
 

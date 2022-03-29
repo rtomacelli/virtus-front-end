@@ -3,10 +3,6 @@ import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
-
 export class Workflow {
   name?: string;
   description?: string;
@@ -16,6 +12,10 @@ export class Workflow {
   status_id?: number;
   stereotype?: string;
 }
+
+@Injectable({
+  providedIn: 'root'
+})
 
 export class WorkflowService {
   endpoint = 'http://localhost:8080';

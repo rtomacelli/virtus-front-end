@@ -3,20 +3,19 @@ import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+export class Feature {
+  name?: string;
+  code?: string;
+  description?: string;
+  author_id?: number;
+  created_at?: string;
+  id_versao_origem?: number;
+  status_id?: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
-
-export class Feature {
-name?: string;
-code?: string;
-description?: string;
-author_id?: number;
-created_at?: string;
-id_versao_origem?: number;
-status_id?: number;
-}
-
 
 export class FeatureService {
 
@@ -30,7 +29,7 @@ export class FeatureService {
 
   getFeature(): Observable<Feature> {
     return this.httpClient
-      .get<Feature>(this.endpoint + '/feature')
+      .get<Feature>(this.endpoint + '/feature/list')
       .pipe(retry(1), catchError(this.processError));
   }
 

@@ -18,7 +18,11 @@ id_versao_origem?: number;
 status_id?: number;
 }
 
-export class OfficeService {
+@Injectable({
+  providedIn: 'root'
+})
+
+export class OfficeService  {
 
   endpoint = 'http://localhost:8080';
   constructor(private httpClient: HttpClient) {}
@@ -30,7 +34,7 @@ export class OfficeService {
 
   getOffice(): Observable<Office> {
     return this.httpClient
-      .get<Office>(this.endpoint + '/office')
+      .get<Office>(this.endpoint + '/office/list')
       .pipe(retry(1), catchError(this.processError));
   }
 
@@ -78,5 +82,4 @@ export class OfficeService {
       message;
     });
   }
-
 }
