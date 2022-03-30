@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 export class Feature {
   name?: string;
@@ -19,7 +20,7 @@ export class Feature {
 
 export class FeatureService {
 
-  endpoint = 'http://localhost:8080';
+  endpoint = environment.urlApi;
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({

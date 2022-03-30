@@ -1,8 +1,8 @@
 <div class="container mt-5">
     <div class="d-flex flex-row-reverse bd-highlight">
-      <button class="btn btn-primary" routerLink="/feature/add">Adicionar Feature</button>
+      <button class="btn btn-primary" routerLink="/feature/add">Adicionar Funcionalidades</button>
     </div>
-    <h2 class="mb-3 text-center">Features</h2>
+    <h2 class="mb-3 text-center">Funcionalidades</h2>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -28,7 +28,7 @@
           <td>{{ feature.status_id }}</td>
           <td>
             <span class="material-icons" (click)="delete(feature.id)">delete</span>
-            <span class="material-icons" routerLink="/edit/{{ feature.id }}" style="float: right;">edit</span>
+            <span class="material-icons" routerLink="/feature/edit/{{ feature.id }}" style="float: right;">edit</span>
           </td>
         </tr>
       </tbody>

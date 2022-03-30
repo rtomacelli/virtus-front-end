@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="d-flex flex-row-reverse bd-highlight">
-      <button class="btn btn-primary" routerLink="/add">Adicionar Usuario</button>
+      <button class="btn btn-primary" routerLink="/add">Adicionar Escritório</button>
     </div>
     <h2 class="mb-3 text-center">Escritórios</h2>
     <table class="table table-bordered">
@@ -30,7 +30,7 @@
           <td>{{ office.status_id }}</td>
           <td>
             <span class="material-icons" (click)="delete(office.id)">delete</span>
-            <span class="material-icons" routerLink="/edit/{{ office.id }}" style="float: right;">edit</span>
+            <span class="material-icons" routerLink="/office/edit/{{ office.id }}" style="float: right;">edit</span>
           </td>
         </tr>
       </tbody>

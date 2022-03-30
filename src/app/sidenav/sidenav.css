@@ -57,3 +57,19 @@ mat-nav-list{
   overflow: hidden;
   outline:none;
 }
+
+.submenu-administracao {
+  background-color: rgb(251, 255, 228); 
+}
+
+.submenu-configuracao {
+  background-color: rgb(243, 219, 219); 
+}
+
+.submenu-coordenacao {
+  background-color: rgb(199, 197, 214); 
+}
+
+.submenu-avaliacao {
+  background-color: rgb(230, 250, 253); 
+}

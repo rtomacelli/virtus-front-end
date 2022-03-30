@@ -1,35 +1,35 @@
 <div class="container" style="max-width: 500px;">
-    <h3 class="mb-3 mt-5 text-center">Editar feature</h3>
+    <h3 class="mb-3 mt-5 text-center">Editar Funcionalidades</h3>
   
     <div class="form-group">
-        <label for="name">name</label>
-        <input type="text" [(ngModel)]="featureObj.name" class="form-control" placeholder="Digite o nome">
-      </div>
-  
-      <div class="form-group">
-        <label for="code">Código</label>
-        <input type="text" [(ngModel)]="featureObj.code" class="form-control" placeholder="Digite o código">
-      </div>
-  
-      <div class="form-group">
-        <label for="description">Descrição</label>
-        <input type="text" [(ngModel)]="featureObj.description" class="form-control" placeholder="Informe a descrição">
-      </div>
-  
-      <div class="form-group">
-        <label for="author_id">Autor</label>
-        <input type="text" [(ngModel)]="featureObj.author_id" class="form-control" placeholder="Informe o autor">
-      </div>
-  
-      <div class="form-group">
-        <label for="id_versao_origem">Versão de origem</label>
-        <input type="text" [(ngModel)]="featureObj.id_versao_origem" class="form-control" placeholder="Informe a versao de origem">
-      </div>
-  
-      <div class="form-group">
-        <label for="status_id">Status ID</label>
-        <input type="text" [(ngModel)]="featureObj.status_id" class="form-control" placeholder="status_id">
-      </div>
+      <label for="name">name</label>
+      <input type="text" [(ngModel)]="featureObj.name" class="form-control" placeholder="Digite o nome">
+    </div>
+
+    <div class="form-group">
+      <label for="code">Código</label>
+      <input type="text" [(ngModel)]="featureObj.code" class="form-control" placeholder="Digite o código">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descrição</label>
+      <input type="text" [(ngModel)]="featureObj.description" class="form-control" placeholder="Informe a descrição">
+    </div>
+
+    <div class="form-group">
+      <label for="author_id">Autor</label>
+      <input type="text" [(ngModel)]="featureObj.author_id" class="form-control" placeholder="Informe o autor">
+    </div>
+
+    <div class="form-group">
+      <label for="id_versao_origem">Versão de origem</label>
+      <input type="text" [(ngModel)]="featureObj.id_versao_origem" class="form-control" placeholder="Informe a versao de origem">
+    </div>
+
+    <div class="form-group">
+      <label for="status_id">Status ID</label>
+      <input type="text" [(ngModel)]="featureObj.status_id" class="form-control" placeholder="status_id">
+    </div>
   
     <div class="form-group">
       <button class="btn btn-success btn-lg btn-block" (click)="updateFeature(featureObj.id, featureObj)">Atualizar Feature</button>

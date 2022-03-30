@@ -58,7 +58,7 @@ import { DeleteActionComponent } from './administration/action/delete-action/del
 
 import { HomeComponent } from './administration/home/home.component';
 import { MatCardModule } from '@angular/material/card';
-
+import { ActiveUserComponent } from './login/active-user/active-user.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +95,8 @@ import { MatCardModule } from '@angular/material/card';
     DashboardWorkflowComponent,
     DashboardStatusComponent,
     DashboardFeatureComponent,
-    DashboardActionComponent
+    DashboardActionComponent,
+    ActiveUserComponent,
 
   ],
   entryComponents: [

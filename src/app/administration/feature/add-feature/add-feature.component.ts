@@ -22,6 +22,7 @@ ngOnInit(): void { }
 
 addFeature(data: any) {
   this.featureObj.created_at = new Date().toISOString();
+  console.log(this.featureObj);
   this.featureService.addFeature(this.featureObj).subscribe((data: {}) => {
     this.router.navigate(['/feature/list'])
 })

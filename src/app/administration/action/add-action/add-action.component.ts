@@ -21,7 +21,7 @@ export class AddActionComponent implements OnInit {
   addAction(data: any) {
     this.actionObj.created_at = new Date().toISOString();
     this.actionService.addAction(this.actionObj).subscribe((data: {}) => {
-      this.router.navigate(['/list'])
+      this.router.navigate(['/action/list'])
     })
   }
 

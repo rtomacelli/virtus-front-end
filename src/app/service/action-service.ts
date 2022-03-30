@@ -3,16 +3,17 @@ import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-export class User {
+export class Action {
 
-  username?: string;
-  password?: string;
-  email?: string;
-  mobile?: string;
   name?: string;
-  role_id?: number;
+  origin_status_id?: number;
+  destination_status_id?: number;
+  other_than?: boolean;
+  description?: string;
   author_id?: number;
-  criado_em?: string;
+  created_at?: string;
+  id_versao_origem?: number;
+  status_id?: number;
 
 }
 
@@ -20,7 +21,7 @@ export class User {
   providedIn: 'root'
 })
 
-export class UserService {
+export class ActionService {
 
   endpoint = 'http://localhost:8080';
   constructor(private httpClient: HttpClient) {}
@@ -30,41 +31,41 @@ export class UserService {
     }),
   };
 
-  getUsers(): Observable<User> {
+  getActions(): Observable<Action> {
     return this.httpClient
-      .get<User>(this.endpoint + '/user/list')
+      .get<Action>(this.endpoint + '/action')
       .pipe(retry(1), catchError(this.processError));
   }
 
-  getSingleUser(id: any): Observable<User> {
+  getSingleAction(id: any): Observable<Action> {
     return this.httpClient
-      .get<User>(this.endpoint + '/user/' + id)
+      .get<Action>(this.endpoint + '/action/' + id)
       .pipe(retry(1), catchError(this.processError));
   }
 
-  addUser(data: any): Observable<User> {
+  addAction(data: any): Observable<Action> {
     return this.httpClient
-      .post<User>(
-        this.endpoint + '/user',
+      .post<Action>(
+        this.endpoint + '/action',
         JSON.stringify(data),
         this.httpHeader
       )
       .pipe(retry(1), catchError(this.processError));
   }
 
-  updateUser(id: any, data: any): Observable<User> {
+  updateAction(id: any, data: any): Observable<Action> {
     return this.httpClient
-      .put<User>(
-        this.endpoint + '/user/' + id,
+      .put<Action>(
+        this.endpoint + '/action/' + id,
         JSON.stringify(data),
         this.httpHeader
       )
       .pipe(retry(1), catchError(this.processError));
   }
 
-  deleteUser(id: any) {
+  deleteAction(id: any) {
     return this.httpClient
-      .delete<User>(this.endpoint + '/user/' + id, this.httpHeader)
+      .delete<Action>(this.endpoint + '/action/' + id, this.httpHeader)
       .pipe(retry(1), catchError(this.processError));
   }
 

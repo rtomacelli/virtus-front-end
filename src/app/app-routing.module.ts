@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ActiveUserComponent } from '../app/login/active-user/active-user.component'
+
 import { HomeComponent } from './administration/home/home.component';
 
 import { DashboardActionComponent } from './administration/action/dashboard-action/dashboard-action.component';
@@ -39,6 +41,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
 
   { path: 'home', component: HomeComponent },
+
+  { path: 'activeUser', component: ActiveUserComponent },
 
   { path: 'action/dashboard', component: DashboardActionComponent },
   { path: 'action/add', component: AddActionComponent },
