@@ -32,6 +32,33 @@ export class OfficeService  {
     }),
   };
 
+/*
+
+SQL que lista todos dados 
+
+SELECT 
+    office.id,
+    office.abreviatura,
+    usuario.name,
+    office.author_id,
+    chefe.name,
+    office.chefe_id,
+    office.criado_em,
+    office.descricao,
+    office.id_versao_origem,
+    office.nome,
+    office.status_id,
+    status.name
+FROM
+  virtus.office AS office
+      INNER JOIN
+  virtus.status AS status ON virtus.office.status_id = status.status_id
+      INNER JOIN
+  virtus.user AS usuario ON virtus.office.author_id = usuario.author_id
+      INNER JOIN
+  virtus.user AS chefe ON virtus.office.chefe_id = chefe.author_id
+  */
+
   getOffice(): Observable<Office> {
     return this.httpClient
       .get<Office>(this.endpoint + '/office/list')

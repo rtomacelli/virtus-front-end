@@ -8,5 +8,12 @@ table {
 
 th.mat-header-cell {
     text-align: left;
+    font-size: 14px; 
+    font-weight: bold;
     max-width: 300px;
+
+}
+
+td.mat-cell {
+    font-size: 12px; 
 }

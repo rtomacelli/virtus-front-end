@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { StatusService } from "../../../service/status.service";
 
 @Component({
@@ -8,10 +10,21 @@ import { StatusService } from "../../../service/status.service";
 })
 export class ListStatusComponent implements OnInit {
 
+
+  label: string[] = ['Nome', 'Descrição',   'Autor',     'Criado em',  'Versão',           'Status',    'Estereótipo']
+  cols: string[] =  ['name', 'description', 'author_id', 'created_at', 'id_versao_origem', 'status_id', 'stereotype']
+
+  displayedColumns: string[] = ['name',  'description', 'author_id', 'created_at', 'id_versao_origem', 'status_id', 'stereotype']
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
   Status: any = [];
   constructor(public statusService: StatusService) {}
   
   ngOnInit() {
+    this.Status.paginator = this.paginator;
+    this.Status.sort = this.sort;
     this.fetchStatus();
   }
 

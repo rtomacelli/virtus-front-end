@@ -14,6 +14,22 @@ export class Feature {
   status_id?: number;
 }
 
+/*
+SELECT `feature`.`id`,
+    `feature`.`author_id`,
+	`usuario`.`name` as autor,
+    `feature`.`code`,
+    `feature`.`created_at`,
+    `feature`.`description`,
+    `feature`.`id_versao_origem`,
+    `feature`.`name`,
+    `feature`.`status_id`
+FROM `virtus`.`feature`
+INNER JOIN
+    virtus.user AS usuario ON virtus.feature.author_id = usuario.author_id
+*/
+
+
 @Injectable({
   providedIn: 'root'
 })

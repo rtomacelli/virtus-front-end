@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { FeatureService } from "../../../service/feature.service";
 
 @Component({
@@ -8,16 +10,25 @@ import { FeatureService } from "../../../service/feature.service";
 })
 export class ListFeatureComponent implements OnInit {
 
-  Feature: any = [];
+  label:  string[] = ['Nome', 'Código', 'Descricao',   'Autor',     'Criado em',   'Versao origem',    'Status']
+  cols:   string[] = ['name', 'code',   'description', 'author_id', 'created_at',  'id_versao_origem', 'status_id'];
+  displayedColumns: string[] = ['name', 'code', 'description', 'author_id', 'created_at', 'id_versao_origem', 'status_id'];
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  Features: any = [];
+
   constructor(public featureService: FeatureService) {}
   
   ngOnInit() {
+    this.Features.paginator = this.paginator;
+    this.Features.sort = this.sort;
     this.fetchFeature();
   }
 
   fetchFeature() {
     return this.featureService.getFeature().subscribe((res: {}) => {
-      this.Feature = res;
+      this.Features = res;
     });
   }
 
