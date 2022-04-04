@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { GlobalConstants } from '../global-constants';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ status_id?: number;
 
 export class OfficeService  {
 
-  endpoint = 'http://localhost:8080';
+  endpoint = GlobalConstants.apiURL;
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({

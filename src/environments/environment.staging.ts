@@ -4,10 +4,11 @@
 
 
 export const environment = {
-  production: false,
-};
-
-/*
+    production: false,
+    apiUrl: 'http://my-api-url'
+  };
+  
+  /*
     https://angular.io/guide/build
     this.user.id = 9999,
     this.user.username = 'Roy Batty';

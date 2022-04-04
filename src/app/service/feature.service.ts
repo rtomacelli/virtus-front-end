@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { GlobalConstants } from '../global-constants';
 
 export class Feature {
   name?: string;
@@ -36,7 +36,7 @@ INNER JOIN
 
 export class FeatureService {
 
-  endpoint = environment.urlApi;
+  endpoint = GlobalConstants.apiURL;
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({

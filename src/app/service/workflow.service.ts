@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { GlobalConstants } from '../global-constants';
 
 export class Workflow {
   name?: string;
@@ -18,7 +19,8 @@ export class Workflow {
 })
 
 export class WorkflowService {
-  endpoint = 'http://localhost:8080';
+
+  endpoint = GlobalConstants.apiURL;
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({

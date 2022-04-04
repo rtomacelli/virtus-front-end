@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "usuarios": {
+    "virtus": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/usuarios",
+            "outputPath": "dist/virtus",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,15 +71,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ZarbatWebTester:build",
-            "proxyConfig": "./proxy.config.cjs"
+            "browserTarget": "virtus:build",
+            "proxyConfig": "./proxy.config.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "usuarios:build:production"
+              "browserTarget": "virtus:build:production"
             },
             "development": {
-              "browserTarget": "usuarios:build:development"
+              "browserTarget": "virtus:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "usuarios:build"
+            "browserTarget": "virtus:build"
           }
         },
         "test": {
@@ -111,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "usuarios"
+  "defaultProject": "virtus"
 }
