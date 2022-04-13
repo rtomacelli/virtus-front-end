@@ -10,9 +10,9 @@ import { FeatureService } from "../../../service/feature.service";
 })
 export class ListFeatureComponent implements OnInit {
 
-  label:  string[] = ['Nome', 'Código', 'Descricao',   'Autor',     'Criado em',   'Versao origem',    'Status']
-  cols:   string[] = ['name', 'code',   'description', 'author_id', 'created_at',  'id_versao_origem', 'status_id'];
-  displayedColumns: string[] = ['name', 'code', 'description', 'author_id', 'created_at', 'id_versao_origem', 'status_id'];
+  label:  string[] = ['Nome', 'Código', 'Descricao']
+  cols:   string[] = ['name', 'code',   'description'];
+  displayedColumns: string[] = ['name', 'code', 'description'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

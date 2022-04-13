@@ -11,7 +11,7 @@ import { MatSidenavContainer } from '@angular/material/sidenav';
 export class Sidenav implements OnDestroy {
   
   mobileQuery: MediaQueryList;
-  title = 'virtus';
+  title = 'Virtus';
 
   events: string[] = [];
   opened!: boolean;

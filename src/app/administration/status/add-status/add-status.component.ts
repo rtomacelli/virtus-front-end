@@ -9,7 +9,7 @@ import { StatusService } from "../../../service/status.service";
 })
 export class AddStatusComponent implements OnInit {
 
-  @Input() statusObj = { name: '', description: '', author_id: 0, created_at: '', id_versao_origem: 0, status_id: 0, stereotype: '' }
+  @Input() statusObj = { name: '', description: '', stereotype: '' }
 
   constructor(
     public statusService: StatusService, 
@@ -19,7 +19,6 @@ export class AddStatusComponent implements OnInit {
   ngOnInit(): void { }
   
   addStatus(data: any) {
-    this.statusObj.created_at = new Date().toISOString();
     this.statusService.addStatus(this.statusObj).subscribe((data: {}) => {
       this.router.navigate(['/status/list'])
     })

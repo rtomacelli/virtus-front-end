@@ -10,9 +10,12 @@ import { OfficeService } from "../../../service/office.service";
 })
 export class ListOfficeComponent implements OnInit {
 
-  label:  string[] = ['Nome', 'Abreviatura', 'Descricao', 'Chefe',    'Autor',     'Criado em', 'Versao origem', 'Status']
-  cols:   string[] = ['nome', 'abreviatura', 'descricao', 'chefe_id', 'author_id', 'criado_em', 'id_versao_origem', 'status_id']
-  displayedColumns: string[] = ['nome', 'abreviatura', 'descricao', 'chefe_id', 'author_id', 'criado_em', 'id_versao_origem', 'status_id'];
+
+  // Autor', 'Criado em', 'Versao origem', 'Status não devem aparecer na listagem.
+
+  label:  string[] = ['Nome', 'Abreviatura', 'Descricao', 'Chefe']
+  cols:   string[] = ['nome', 'abreviatura', 'descricao', 'chefe_id']
+  displayedColumns: string[] = ['nome', 'abreviatura', 'descricao', 'chefe_id'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

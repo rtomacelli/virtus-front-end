@@ -11,10 +11,9 @@ import { ActionService } from "../../../service/action.service";
 
 export class ListActionComponent implements OnInit {
 
-
-  label:  string[] = ['id', 'Nome', 'Status origem',    'Status destino',        'Outro',      'Descrição',   'Autor',     'Criado em', 'Versão origem',    'Status'];
-  cols:   string[] = ['id', 'name', 'origin_status_id', 'destination_status_id', 'other_than', 'description', 'author_id', 'criado_em', 'id_versao_origem', 'status_id'];
-  displayedColumns: string[] = ['id', 'name', 'origin_status_id', 'destination_status_id', 'other_than', 'description', 'author_id', 'criado_em', 'id_versao_origem', 'status_id'];
+  label:  string[] = ['#', 'Nome', 'Origem Status', 'Destinação Status', 'Outro', 'Descrição'];
+  cols:   string[] = ['id', 'name', 'origin_status_id', 'destination_status_id', 'other_than', 'description'];
+  displayedColumns: string[] = ['id', 'name', 'origin_status_id', 'destination_status_id', 'other_than', 'description'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

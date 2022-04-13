@@ -8,25 +8,24 @@ export class Feature {
   name?: string;
   code?: string;
   description?: string;
-  author_id?: number;
-  created_at?: string;
-  id_versao_origem?: number;
-  status_id?: number;
 }
 
 /*
-SELECT `feature`.`id`,
-    `feature`.`author_id`,
-	`usuario`.`name` as autor,
-    `feature`.`code`,
-    `feature`.`created_at`,
-    `feature`.`description`,
-    `feature`.`id_versao_origem`,
-    `feature`.`name`,
-    `feature`.`status_id`
-FROM `virtus`.`feature`
+SELECT feature.id,
+    feature.author_id,
+    usuario.name as autor,
+    feature.code,
+    feature.created_at,
+    feature.description,
+    feature.id_versao_origem,
+    feature.name,
+    feature.status_id,
+    status.name
+FROM virtus.feature
 INNER JOIN
     virtus.user AS usuario ON virtus.feature.author_id = usuario.author_id
+      INNER JOIN
+  virtus.status AS status ON virtus.feature.status_id = status.status_id
 */
 
 

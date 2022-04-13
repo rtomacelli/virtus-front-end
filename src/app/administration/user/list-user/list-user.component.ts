@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { PageEvent } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { UserService } from "../../../service/user.service";
 
@@ -12,9 +13,9 @@ import { UserService } from "../../../service/user.service";
 
   export class ListUserComponent implements OnInit {
 
-    label:  string[] = ['Username',  'Email', 'Telefone', 'Nome', 'Papel',   'Autor',     'Criado em']
-    cols:   string[] = ['username',  'email', 'mobile',   'name', 'role_id', 'author_id', 'criado_em']
-    displayedColumns: string[] = ['username',  'email', 'mobile', 'name', 'role_id', 'author_id', 'criado_em']
+    label:  string[] = ['Username',  'Email', 'Telefone', 'Nome', 'Papel',]
+    cols:   string[] = ['username',  'email', 'mobile',   'name', 'role_id',]
+    displayedColumns: string[] = ['username',  'email', 'mobile', 'name', 'role_id']
     Users: any = [];
 
     pgIndex= 1;
@@ -29,8 +30,15 @@ import { UserService } from "../../../service/user.service";
 
     ngOnInit() {
       this.Users.paginator = this.paginator;
+      this.fetchUsers()
+    }
+
+  /**
+   * Set the sort after the view init since this component will
+   * be able to query its view for the initialized sort.
+   */
+    ngAfterViewInit() {
       this.Users.sort = this.sort;
-      this.fetchUsers();
     }
 
     fetchUsers() {

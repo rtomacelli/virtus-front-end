@@ -9,14 +9,10 @@ import { GlobalConstants } from '../global-constants';
 })
 
 export class Office {
-nome?: string;
-abreviatura?: string;
-descricao?: string;
-chefe_id?: number;
-author_id?: number;
-criado_em?: string;
-id_versao_origem?: number;
-status_id?: number;
+  nome?: string;
+  abreviatura?: string;
+  descricao?: string;
+  chefe_id?: number;
 }
 
 @Injectable({

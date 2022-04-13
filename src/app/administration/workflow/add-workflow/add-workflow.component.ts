@@ -9,7 +9,8 @@ import { WorkflowService } from "../../../service/workflow.service";
 })
 export class AddWorkflowComponent implements OnInit {
 
-  @Input() workflowObj = { name: '', description: '', author_id: 0, created_at: '', id_versao_origem: 0, status_id: 0, stereotype: '' }
+  @Input() workflowObj = { name: '', description: '', entity_type: '' ,  start_at: '', end_at: '' }
+  
 
   constructor(
     public workflowService: WorkflowService, 
@@ -19,7 +20,6 @@ export class AddWorkflowComponent implements OnInit {
   ngOnInit(): void { }
   
   addWorkflow(data: any) {
-    this.workflowObj.created_at = new Date().toISOString();
     this.workflowService.addWorkflow(this.workflowObj).subscribe((data: {}) => {
       this.router.navigate(['/workflow/list'])
     })

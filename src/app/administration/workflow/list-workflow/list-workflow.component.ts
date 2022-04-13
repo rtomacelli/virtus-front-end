@@ -10,9 +10,11 @@ import { WorkflowService } from "../../../service/workflow.service";
 })
 export class ListWorkflowComponent implements OnInit {
 
-  label:  string[] = ['Nome', 'Descrição',   'Autor',     'Criado em',  'Versao origem',    'Status',    'Estereótipo'];
-  cols:   string[] = ['name', 'description', 'author_id', 'created_at', 'id_versao_origem', 'status_id', 'stereotype'];
-  displayedColumns: string[] = ['name', 'description', 'author_id', 'created_at', 'id_versao_origem', 'status_id', 'stereotype'];
+  label:  string[] = ['#',  'Nome', 'Descrição',   'Entidade',    'Inicio',	  'Término'];
+  cols:   string[] = ['id', 'name', 'description', 'entity_type', 'start_at',	'end_at'];
+  displayedColumns: string[] = ['id', 'name', 'description', 'entity_type', 'start_at',	'end_at'];
+
+  
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

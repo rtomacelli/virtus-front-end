@@ -13,7 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from '../material.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -123,6 +123,8 @@ import { ActiveUserComponent } from './login/active-user/active-user.component';
     MatCardModule
   ],
   bootstrap: [AppComponent],
-  providers: []
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
+  ]
 })
 export class AppModule { }

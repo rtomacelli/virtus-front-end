@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from "../../../service/user.service";
 
@@ -41,5 +42,4 @@ export class AddUserComponent implements OnInit {
       this.router.navigate(['/user/list'])
     })
   }
-
 }

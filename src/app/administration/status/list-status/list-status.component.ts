@@ -11,10 +11,10 @@ import { StatusService } from "../../../service/status.service";
 export class ListStatusComponent implements OnInit {
 
 
-  label: string[] = ['Nome', 'Descrição',   'Autor',     'Criado em',  'Versão',           'Status',    'Estereótipo']
-  cols: string[] =  ['name', 'description', 'author_id', 'created_at', 'id_versao_origem', 'status_id', 'stereotype']
+  label: string[] = ['Nome', 'Descrição',   'Estereótipo']
+  cols: string[] =  ['name', 'description', 'stereotype']
 
-  displayedColumns: string[] = ['name',  'description', 'author_id', 'created_at', 'id_versao_origem', 'status_id', 'stereotype']
+  displayedColumns: string[] = ['name',  'description', 'stereotype']
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

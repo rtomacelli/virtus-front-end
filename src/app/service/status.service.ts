@@ -4,13 +4,9 @@ import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalConstants } from '../global-constants';
 export class Status {
-name?: string;
-description?: string;
-author_id?: number;
-created_at?: string;
-id_versao_origem?: number;
-status_id?: number;
-stereotype?: string;
+  name?: string;
+  description?: string;
+  stereotype?: string;
 }
 
 @Injectable({

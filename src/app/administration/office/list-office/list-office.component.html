@@ -1,3 +1,5 @@
+<br />
+<h1 class="text-center">Listagem de Escritórios</h1>
 <table mat-table [dataSource]="Offices" matSort>
   <ng-container *ngFor="let col of cols; let i = index" [matColumnDef]="col">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ label[i] }} </th>
