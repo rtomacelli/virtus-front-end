@@ -24,7 +24,6 @@ import { AddUserComponent } from './administration/user/add-user/add-user.compon
 import { EditUserComponent } from './administration/user/edit-user/edit-user.component';
 import { ListUserComponent } from './administration/user/list-user/list-user.component';
 import { DeleteUserComponent } from './administration/user/delete-user/delete-user.component';
-import { SearchUserComponent } from './administration/user/search-user/search-user.component';
 
 import { DashboardWorkflowComponent } from './administration/workflow/dashboard-workflow/dashboard-workflow.component';
 import { AddWorkflowComponent } from './administration/workflow/add-workflow/add-workflow.component';
@@ -59,6 +58,11 @@ import { DeleteActionComponent } from './administration/action/delete-action/del
 import { HomeComponent } from './administration/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { ActiveUserComponent } from './login/active-user/active-user.component';
+import { AddRoleComponent } from './administration/role/add-role/add-role.component';
+import { DashboardRoleComponent } from './administration/role/dashboard-role/dashboard-role.component';
+import { DeleteRoleComponent } from './administration/role/delete-role/delete-role.component';
+import { EditRoleComponent } from './administration/role/edit-role/edit-role.component';
+import { ListRoleComponent } from './administration/role/list-role/list-role.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +93,6 @@ import { ActiveUserComponent } from './login/active-user/active-user.component';
     ListActionComponent,
     DeleteActionComponent,
     HomeComponent,
-    SearchUserComponent,
     DashboardOfficeComponent,
     DashboardUserComponent,
     DashboardWorkflowComponent,
@@ -97,6 +100,11 @@ import { ActiveUserComponent } from './login/active-user/active-user.component';
     DashboardFeatureComponent,
     DashboardActionComponent,
     ActiveUserComponent,
+    AddRoleComponent,
+    DashboardRoleComponent,
+    DeleteRoleComponent,
+    EditRoleComponent,
+    ListRoleComponent,
 
   ],
   entryComponents: [

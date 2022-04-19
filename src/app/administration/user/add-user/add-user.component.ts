@@ -27,7 +27,7 @@ export class AddUserComponent implements OnInit {
 //  INSERT INTO `virtus`.`user` (`id`, `author_id`, `criado_em`, `email`, `mobile`, `name`, `password`, `role_id`, `username`) VALUES ('14', '3', '2022-03-16 21:10:15.048000', 'taiguara@gmail.com.br', '+5561999999999', 'Taiguara', '12345678', '5', 'taiguara');
 //  INSERT INTO `virtus`.`user` (`id`, `author_id`, `criado_em`, `email`, `mobile`, `name`, `password`, `role_id`, `username`) VALUES ('15', '3', '2022-03-16 21:10:15.048000', 'zeramalho@gmail.com.br', '+5561999999999', 'Zé Ramalho', '12345678', '5', 'ze_ramalho');
 
-  @Input() userObj = { username: '', password: '', email: '', mobile: '', name: '', role_id: 0, author_id: 0, criado_em: ''}
+  @Input() userObj = { username: '', password: '', email: '', mobile: '', name: '', role_id: 0}
 
   constructor(
     public userService: UserService, 
@@ -37,7 +37,6 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void { }
   
   addUser(data: any) {
-    this.userObj.criado_em = new Date().toISOString();
     this.userService.addUser(this.userObj).subscribe((data: {}) => {
       this.router.navigate(['/user/list'])
     })

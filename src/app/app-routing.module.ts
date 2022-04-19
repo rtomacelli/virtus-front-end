@@ -29,12 +29,16 @@ import { DashboardUserComponent } from './administration/user/dashboard-user/das
 import { AddUserComponent } from './administration/user/add-user/add-user.component';
 import { EditUserComponent } from './administration/user/edit-user/edit-user.component';
 import { ListUserComponent } from './administration/user/list-user/list-user.component';
-import { SearchUserComponent } from './administration/user/search-user/search-user.component';
 
 import { DashboardWorkflowComponent } from './administration/workflow/dashboard-workflow/dashboard-workflow.component';
 import { AddWorkflowComponent } from './administration/workflow/add-workflow/add-workflow.component';
 import { EditWorkflowComponent } from './administration/workflow/edit-workflow/edit-workflow.component';
 import { ListWorkflowComponent } from './administration/workflow/list-workflow/list-workflow.component';
+
+import { DashboardRoleComponent } from './administration/role/dashboard-role/dashboard-role.component';
+import { AddRoleComponent } from './administration/role/add-role/add-role.component';
+import { EditRoleComponent } from './administration/role/edit-role/edit-role.component';
+import { ListRoleComponent } from './administration/role/list-role/list-role.component';
 
 const routes: Routes = [
   
@@ -68,12 +72,16 @@ const routes: Routes = [
   { path: 'user/add', component: AddUserComponent },
   { path: 'user/edit/:id', component: EditUserComponent },
   { path: 'user/list', component: ListUserComponent },
-  { path: 'user/search', component: SearchUserComponent },
-
+  
   { path: 'workflow/dashboard', component: DashboardWorkflowComponent },
   { path: 'workflow/add', component: AddWorkflowComponent },
   { path: 'workflow/edit/:id', component: EditWorkflowComponent },
   { path: 'workflow/list', component: ListWorkflowComponent },
+
+  { path: 'role/dashboard', component: DashboardRoleComponent },
+  { path: 'role/add', component: AddRoleComponent },
+  { path: 'role/edit/:id', component: EditRoleComponent },
+  { path: 'role/list', component: ListRoleComponent },
 
 ];
 

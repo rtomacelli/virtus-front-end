@@ -42,6 +42,4 @@ export class ListOfficeComponent implements OnInit {
       });
     }
   }
-
-
 }
