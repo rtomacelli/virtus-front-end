@@ -16,25 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `hibernate_sequence`
+-- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `hibernate_sequence`;
+DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `hibernate_sequence` (
-  `next_val` bigint DEFAULT NULL
+CREATE TABLE `role` (
+  `id` int NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `hibernate_sequence`
+-- Dumping data for table `role`
 --
 
-LOCK TABLES `hibernate_sequence` WRITE;
-/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (34);
-/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'Descrição 1','Admin'),(2,'Descrição 2','Chefe'),(3,'Descrição 3','Supervisor'),(4,'Descrição 4','Auditor'),(5,'Descrição 5','Visualizador'),(6,'Descrição 6','Desenvolvedor');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -46,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-04  8:39:34
+-- Dump completed on 2022-04-19 21:58:00

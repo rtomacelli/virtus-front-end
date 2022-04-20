@@ -24,15 +24,11 @@ DROP TABLE IF EXISTS `action`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `action` (
   `id` int NOT NULL,
-  `author_id` int NOT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `destination_status_id` int NOT NULL,
-  `id_versao_origem` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `origin_status_id` int NOT NULL,
   `other_than` bit(1) NOT NULL,
-  `status_id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -43,7 +39,7 @@ CREATE TABLE `action` (
 
 LOCK TABLES `action` WRITE;
 /*!40000 ALTER TABLE `action` DISABLE KEYS */;
-INSERT INTO `action` VALUES (25,4,'2022-03-29 20:25:15.764000','Processar algo',2,0,'Ação 1',1,_binary '\0',1);
+INSERT INTO `action` VALUES (1,'Processar algo',2,'Ação 1',1,_binary '\0'),(2,'Criar algo',2,'Ação 2',1,_binary '\0'),(3,'Editar algo',2,'Ação 3',1,_binary '\0');
 /*!40000 ALTER TABLE `action` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-04  8:39:33
+-- Dump completed on 2022-04-19 21:58:00

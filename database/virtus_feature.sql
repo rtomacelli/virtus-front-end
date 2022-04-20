@@ -24,13 +24,9 @@ DROP TABLE IF EXISTS `feature`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `feature` (
   `id` int NOT NULL,
-  `author_id` int NOT NULL,
   `code` varchar(255) DEFAULT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `id_versao_origem` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `status_id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +37,7 @@ CREATE TABLE `feature` (
 
 LOCK TABLES `feature` WRITE;
 /*!40000 ALTER TABLE `feature` DISABLE KEYS */;
-INSERT INTO `feature` VALUES (27,2,'2531','2022-03-29 20:35:40.948000','Descrição criar contrato',1,'Criar contrato',1),(28,3,'5233','2022-03-29 20:45:55.445000','Descrição cancelar contrato',1,'Cancelar contrato',1),(29,4,'2199','2022-03-29 20:53:41.427000','Descrição validar contrato',1,'Validar contrato',2),(30,5,'1508','2022-03-29 20:57:51.930000','Descrição revisar contrato',1,'Revisar contrato',2),(31,6,'8677','2022-03-29 21:33:38.613000','Descrição arquivar contrato',1,'Arquivar contrato',2);
+INSERT INTO `feature` VALUES (1,'2531','Descrição criar contrato','Criar contrato'),(2,'5233','Descrição cancelar contrato','Cancelar contrato'),(3,'2199','Descrição validar contrato','Validar contrato'),(4,'1508','Descrição revisar contrato','Revisar contrato'),(5,'8677','Descrição arquivar contrato','Arquivar contrato');
 /*!40000 ALTER TABLE `feature` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-04  8:39:34
+-- Dump completed on 2022-04-19 21:58:00

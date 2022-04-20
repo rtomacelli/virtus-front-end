@@ -24,12 +24,8 @@ DROP TABLE IF EXISTS `status`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `status` (
   `id` int NOT NULL,
-  `author_id` int NOT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `id_versao_origem` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `status_id` int NOT NULL,
   `stereotype` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -41,7 +37,7 @@ CREATE TABLE `status` (
 
 LOCK TABLES `status` WRITE;
 /*!40000 ALTER TABLE `status` DISABLE KEYS */;
-INSERT INTO `status` VALUES (11,2,'2022-03-04 14:17:28.325285','Status aberto',1,'Aberto',1,'Estereotipo'),(33,3,'2022-03-30 20:08:06.444000','Status em Processamento',1,'Processamento',2,'Estereotipo'),(34,4,'2022-03-30 20:08:06.444000','Status Finalizado',1,'Finalizado',2,'Estereotipo');
+INSERT INTO `status` VALUES (1,'Status aberto','Aberto','Estereotipo'),(2,'Status em Processamento','Processamento','Estereotipo'),(3,'Status Finalizado','Finalizado','Estereotipo');
 /*!40000 ALTER TABLE `status` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-04  8:39:34
+-- Dump completed on 2022-04-19 21:58:00

@@ -25,13 +25,9 @@ DROP TABLE IF EXISTS `office`;
 CREATE TABLE `office` (
   `id` int NOT NULL,
   `abreviatura` varchar(255) DEFAULT NULL,
-  `author_id` int NOT NULL,
   `chefe_id` int NOT NULL,
-  `criado_em` datetime(6) DEFAULT NULL,
   `descricao` varchar(255) DEFAULT NULL,
-  `id_versao_origem` int NOT NULL,
   `nome` varchar(255) DEFAULT NULL,
-  `status_id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -42,7 +38,7 @@ CREATE TABLE `office` (
 
 LOCK TABLES `office` WRITE;
 /*!40000 ALTER TABLE `office` DISABLE KEYS */;
-INSERT INTO `office` VALUES (22,'BSB',3,3,'2022-03-25 19:54:27.265000','Escritório de Brasilia',1,'Brasilia',1),(23,'RJ',4,4,'2022-03-25 20:03:38.441000','Escritório do Rio de Janeiro',1,'Rio de Janeiro',1),(24,'SP',4,5,'2022-03-25 20:03:38.441000','Escritório de São Paulo',1,'São Paulo',1),(25,'PB',4,6,'2022-03-25 20:03:38.441000','Escritório de João Pessoa',1,'João Pessoa',1);
+INSERT INTO `office` VALUES (1,'BSB',3,'Escritório de Brasilia','Brasilia'),(2,'RJ',4,'Escritório do Rio de Janeiro','Rio de Janeiro'),(3,'SP',5,'Escritório de São Paulo','São Paulo'),(4,'PB',6,'Escritório de João Pessoa','João Pessoa');
 /*!40000 ALTER TABLE `office` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-04  8:39:33
+-- Dump completed on 2022-04-19 21:58:00

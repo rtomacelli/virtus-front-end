@@ -24,15 +24,11 @@ DROP TABLE IF EXISTS `workflow`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `workflow` (
   `id` int NOT NULL,
-  `author_id` int NOT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `end_at` datetime(6) DEFAULT NULL,
   `entity_type` varchar(255) DEFAULT NULL,
-  `id_versao_origem` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `start_at` datetime(6) DEFAULT NULL,
-  `status_id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -43,7 +39,7 @@ CREATE TABLE `workflow` (
 
 LOCK TABLES `workflow` WRITE;
 /*!40000 ALTER TABLE `workflow` DISABLE KEYS */;
-INSERT INTO `workflow` VALUES (24,3,'2022-03-29 20:24:55.025000','Descrição Workflow 1','2022-11-29 20:24:55.025000','1',1,'Workflow 1','2022-11-29 20:24:55.025000',1),(25,4,'2022-03-29 20:24:55.025000','Descrição Workflow 2','2022-08-29 20:24:55.025000','1',1,'Workflow 2','2022-11-29 20:24:55.025000',1);
+INSERT INTO `workflow` VALUES (1,'Descrição Workflow 1','2022-11-29 20:24:55.025000','1','Workflow 1','2022-01-29 20:24:55.025000'),(2,'Descrição Workflow 2','2022-11-29 20:24:55.025000','1','Workflow 2','2022-01-29 20:24:55.025000');
 /*!40000 ALTER TABLE `workflow` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-04  8:39:34
+-- Dump completed on 2022-04-19 21:58:00

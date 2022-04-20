@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { UserService } from "../../../service/user.service";
+import {MatTableModule} from '@angular/material/table'
 
 @Component({
   selector: 'app-list-user',
