@@ -1,18 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
 import { OfficeService } from "../../../service/office.service";
 
 @Component({
   selector: 'app-list-office',
   templateUrl: './list-office.component.html',
-  styleUrls: ['./list-office.component.css'],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({ height: '0px', minHeight: '0' })),
-      state('expanded', style({ height: '*' })),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ]
+  styleUrls: ['./list-office.component.css']
 })
 
 
@@ -44,20 +36,5 @@ export class ListOfficeComponent implements OnInit {
         this.fetchOffice();
       });
     }
-  }
-
-
-  toggleRow(element: { expanded: boolean; }) {
-    // Uncommnet to open only single row at once
-     this.Offices.forEach(row => {
-       row.expanded = false;
-     })
-    element.expanded = !element.expanded
-  }
-
-  manageAllRows(flag: boolean) {
-    this.Offices.forEach(row => {
-      row.expanded = flag;
-    })
   }
 }

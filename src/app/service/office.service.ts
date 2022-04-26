@@ -15,6 +15,7 @@ export class Office {
   abreviatura?: string;
   descricao?: string;
   chefe_id?: number;
+  expanded: boolean;
   users?:User[];  
 }
 
