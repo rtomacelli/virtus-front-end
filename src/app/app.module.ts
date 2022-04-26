@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,17 +8,13 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Sidenav } from './sidenav/sidenav';
-import { MatTableModule } from '@angular/material/table'
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
-import { MatSliderModule } from '@angular/material/slider';
-import { MaterialModule } from '../material.module';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+import { PrevicMaterialModule } from '../material.module';
+
+import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import {MAT_DATE_LOCALE} from '@angular/material/core';
+
 
 import { DashboardUserComponent } from './administration/user/dashboard-user/dashboard-user.component';
 import { AddUserComponent } from './administration/user/add-user/add-user.component';
@@ -63,48 +60,77 @@ import { DashboardRoleComponent } from './administration/role/dashboard-role/das
 import { DeleteRoleComponent } from './administration/role/delete-role/delete-role.component';
 import { EditRoleComponent } from './administration/role/edit-role/edit-role.component';
 import { ListRoleComponent } from './administration/role/list-role/list-role.component';
+import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.component';
+import { ModalUsuariosComponent } from './administration/office/modal-usuarios/modal-usuarios.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+
+    // Barra de navegação
     Sidenav,
+
+    // Default do sistema
+    AppComponent,
+
+    // Página principal
+    HomeComponent,
+
+    // Usuário ativo no sistema
+    ActiveUserComponent,
+
+    //Usuários
+    DashboardUserComponent,
     AddUserComponent,
     EditUserComponent,
     ListUserComponent,
     DeleteUserComponent,
+    ModalUsuariosComponent,
+
+    // Workflow
+    DashboardWorkflowComponent,
     DeleteWorkflowComponent,
     AddWorkflowComponent,
     EditWorkflowComponent,
     ListWorkflowComponent,
+
+    // Status
+    DashboardStatusComponent,
     AddStatusComponent,
     DeleteStatusComponent,
     EditStatusComponent,
     ListStatusComponent,
+
+    // Escritórios
+    DashboardOfficeComponent,
     ListOfficeComponent,
     AddOfficeComponent,
     EditOfficeComponent,
     DeleteOfficeComponent,
+
+    // Funcionalidades
+    DashboardFeatureComponent,
     AddFeatureComponent,
     EditFeatureComponent,
     ListFeatureComponent,
     DeleteFeatureComponent,
+
+    // Ações
+    DashboardActionComponent,
     AddActionComponent,
     EditActionComponent,
     ListActionComponent,
     DeleteActionComponent,
-    HomeComponent,
-    DashboardOfficeComponent,
-    DashboardUserComponent,
-    DashboardWorkflowComponent,
-    DashboardStatusComponent,
-    DashboardFeatureComponent,
-    DashboardActionComponent,
-    ActiveUserComponent,
-    AddRoleComponent,
+
+    // Papéis
     DashboardRoleComponent,
+    AddRoleComponent,
     DeleteRoleComponent,
     EditRoleComponent,
     ListRoleComponent,
+
+    // Sandbox
+    ExpandedRowComponent,
+    
 
   ],
   entryComponents: [
@@ -116,23 +142,17 @@ import { ListRoleComponent } from './administration/role/list-role/list-role.com
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatNativeDateModule,
-    MaterialModule,
-    MatSliderModule,
+    PrevicMaterialModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    MatTableModule,
     MatFormFieldModule,
     MatCardModule
   ],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false} }
   ]
 })
+
 export class AppModule { }

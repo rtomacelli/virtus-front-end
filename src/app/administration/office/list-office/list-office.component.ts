@@ -1,15 +1,22 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { OfficeService } from "../../../service/office.service";
 
 @Component({
   selector: 'app-list-office',
   templateUrl: './list-office.component.html',
-  styleUrls: ['./list-office.component.css']
+  styleUrls: ['./list-office.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ]
 })
-export class ListOfficeComponent implements OnInit {
 
+
+export class ListOfficeComponent implements OnInit {
 
   // Autor', 'Criado em', 'Versao origem', 'Status não devem aparecer na listagem.
 
@@ -17,15 +24,11 @@ export class ListOfficeComponent implements OnInit {
   cols:   string[] = ['nome', 'abreviatura', 'descricao', 'chefe_id']
   displayedColumns: string[] = ['nome', 'abreviatura', 'descricao', 'chefe_id'];
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
   Offices: any = [];
 
   constructor(public officeService: OfficeService) {}
   
   ngOnInit() {
-    this.Offices.paginator = this.paginator;
-    this.Offices.sort = this.sort;
     this.fetchOffice();
   }
 
@@ -41,5 +44,20 @@ export class ListOfficeComponent implements OnInit {
         this.fetchOffice();
       });
     }
+  }
+
+
+  toggleRow(element: { expanded: boolean; }) {
+    // Uncommnet to open only single row at once
+     this.Offices.forEach(row => {
+       row.expanded = false;
+     })
+    element.expanded = !element.expanded
+  }
+
+  manageAllRows(flag: boolean) {
+    this.Offices.forEach(row => {
+      row.expanded = flag;
+    })
   }
 }

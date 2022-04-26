@@ -40,6 +40,8 @@ import { AddRoleComponent } from './administration/role/add-role/add-role.compon
 import { EditRoleComponent } from './administration/role/edit-role/edit-role.component';
 import { ListRoleComponent } from './administration/role/list-role/list-role.component';
 
+import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.component';
+
 const routes: Routes = [
   
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -82,6 +84,8 @@ const routes: Routes = [
   { path: 'role/add', component: AddRoleComponent },
   { path: 'role/edit/:id', component: EditRoleComponent },
   { path: 'role/list', component: ListRoleComponent },
+
+  { path: 'expandedrow', component: ExpandedRowComponent },
 
 ];
 

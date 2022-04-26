@@ -99,4 +99,4 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
   ]
 })
-export class MaterialModule {}
+export class PrevicMaterialModule {}
