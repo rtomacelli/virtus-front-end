@@ -18,27 +18,6 @@ export class User {
   providedIn: 'root'
 })
 
-/**
-SELECT action.id,
-    action.author_id,
-    usuario.name,
-    action.created_at,
-    action.description,
-    action.destination_status_id,
-    action.id_versao_origem,
-    action.name,
-    action.origin_status_id,
-    action.other_than,
-    action.status_id,
-    status.name
-FROM virtus.action
-      INNER JOIN
-  virtus.user AS usuario ON virtus.action.author_id = usuario.author_id
-      INNER JOIN
-  virtus.status AS status ON virtus.action.status_id = status.status_id
-*/
-
-
 export class UserService {
 
   endpoint = GlobalConstants.apiURL;

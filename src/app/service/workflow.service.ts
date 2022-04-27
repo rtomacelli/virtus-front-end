@@ -14,26 +14,6 @@ export class Workflow {
   providedIn: 'root'
 })
 
-/**
-SELECT workflow.id,
-    workflow.author_id,
-    usuario.name,
-    workflow.created_at,
-    workflow.description,
-    workflow.end_at,
-    workflow.entity_type,
-    workflow.id_versao_origem,
-    workflow.name,
-    workflow.start_at,
-    workflow.status_id,
-    status.name
-FROM virtus.workflow AS workflow
-      INNER JOIN
-  virtus.status AS status ON virtus.workflow.status_id = status.status_id
-      INNER JOIN
-  virtus.user AS usuario ON virtus.workflow.author_id = usuario.author_id
- */
-
 export class WorkflowService {
 
   endpoint = GlobalConstants.apiURL;

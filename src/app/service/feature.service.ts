@@ -10,25 +10,6 @@ export class Feature {
   description?: string;
 }
 
-/*
-SELECT feature.id,
-    feature.author_id,
-    usuario.name as autor,
-    feature.code,
-    feature.created_at,
-    feature.description,
-    feature.id_versao_origem,
-    feature.name,
-    feature.status_id,
-    status.name
-FROM virtus.feature
-INNER JOIN
-    virtus.user AS usuario ON virtus.feature.author_id = usuario.author_id
-      INNER JOIN
-  virtus.status AS status ON virtus.feature.status_id = status.status_id
-*/
-
-
 @Injectable({
   providedIn: 'root'
 })

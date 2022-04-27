@@ -15,6 +15,8 @@ import { PrevicMaterialModule } from '../material.module';
 import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import {MAT_DATE_LOCALE} from '@angular/material/core';
 
+import { HomeComponent } from './administration/home/home.component';
+import { ActiveUserComponent } from './login/active-user/active-user.component';
 
 import { DashboardUserComponent } from './administration/user/dashboard-user/dashboard-user.component';
 import { AddUserComponent } from './administration/user/add-user/add-user.component';
@@ -52,14 +54,12 @@ import { EditActionComponent } from './administration/action/edit-action/edit-ac
 import { ListActionComponent } from './administration/action/list-action/list-action.component';
 import { DeleteActionComponent } from './administration/action/delete-action/delete-action.component';
 
-import { HomeComponent } from './administration/home/home.component';
-import { MatCardModule } from '@angular/material/card';
-import { ActiveUserComponent } from './login/active-user/active-user.component';
 import { AddRoleComponent } from './administration/role/add-role/add-role.component';
 import { DashboardRoleComponent } from './administration/role/dashboard-role/dashboard-role.component';
 import { DeleteRoleComponent } from './administration/role/delete-role/delete-role.component';
 import { EditRoleComponent } from './administration/role/edit-role/edit-role.component';
 import { ListRoleComponent } from './administration/role/list-role/list-role.component';
+
 import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.component';
 import { ModalUsuariosComponent } from './administration/office/modal-usuarios/modal-usuarios.component';
 
@@ -129,23 +129,17 @@ import { ModalUsuariosComponent } from './administration/office/modal-usuarios/m
     ListRoleComponent,
 
     // Sandbox
-    ExpandedRowComponent,
-    
+    ExpandedRowComponent    
 
   ],
   entryComponents: [
 
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    AppRoutingModule,
     PrevicMaterialModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatCardModule
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

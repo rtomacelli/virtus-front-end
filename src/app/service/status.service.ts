@@ -13,22 +13,6 @@ export class Status {
   providedIn: 'root'
 })
 
-/*
-SELECT 
-    status.id,
-    usuario.name,
-    status.created_at,
-    status.description,
-    status.id_versao_origem,
-    status.name,
-    status.status_id,
-    status.stereotype
-FROM
-    virtus.status
-        INNER JOIN
-    virtus.user AS usuario ON virtus.status.author_id = usuario.author_id
-*/
-
 export class StatusService {
 
   endpoint = GlobalConstants.apiURL;
