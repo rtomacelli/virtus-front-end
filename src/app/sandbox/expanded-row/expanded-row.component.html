@@ -42,3 +42,24 @@
     </table>
   
   </div>
+
+  <br/>
+  <br/>
+  <table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let group of data">
+           <td>{{group.id}}</td>
+           <td>{{group.name}}</td>
+           <td>{{group.email}}</td>
+           <td>{{group.username}}</td>
+       </tr>
+    </tbody>
+  </table>

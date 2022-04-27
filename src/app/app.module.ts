@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { Sidenav } from './sidenav/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { DataTablesModule } from 'angular-datatables';
+
 import { PrevicMaterialModule } from '../material.module';
 
 import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
@@ -140,6 +142,8 @@ import { ModalUsuariosComponent } from './administration/office/modal-usuarios/m
     AppRoutingModule,
     PrevicMaterialModule,
     BrowserAnimationsModule,
+    DataTablesModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
