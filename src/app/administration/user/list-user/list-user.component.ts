@@ -1,44 +1,62 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
-import { UserService } from "../../../service/user.service";
+import { HttpClient } from '@angular/common/http';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.css']
+  styleUrls: ['./list-user.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
+    ]),
+  ],
 })
 
   export class ListUserComponent implements OnInit {
 
-    label:  string[] = ['Username',  'Email', 'Telefone', 'Nome', 'Papel',]
-    cols:   string[] = ['username',  'email', 'mobile',   'name', 'role_id',]
-    displayedColumns: string[] = ['username',  'email', 'mobile', 'name', 'role_id']
     Users: any = [];
 
     constructor(public userService: UserService) {}
-
+    
     ngOnInit() {
-      this.fetchUsers()
+      this.fetchUsers();
     }
-
-    ngAfterViewInit() {}
 
     fetchUsers() {
       return this.userService.getUsers().subscribe((res: {}) => {
         this.Users = res;
-      });
+        setTimeout(() => {
+          $('#datatableexample').DataTable({
+            pagingType: 'full_numbers',
+            pageLength: 5,
+            processing: true,
+            lengthMenu: [5, 10, 25],
+          });
+        }, 1);
+      },
+      (error) => console.error(error)
+      );
     }
-
+  
     delete(id: any) {
-      if (window.confirm('Deseja realmente excluir este usuário?')) {
+      if (window.confirm('Deseja realmente excluir este escritório?')) {
         this.userService.deleteUser(id).subscribe((res) => {
           this.fetchUsers();
         });
       }
-    }
-
-    onChangePage(pe:PageEvent) {
-
     }
 
   }

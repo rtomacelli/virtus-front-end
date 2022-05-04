@@ -1,45 +1,60 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { WorkflowService } from "../../../service/workflow.service";
+import { HttpClient } from '@angular/common/http';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
+import { WorkflowService } from 'src/app/service/workflow.service';
 
 @Component({
   selector: 'app-list-workflow',
   templateUrl: './list-workflow.component.html',
-  styleUrls: ['./list-workflow.component.css']
+  styleUrls: ['./list-workflow.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
+    ]),
+  ],
 })
 export class ListWorkflowComponent implements OnInit {
 
-  label:  string[] = ['#',  'Nome', 'Descrição',   'Entidade',    'Inicio',	  'Término'];
-  cols:   string[] = ['id', 'name', 'description', 'entity_type', 'start_at',	'end_at'];
-  displayedColumns: string[] = ['id', 'name', 'description', 'entity_type', 'start_at',	'end_at'];
-
-  
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  Workflows: any = [];
+  workflows: any = [];
 
   constructor(public workflowService: WorkflowService) {}
   
   ngOnInit() {
-    this.Workflows.paginator = this.paginator;
-    this.Workflows.sort = this.sort;
-    this.fetchWorkflow();
+    this.fetchWorkflows();
   }
 
-  fetchWorkflow() {
+  fetchWorkflows() {
     return this.workflowService.getWorkflow().subscribe((res: {}) => {
-      this.Workflows = res;
-    });
+      this.workflows = res;
+      setTimeout(() => {
+        $('#datatableexample').DataTable({
+          pagingType: 'full_numbers',
+          pageLength: 5,
+          processing: true,
+          lengthMenu: [5, 10, 25],
+        });
+      }, 1);
+    },
+    (error) => console.error(error)
+    );
   }
 
   delete(id: any) {
-    if (window.confirm('Deseja realmente excluir este usuário?')) {
+    if (window.confirm('Deseja realmente excluir este escritório?')) {
       this.workflowService.deleteWorkflow(id).subscribe((res) => {
-        this.fetchWorkflow();
+        this.fetchWorkflows();
       });
     }
   }
-
 }

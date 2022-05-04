@@ -1,43 +1,56 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { FeatureService } from "../../../service/feature.service";
+import { HttpClient } from '@angular/common/http';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
+import { FeatureService } from 'src/app/service/feature.service';
 
 @Component({
   selector: 'app-list-feature',
   templateUrl: './list-feature.component.html',
-  styleUrls: ['./list-feature.component.css']
+  styleUrls: ['./list-feature.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
+    ]),
+  ],
 })
 export class ListFeatureComponent implements OnInit {
 
-  label:  string[] = ['Nome', 'Código', 'Descricao']
-  cols:   string[] = ['name', 'code',   'description'];
-  displayedColumns: string[] = ['name', 'code', 'description'];
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
   Features: any = [];
 
   constructor(public featureService: FeatureService) {}
   
   ngOnInit() {
-    this.Features.paginator = this.paginator;
-    this.Features.sort = this.sort;
-    this.fetchFeature();
+    this.fetchFeatures();
   }
 
-  fetchFeature() {
+  fetchFeatures() {
     return this.featureService.getFeature().subscribe((res: {}) => {
       this.Features = res;
-    });
+      setTimeout(() => {
+        $('#datatableexample').DataTable({
+          pagingType: 'full_numbers',
+          pageLength: 5,
+          processing: true,
+          lengthMenu: [5, 10, 25],
+        });
+      }, 1);
+    },
+    (error) => console.error(error)
+    );
   }
 
   delete(id: any) {
-    if (window.confirm('Deseja realmente excluir este usuário?')) {
+    if (window.confirm('Deseja realmente excluir este escritório?')) {
       this.featureService.deleteFeature(id).subscribe((res) => {
-        this.fetchFeature();
+        this.fetchFeatures();
       });
     }
   }
+
 
 }

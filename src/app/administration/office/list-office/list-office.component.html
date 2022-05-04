@@ -1,10 +1,20 @@
-<br />
-<h1 class="text-center">Listagem de Escritórios</h1>
-<table mat-table [dataSource]="Offices" matSort>
-  <ng-container *ngFor="let col of cols; let i = index" [matColumnDef]="col">
-      <th mat-header-cell *matHeaderCellDef> {{ label[i] }} </th>
-      <td mat-cell *matCellDef="let element"> {{ element[col] }} </td>
-  </ng-container>
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+<table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Abreviatura</th>
+      <th>Descrição</th>
+      <th>Papel</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr *ngFor="let office of Offices">
+         <td>{{office.id}}</td>
+         <td>{{office.nome}}</td>
+         <td>{{office.abreviatura}}</td>
+         <td>{{office.descricao}}</td>
+         <td>{{office.chefe_id}}</td>
+     </tr>
+  </tbody>
 </table>
