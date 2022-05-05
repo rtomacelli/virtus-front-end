@@ -137,8 +137,6 @@ export class ExpandedRowComponent {
 }
 
 // https://l-lin.github.io/angular-datatables/#/welcome
-
-
 //https://therichpost.com/angular-13-datatable-with-dynamic-data-working-example/
 //https://l-lin.github.io/angular-datatables/#/basic/angular-way
 //https://l-lin.github.io/angular-datatables/#/basic/server-side-angular-way
