@@ -1,37 +1,48 @@
-<div class="container" style="max-width: 500px;">
-    <h1 class="mb-3 mt-5 text-center">Adicionar usuário</h1>
+<div class="container" style="max-width: 50%;">
 
-    <div class="form-group">
-      <label for="username">Usuário</label>
-      <input type="text" [(ngModel)]="userObj.username" class="form-control" placeholder="Digite o nome do usuário" >
-    </div>
+  <h1 class="mb-3 mt-5 text-center">Adicionar usuário</h1>
+  <form class="example-form">
 
-    <div class="form-group">
-      <label for="password">Senha</label>
-      <input type="password" [(ngModel)]="userObj.password" class="form-control" placeholder="Digite a senha">
-    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome do usuário" [(ngModel)]="usuario.name" name="name" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="text" [(ngModel)]="userObj.email" class="form-control" placeholder="Informe o email">
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Informe o email" [(ngModel)]="usuario.email" name="email" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="mobile">Telefone</label>
-      <input type="text" [(ngModel)]="userObj.mobile" class="form-control" placeholder="Informe o telefone para contato">
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Telefone</mat-label>
+      <input matInput placeholder="(XX) 99999-9999." [(ngModel)]="usuario.mobile" name="email" type="tel">
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="name">Nome</label>
-      <input type="text" [(ngModel)]="userObj.name" class="form-control" placeholder="Informe o nome do usuário">
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Usuário</mat-label>
+      <input matInput placeholder="Digite o nome do usuário." [(ngModel)]="usuario.username" name="email" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="role_id">Papel</label>
-      <input type="text" [(ngModel)]="userObj.role_id" class="form-control" placeholder="Papel">
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input matInput placeholder="Digite a senha." [(ngModel)]="usuario.password" name="password" type="password">
+    </mat-form-field>
 
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="addUser(userObj)">Enviar</button>
-    </div>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Papel</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let role of Roles" [value]="role.id">{{role.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <section>
+      <button mat-button color="primary" (click)="addUser(usuario)">Enviar</button>
+    </section>
+    
+  </form>
 </div>
