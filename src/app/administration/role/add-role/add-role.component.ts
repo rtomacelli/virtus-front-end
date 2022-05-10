@@ -9,7 +9,7 @@ import { RoleService } from "../../../service/role.service";
 })
 export class AddRoleComponent implements OnInit {
 
-  @Input() roleObj = {id: '', name: ''}
+  @Input() roleObj = {id: '', name: '', description: ''}
 
   constructor(
     public roleService: RoleService, 

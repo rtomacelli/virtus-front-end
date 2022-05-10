@@ -1,22 +1,29 @@
-<div class="container" style="max-width: 500px;">
+<div class="container" style="max-width: 50%;">
+
+  <form class="example-form">
+
     <h1 class="mb-3 mt-5 text-center">Adicionar Status</h1>
 
-    <div class="form-group">
-      <label for="name">Status</label>
-      <input type="text" [(ngModel)]="statusObj.name" class="form-control" placeholder="Digite o nome do usuário">
-    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Status</mat-label>
+      <input matInput placeholder="Informe o status" [(ngModel)]="statusObj.name" name="name" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="description">Descrição</label>
-      <input type="text" [(ngModel)]="statusObj.description" class="form-control" placeholder="Digite a Descrição">
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput placeholder="Informe a Descrição"  [(ngModel)]="statusObj.description"></textarea>
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="stereotype">Estereótipo</label>
-      <input type="text" [(ngModel)]="statusObj.stereotype" class="form-control" placeholder="Estereótipo">
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Estereótipo</mat-label>
+      <input matInput placeholder="Informe o Estereótipo" [(ngModel)]="statusObj.stereotype" name="stereotype" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="addStatus(statusObj)">Enviar</button>
-    </div>
+    <section>
+      <button mat-button color="primary" (click)="addStatus(statusObj)">Enviar</button>
+    </section>
+    
+  </form>
 </div>

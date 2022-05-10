@@ -1,28 +1,67 @@
-<div class="container" style="max-width: 500px;">
+<div class="container" style="max-width: 50%;">
+
+  <form class="example-form">
+
     <h1 class="mb-3 mt-5 text-center">Adicionar Escritório</h1>
 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Escritório</mat-label>
+      <input matInput placeholder="Informe o nome da escritório" [(ngModel)]="officeObj.nome" name="nome" type="text">
+    </mat-form-field>
+
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Abreviatura</mat-label>
+      <input matInput placeholder="Informe a abreviatura" [(ngModel)]="officeObj.abreviatura" name="abreviatura" type="text">
+    </mat-form-field>
+
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput placeholder="Informe a descrição"  [(ngModel)]="officeObj.descricao" name="descricao"></textarea>
+    </mat-form-field>
+
+    <br />
     <div class="form-group">
-      <label for="nome">Escritório</label>
-      <input type="text" [(ngModel)]="officeObj.nome" class="form-control" placeholder="Digite o nome do Escritório">
+      <button mat-button (click)="openDialogChefe()">Adicionar chefe</button>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput placeholder="Chefe" [(ngModel)]="officeObj.chefe_id" name="chefe" type="text">
+      </mat-form-field>
     </div>
 
-    <div class="form-group">
-      <label for="abreviatura">Abreviatura</label>
-      <input type="text" [(ngModel)]="officeObj.abreviatura" class="form-control" placeholder="Digite a abreviatura">
-    </div>
+    <br />
+    <button mat-raised-button (click)="openDialogUsuarios()">Adicionar usuário</button>
+    <br /><br />
 
-    <div class="form-group">
-      <label for="descricao">Descricao</label>
-      <textarea [(ngModel)]="officeObj.descricao" matInput class="form-control" placeholder="Informe a descrição"></textarea>
-    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <div class="form-group">
-      <label for="chefe_id">Chefe</label>
-      <input type="text" [(ngModel)]="officeObj.chefe_id" class="form-control" placeholder="Informe o Chefe">
-    </div>
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
-    <div class="form-group">
-      <button mat-button (click)="openDialog()">Adicionar usuário</button>
-      <button class="btn btn-success btn-lg btn-block" (click)="addOffice(officeObj)">Enviar</button>
-    </div>
+    <section>
+      <button mat-button color="primary" (click)="addOffice(officeObj)">Enviar</button>
+    </section>
+    
+  </form>
 </div>

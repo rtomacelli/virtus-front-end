@@ -1,12 +1,23 @@
-<div class="container" style="max-width: 500px;">
-    <h1 class="mb-3 mt-5 text-center">Adicionar Papel</h1>
+<div class="container" style="max-width: 50%;">
 
-    <div class="form-group">
-      <label for="nome">Nome</label>
-      <input type="text" [(ngModel)]="roleObj.name" class="form-control" placeholder="Digite o nome do papel">
-    </div>
+  <form class="example-form">
 
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="addRole(roleObj)">Enviar</button>
-    </div>
+    <h1 class="mb-3 mt-5 text-center">Adicionar papel</h1>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome do usuário" [(ngModel)]="roleObj.name" name="name" type="text">
+    </mat-form-field>
+
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput placeholder="Informe a descrição"  [(ngModel)]="roleObj.description"></textarea>
+    </mat-form-field>
+
+    <section>
+      <button mat-button color="primary" (click)="addRole(roleObj)">Enviar</button>
+    </section>
+    
+  </form>
 </div>

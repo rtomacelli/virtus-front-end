@@ -1,22 +1,29 @@
-<div class="container" style="max-width: 500px;">
-    <h1 class="mb-3 mt-5 text-center">Adicionar Funcionalidade</h1>
+<div class="container" style="max-width: 50%;">
 
-    <div class="form-group">
-      <label for="name">name</label>
-      <input type="text" [(ngModel)]="featureObj.name" class="form-control" placeholder="Digite o nome">
-    </div>
+  <form class="example-form">
 
-    <div class="form-group">
-      <label for="code">Código</label>
-      <input type="text" [(ngModel)]="featureObj.code" class="form-control" placeholder="Digite o código">
-    </div>
+    <h1 class="mb-3 mt-5 text-center">Adicionar funcionalidade</h1>
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome da funcionalidade" [(ngModel)]="featureObj.name" name="name" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="description">Descrição</label>
-      <textarea [(ngModel)]="featureObj.description" matInput class="form-control" placeholder="Informe a descrição"></textarea>
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Código</mat-label>
+      <input matInput placeholder="Informe o código" [(ngModel)]="featureObj.code" name="code" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="addFeature(featureObj)">Enviar</button>
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput placeholder="Informe a descrição"  [(ngModel)]="featureObj.description"></textarea>
+    </mat-form-field>
+
+    <section>
+      <button mat-button color="primary" (click)="addFeature(featureObj)">Enviar</button>
+    </section>
+    
+  </form>
 </div>

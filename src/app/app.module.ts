@@ -63,7 +63,6 @@ import { EditRoleComponent } from './administration/role/edit-role/edit-role.com
 import { ListRoleComponent } from './administration/role/list-role/list-role.component';
 
 import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.component';
-import { ModalUsuariosComponent } from './administration/office/modal-usuarios/modal-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +85,6 @@ import { ModalUsuariosComponent } from './administration/office/modal-usuarios/m
     EditUserComponent,
     ListUserComponent,
     DeleteUserComponent,
-    ModalUsuariosComponent,
 
     // Workflow
     DashboardWorkflowComponent,

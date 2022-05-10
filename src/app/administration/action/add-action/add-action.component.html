@@ -1,35 +1,39 @@
-<div class="container" style="max-width: 500px;">
-    <h1 class="mb-3 mt-5 text-center">Adicionar ação</h1>
+<div class="container" style="max-width: 50%;">
 
-    <div class="form-group">
-      <label for="name">Nome</label>
-      <input type="text" [(ngModel)]="actionObj.name" class="form-control" placeholder="Digite o nome da ação">
-    </div>
+  <h1 class="mb-3 mt-5 text-center">Adicionar ação</h1>
+  <form class="example-form" id="actionForm">
 
-    <div class="form-group">
-      <label for="password">Origem Status</label>
-      <input type="text" [(ngModel)]="actionObj.origin_status_id" class="form-control" placeholder="Digite o origin_status_id">
-    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome da Ação" [(ngModel)]="actionObj.name" name="name" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-      <label for="destination_status_id">Destinação Status</label>
-      <input type="text" [(ngModel)]="actionObj.destination_status_id" class="form-control" placeholder="Informe o destination_status_id">
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Origem Status</mat-label>
+      <input matInput placeholder="Informe o identificador de status de origem" [(ngModel)]="actionObj.origin_status_id" name="origin_status_id" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-        <section class="example-section">
-          <mat-checkbox class="example-margin"  [(ngModel)]="actionObj.other_than">Outro</mat-checkbox>
-        </section>
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Destinação Status</mat-label>
+      <input matInput placeholder="Informe o identificador de status de destino" [(ngModel)]="actionObj.destination_status_id" name="destination_status_id" type="text">
+    </mat-form-field>
 
-    <div class="form-group">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Descrição</mat-label>
-          <textarea [(ngModel)]="actionObj.description" matInput placeholder="Informe a Descrição"></textarea>
-        </mat-form-field>
-    </div>
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput placeholder="Informe a descrição"  [(ngModel)]="actionObj.description"></textarea>
+    </mat-form-field>
 
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="addAction(actionObj)">Enviar</button>
-    </div>
+    <br />
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="actionObj.other_than" [ngModelOptions]="{standalone: true}" name="outro">Outro</mat-checkbox>
+    </section>
+
+    <section>
+      <button mat-button color="primary" (click)="addAction(actionObj)">Enviar</button>
+    </section>
+    
+  </form>
 </div>
