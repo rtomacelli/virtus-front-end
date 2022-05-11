@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms'
-import { ReactiveFormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Sidenav } from './sidenav/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 import { DataTablesModule } from 'angular-datatables';
 
@@ -141,7 +140,9 @@ import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.compon
     PrevicMaterialModule,
     BrowserAnimationsModule,
     DataTablesModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMatSelectSearchModule,
+    MatFormFieldModule
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
