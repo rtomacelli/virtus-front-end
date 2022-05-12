@@ -23,12 +23,12 @@
     <br />
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Descrição</mat-label>
-      <textarea matInput placeholder="Informe a descrição"  [(ngModel)]="actionObj.description"></textarea>
+      <textarea matInput placeholder="Informe a descrição" [(ngModel)]="actionObj.description" name="descricao"></textarea>
     </mat-form-field>
 
     <br />
     <section class="example-section">
-      <mat-checkbox class="example-margin" [(ngModel)]="actionObj.other_than" [ngModelOptions]="{standalone: true}" name="outro">Outro</mat-checkbox>
+      <mat-checkbox class="example-margin" [(ngModel)]="actionObj.other_than" name="outro">Outro</mat-checkbox>
     </section>
 
     <section>

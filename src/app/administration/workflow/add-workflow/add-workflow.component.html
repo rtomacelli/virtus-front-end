@@ -24,14 +24,16 @@
     <br />
     <mat-form-field appearance="fill">
       <mat-label>Inicia em:</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="workflowObj.start_at">
+      <input matInput [matDatepicker]="picker" [(ngModel)]="workflowObj.end_at" name="start_at">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
     <mat-form-field appearance="fill">
       <mat-label>Finaliza em:</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="workflowObj.end_at">
+      <input matInput [matDatepicker]="picker" [(ngModel)]="workflowObj.start_at" name="end_at">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>

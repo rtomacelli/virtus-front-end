@@ -1,122 +1,117 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { OfficeService } from "../../../service/office.service";
-import { ListUserComponent } from '../../user/list-user/list-user.component';
+import { OfficeService } from '../../../service/office.service';
 
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { UserService } from 'src/app/service/user.service';
 
 export interface Usuarios {
   id: number;
   name: string;
+  username?: string;
+  password?: string;
+  email?: string;
+  mobile?: string;
+  role_id?: number;
 }
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-];
 
 @Component({
   selector: 'app-add-office',
   templateUrl: './add-office.component.html',
-  styleUrls: ['./add-office.component.css']
+  styleUrls: ['./add-office.component.css'],
 })
 
 export class AddOfficeComponent implements OnInit {
-  
-  @Input() officeObj = { nome: '', abreviatura: '', descricao: '', chefe_id: 0}
-  
-  users: Usuarios[] = [
-    {id: 1, name: 'Joao'},
-    {id: 2, name: 'Jose'},
-  ];
+  myControl = new FormControl();
+  options: string[] = ['Ricardo', 'Roberto', 'Ronaldo'];
+  filteredOptions: Observable<string[]>;
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  @Input() officeObj = {
+    nome: '',
+    abreviatura: '',
+    descricao: '',
+    chefe_id: 0,
+  };
+
+  ngOnInit() {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value))
+    );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.options.filter((option) =>
+      option.toLowerCase().includes(filterValue)
+    );
+  }
 
   constructor(
     public dialog: MatDialog,
-    public officeService: OfficeService, 
+    public officeService: OfficeService,
     public router: Router
-  ) { }
+  ) {}
 
   openDialogUsuarios() {
-
     const dialogConfig = new MatDialogConfig();
-          dialogConfig.disableClose = true;
-          dialogConfig.id = "modal-component";
-          dialogConfig.height = "50%",
-          dialogConfig.width = "50%"
+    dialogConfig.disableClose = true;
+    dialogConfig.id = 'modal-component';
+    (dialogConfig.height = '50%'), (dialogConfig.width = '50%');
 
-    const dialogRef = this.dialog.open( ModalUsuariosComponent , dialogConfig);
+    const dialogRef = this.dialog.open(ModalUsuariosComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
-
   }
 
-  openDialogChefe() {
-
-    const dialogConfig = new MatDialogConfig();
-          dialogConfig.disableClose = true;
-          dialogConfig.id = "modal-component";
-          dialogConfig.height = "50%",
-          dialogConfig.width = "50%"
-
-    const dialogRef = this.dialog.open(  ModalchefeComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-
-  }
-
-  ngOnInit(): void { }
-  
   addOffice(data: any) {
     this.officeService.addOffice(this.officeObj).subscribe((data: {}) => {
-      this.router.navigate(['/office/list'])
-  })
+      this.router.navigate(['/office/list']);
+    });
   }
 }
+
+
 
 @Component({
   selector: 'app-modal-usuarios',
   templateUrl: './modal-usuarios.component.html',
 })
+
 export class ModalUsuariosComponent {
+
+  Users: any = [];
+
   constructor(
-    public dialogRef: MatDialogRef<ModalUsuariosComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Usuarios,
-  ) {}
+    public userService: UserService,
+    public dialogRef: MatDialogRef<ModalUsuariosComponent>
+    ) {}
+  
+  ngOnInit() {
+    this.fetchUsers();
+  }
 
   onCloseUsuarios(): void {
     this.dialogRef.close();
   }
-}
-
-@Component({
-  selector: 'app-modal-chefe',
-  templateUrl: './modal-chefe.component.html',
-})
-export class ModalchefeComponent {
-  constructor(
-    public dialogRef: MatDialogRef<ModalchefeComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Usuarios,
-  ) {}
-
-  onCloseChefe(): void {
-    this.dialogRef.close();
+  fetchUsers() {
+    return this.userService.getUsers().subscribe((res: {}) => {
+      this.Users = res;
+      setTimeout(() => {
+        $('#datatableexample').DataTable({
+          pagingType: 'full_numbers',
+          pageLength: 5,
+          processing: true,
+          lengthMenu: [5, 10, 25],
+        });
+      }, 1);
+    },
+    (error) => console.error(error)
+    );
   }
 }
-
-//https://material.angular.io/components/dialog/overview

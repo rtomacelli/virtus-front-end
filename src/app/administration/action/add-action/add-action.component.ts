@@ -9,7 +9,7 @@ import { ActionService } from "../../../service/action.service";
 })
 export class AddActionComponent implements OnInit {
 
-  @Input() actionObj = { name: '', origin_status_id: 0, destination_status_id: 0, other_than: false, description: false, author_id: 0, created_at: '', id_versao_origem: 0, status_id: 0 }
+  @Input() actionObj = { name: '', origin_status_id: 0, destination_status_id: 0, other_than: false, description: '', author_id: 0, created_at: '', id_versao_origem: 0, status_id: 0 }
 
   constructor(
     public actionService: ActionService, 
