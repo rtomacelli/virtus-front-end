@@ -10,8 +10,7 @@
     </tr>
   </thead>
   <tbody>
-
-   <tr *ngFor="let user of Users">
+   <tr *ngFor="let user of Usuarios">
          <td>{{user.id}}</td>
          <td>{{user.name}}</td>
          <td>{{user.username}}</td>
@@ -21,5 +20,5 @@
   </tbody>
 </table>
 <div mat-dialog-actions>
-  <button mat-button (click)="onCloseUsuarios()">No Thanks</button>
+  <button mat-button (click)="onCloseUsuarios()">Fechar</button>
 </div>

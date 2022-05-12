@@ -1,5 +1,6 @@
 
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -137,6 +138,7 @@ import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.compon
   ],
   imports: [
     FormsModule,
+    BrowserModule,
     AppRoutingModule,
     PrevicMaterialModule,
     BrowserAnimationsModule,

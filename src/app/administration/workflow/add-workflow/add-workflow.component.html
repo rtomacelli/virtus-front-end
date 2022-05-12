@@ -12,30 +12,30 @@
     <br />
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Descrição</mat-label>
-      <textarea matInput placeholder="Informe a descrição"  [(ngModel)]="workflowObj.description"></textarea>
+      <textarea matInput placeholder="Informe a descrição"  [(ngModel)]="workflowObj.description" name="description"></textarea>
     </mat-form-field>
 
     <br />
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Tipo de entidade</mat-label>
-      <input matInput placeholder="Tipo de entidade" [(ngModel)]="workflowObj.entity_type" name="name" type="text">
+      <input matInput placeholder="Tipo de entidade" [(ngModel)]="workflowObj.entity_type" name="entity_type" type="text">
     </mat-form-field>
 
     <br />
     <mat-form-field appearance="fill">
       <mat-label>Inicia em:</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="workflowObj.end_at" name="start_at">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <input matInput [matDatepicker]="datepickerstart" [(ngModel)]="workflowObj.start_at" name="start_at">
+      <mat-datepicker-toggle matSuffix [for]="datepickerstart"></mat-datepicker-toggle>
+      <mat-datepicker #datepickerstart></mat-datepicker>
     </mat-form-field>
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <mat-form-field appearance="fill">
       <mat-label>Finaliza em:</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="workflowObj.start_at" name="end_at">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <input matInput [matDatepicker]="datepickerend" [(ngModel)]="workflowObj.end_at" name="end_at">
+      <mat-datepicker-toggle matSuffix [for]="datepickerend"></mat-datepicker-toggle>
+      <mat-datepicker #datepickerend></mat-datepicker>
     </mat-form-field>
 
     <section>
