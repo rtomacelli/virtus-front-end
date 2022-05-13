@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalConstants } from '../global-constants';
 
 export class User {
-
   username?: string;
   password?: string;
   email?: string;

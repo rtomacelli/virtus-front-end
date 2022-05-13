@@ -1,8 +1,8 @@
 <div class="container" style="max-width: 50%;">
 
-  <h1 class="mb-3 mt-5 text-center">Adicionar ação</h1>
   <form class="example-form" id="actionForm">
 
+    <h1 class="mb-3 mt-5 text-center">Adicionar ação</h1>
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Nome</mat-label>
       <input matInput placeholder="Informe o nome da Ação" [(ngModel)]="actionObj.name" name="name" type="text">
@@ -31,8 +31,9 @@
       <mat-checkbox class="example-margin" [(ngModel)]="actionObj.other_than" name="outro">Outro</mat-checkbox>
     </section>
 
+    <br />
     <section>
-      <button mat-button color="primary" (click)="addAction(actionObj)">Enviar</button>
+      <button class="btn btn-primary" (click)="addAction(actionObj)" style="float: right;">Enviar</button>
     </section>
     
   </form>

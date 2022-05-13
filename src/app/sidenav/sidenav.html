@@ -9,10 +9,10 @@
     <span class="toolbar-spacer"></span>
     <a routerLink="home" mat-list-item><button mat-icon-button aria-label="Home" placeholder="Início"><mat-icon>home</mat-icon></button></a>
     <a routerLink="activeUser" mat-list-item><button mat-icon-button aria-label="User" placeholder="Usuário"><mat-icon>person</mat-icon></button></a>
-    <a routerLink="home" mat-list-item><button mat-icon-button aria-label="Options" placeholder="Configurações"><mat-icon>settings</mat-icon></button></a>
+    <a routerLink="/expandedrow" mat-list-item><button mat-icon-button aria-label="Sandbox" placeholder="Configurações"><mat-icon>settings</mat-icon></button></a>
     <a routerLink="home" mat-list-item><button mat-icon-button aria-label="Help" placeholder="Ajuda"><mat-icon>help</mat-icon></button></a>
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="More" placeholder="Mais"><mat-icon>more_vert</mat-icon></button>
-    <mat-menu #menu="matMenu">
+      <mat-menu #menu="matMenu">
       <button mat-menu-item>
         <mat-icon>people</mat-icon>
         <span>Sobre nós</span>
@@ -40,8 +40,6 @@
             <a routerLink="/status/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>view_list</mat-icon>Status</a>
             <a routerLink="/action/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>outbound</mat-icon>Ações</a>
             <a routerLink="/workflow/dashboard" mat-list-item><mat-icon color="primary" mat-list-icon>schema</mat-icon>Workflow</a>
-            <a routerLink="/expandedrow" mat-list-item><mat-icon color="primary" mat-list-icon>schema</mat-icon>expandedrow</a>
-            
           </mat-nav-list>
 
           <hr />
