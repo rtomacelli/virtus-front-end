@@ -1,6 +1,6 @@
 <div class="container" style="max-width: 50%;">
 
-  <form class="example-form">
+  <form class="example-form" name="formEscritorio">
 
     <h1 class="mb-3 mt-5 text-center">Adicionar Escritório</h1>
 
@@ -31,27 +31,8 @@
       </mat-autocomplete>
     </mat-form-field>
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container>
-    
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
     <br />
     <section>
-      <button class="btn btn-primary"  (click)="openDialogUsuarios()" style="float: left;">Adicionar usuário</button>
       <button class="btn btn-primary"  (click)="addOffice(officeObj)" style="float: right;">Enviar</button>
     </section>
     
