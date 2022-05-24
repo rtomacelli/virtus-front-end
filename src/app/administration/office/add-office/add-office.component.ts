@@ -11,6 +11,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { User, UserService } from 'src/app/service/user.service';
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 export interface Chefes {
   id: number;
@@ -23,9 +24,8 @@ export interface Chefes {
   styleUrls: ['./add-office.component.css'],
 })
 export class AddOfficeComponent implements OnInit {
+ 
   chefes: any[];
-  Users: any = [];
-  Users2: any = [];
 
   displayedColumns: string[] = ['id', 'name'];
   options: Chefes[] = [
@@ -55,8 +55,6 @@ export class AddOfficeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.Users2 = this.userService.getUsers();
-
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map((value) => (typeof value === 'string' ? value : value.name)),
