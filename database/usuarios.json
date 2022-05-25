@@ -1,0 +1,106 @@
+[
+	{
+		"id" : 1,
+		"email" : "gilbertogil@gmail.com.br",
+		"nome" : "Gilberto Gil",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "gilberto_gil"
+	},
+	{
+		"id" : 2,
+		"email" : "caetanoveloso@gmail.com.br",
+		"nome" : "Caetano Veloso",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "caetano_veloso"
+	},
+	{
+		"id" : 3,
+		"email" : "chicobuarque@gmail.com.br",
+		"nome" : "Chico Buarque",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "chico_buarque"
+	},
+	{
+		"id" : 4,
+		"email" : "jorgebenjor@gmail.com.br",
+		"nome" : "Jorge BenJor",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "jorge_ben_jor"
+	},
+	{
+		"id" : 5,
+		"email" : "tomjobim@gmail.com.br",
+		"nome" : "Tom Jobim",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "tom_jobim"
+	},
+	{
+		"id" : 6,
+		"email" : "miltonnascimento@gmail.com.br",
+		"nome" : "Milton Nascimento",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "milton_nascimento"
+	},
+	{
+		"id" : 7,
+		"email" : "elisregina@gmail.com.br",
+		"nome" : "Elis Regina",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "elis_regina"
+	},
+	{
+		"id" : 8,
+		"email" : "joaogilberto@gmail.com.br",
+		"nome" : "João Gilberto",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "joao_gilberto"
+	},
+	{
+		"id" : 9,
+		"email" : "toquinho@gmail.com.br",
+		"nome" : "Toquinho",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "toquinho"
+	},
+	{
+		"id" : 10,
+		"email" : "viniciusmoraes@gmail.com.br",
+		"nome" : "Vinícius de Moraes",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "vinícius_de_moraes"
+	},
+	{
+		"id" : 11,
+		"email" : "robertocarlos@gmail.com.br",
+		"nome" : "Roberto Carlos",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "roberto_carlos"
+	},
+	{
+		"id" : 12,
+		"email" : "naraleao@gmail.com.br",
+		"nome" : "Nara Leão",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "nara_leao"
+	},
+	{
+		"id" : 13,
+		"email" : "djavan@gmail.com.br",
+		"nome" : "Djavan",
+		"password" : "12345678",
+		"telefone" : "+5561999999999",
+		"username" : "djavan"
+	}
+]

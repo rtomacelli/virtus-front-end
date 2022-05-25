@@ -1,0 +1,26 @@
+[
+	{
+		"id" : 1,
+		"descricao" : "Processar algo",
+		"destination_status_id" : 2,
+		"nome" : "Ação 1",
+		"origin_status_id" : 1,
+		"other_than" : "0"
+	},
+	{
+		"id" : 2,
+		"descricao" : "Criar algo",
+		"destination_status_id" : 2,
+		"nome" : "Ação 2",
+		"origin_status_id" : 1,
+		"other_than" : "0"
+	},
+	{
+		"id" : 3,
+		"descricao" : "Editar algo",
+		"destination_status_id" : 2,
+		"nome" : "Ação 3",
+		"origin_status_id" : 1,
+		"other_than" : "0"
+	}
+]

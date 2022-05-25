@@ -1,0 +1,20 @@
+[
+	{
+		"id" : 1,
+		"descricao" : "Status aberto",
+		"estereotipo" : "Aberto",
+		"nome" : "Estereotipo"
+	},
+	{
+		"id" : 2,
+		"descricao" : "Status em Processamento",
+		"estereotipo" : "Processamento",
+		"nome" : "Estereotipo"
+	},
+	{
+		"id" : 3,
+		"descricao" : "Status Finalizado",
+		"estereotipo" : "Finalizado",
+		"nome" : "Estereotipo"
+	}
+]
