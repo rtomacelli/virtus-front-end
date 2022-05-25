@@ -1,0 +1,32 @@
+[
+	{
+		"id" : 1,
+		"descricao" : "Descrição 1",
+		"nome" : "Admin"
+	},
+	{
+		"id" : 2,
+		"descricao" : "Descrição 2",
+		"nome" : "Chefe"
+	},
+	{
+		"id" : 3,
+		"descricao" : "Descrição 3",
+		"nome" : "Supervisor"
+	},
+	{
+		"id" : 4,
+		"descricao" : "Descrição 4",
+		"nome" : "Auditor"
+	},
+	{
+		"id" : 5,
+		"descricao" : "Descrição 5",
+		"nome" : "Visualizador"
+	},
+	{
+		"id" : 6,
+		"descricao" : "Descrição 6",
+		"nome" : "Desenvolvedor"
+	}
+]
