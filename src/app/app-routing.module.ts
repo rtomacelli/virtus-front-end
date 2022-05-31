@@ -35,10 +35,10 @@ import { AddWorkflowComponent } from './administration/workflow/add-workflow/add
 import { EditWorkflowComponent } from './administration/workflow/edit-workflow/edit-workflow.component';
 import { ListWorkflowComponent } from './administration/workflow/list-workflow/list-workflow.component';
 
-import { DashboardRoleComponent } from './administration/role/dashboard-role/dashboard-role.component';
-import { AddRoleComponent } from './administration/role/add-role/add-role.component';
-import { EditRoleComponent } from './administration/role/edit-role/edit-role.component';
-import { ListRoleComponent } from './administration/role/list-role/list-role.component';
+import { DashboardPerfilComponent } from './administration/perfil/dashboard-perfil/dashboard-perfil.component';
+import { AddPerfilComponent } from './administration/perfil/add-perfil/add-perfil.component';
+import { EditPerfilComponent } from './administration/perfil/edit-perfil/edit-perfil.component';
+import { ListPerfilComponent } from './administration/perfil/list-perfil/list-perfil.component';
 
 import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.component';
 
@@ -80,10 +80,10 @@ const routes: Routes = [
   { path: 'workflow/edit/:id', component: EditWorkflowComponent },
   { path: 'workflow/list', component: ListWorkflowComponent },
 
-  { path: 'role/dashboard', component: DashboardRoleComponent },
-  { path: 'role/add', component: AddRoleComponent },
-  { path: 'role/edit/:id', component: EditRoleComponent },
-  { path: 'role/list', component: ListRoleComponent },
+  { path: 'perfil/dashboard', component: DashboardPerfilComponent },
+  { path: 'perfil/add', component: AddPerfilComponent },
+  { path: 'perfil/edit/:id', component: EditPerfilComponent },
+  { path: 'perfil/list', component: ListPerfilComponent },
 
   { path: 'expandedrow', component: ExpandedRowComponent },
 

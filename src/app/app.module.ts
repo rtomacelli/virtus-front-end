@@ -57,11 +57,11 @@ import { EditActionComponent } from './administration/action/edit-action/edit-ac
 import { ListActionComponent } from './administration/action/list-action/list-action.component';
 import { DeleteActionComponent } from './administration/action/delete-action/delete-action.component';
 
-import { AddRoleComponent } from './administration/role/add-role/add-role.component';
-import { DashboardRoleComponent } from './administration/role/dashboard-role/dashboard-role.component';
-import { DeleteRoleComponent } from './administration/role/delete-role/delete-role.component';
-import { EditRoleComponent } from './administration/role/edit-role/edit-role.component';
-import { ListRoleComponent } from './administration/role/list-role/list-role.component';
+import { AddPerfilComponent } from './administration/perfil/add-perfil/add-perfil.component';
+import { DashboardPerfilComponent } from './administration/perfil/dashboard-perfil/dashboard-perfil.component';
+import { DeletePerfilComponent } from './administration/perfil/delete-perfil/delete-perfil.component';
+import { EditPerfilComponent } from './administration/perfil/edit-perfil/edit-perfil.component';
+import { ListPerfilComponent } from './administration/perfil/list-perfil/list-perfil.component';
 
 import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.component';
 
@@ -122,15 +122,15 @@ import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.compon
     ListActionComponent,
     DeleteActionComponent,
 
-    // Papéis
-    DashboardRoleComponent,
-    AddRoleComponent,
-    DeleteRoleComponent,
-    EditRoleComponent,
-    ListRoleComponent,
+    // Perfil
+    DashboardPerfilComponent,
+    AddPerfilComponent,
+    DeletePerfilComponent,
+    EditPerfilComponent,
+    ListPerfilComponent,
 
     // Sandbox
-    ExpandedRowComponent    
+    ExpandedRowComponent,
 
   ],
   entryComponents: [

@@ -20,7 +20,12 @@ export class Action {
 
 export class ActionService {
 
-  endpoint = GlobalConstants.apiURL;
+  /*/
+  endpoint = GlobalConstants.finalApiURL;
+	/*/
+  endpoint = GlobalConstants.testApiURL;
+  //*/
+  
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({
@@ -30,20 +35,20 @@ export class ActionService {
 
   getAction(): Observable<Action> {
     return this.httpClient
-      .get<Action>(this.endpoint + '/action')
+      .get<Action>(this.endpoint + '/acoes')
       .pipe(retry(1), catchError(this.processError));
   }
 
   getSingleAction(id: any): Observable<Action> {
     return this.httpClient
-      .get<Action>(this.endpoint + '/action/' + id)
+      .get<Action>(this.endpoint + '/acoes/' + id)
       .pipe(retry(1), catchError(this.processError));
   }
 
   addAction(data: any): Observable<Action> {
     return this.httpClient
       .post<Action>(
-        this.endpoint + '/action',
+        this.endpoint + '/acoes',
         JSON.stringify(data),
         this.httpHeader
       )
@@ -53,7 +58,7 @@ export class ActionService {
   updateAction(id: any, data: any): Observable<Action> {
     return this.httpClient
       .put<Action>(
-        this.endpoint + '/action/' + id,
+        this.endpoint + '/acoes/' + id,
         JSON.stringify(data),
         this.httpHeader
       )
@@ -62,7 +67,7 @@ export class ActionService {
 
   deleteAction(id: any) {
     return this.httpClient
-      .delete<Action>(this.endpoint + '/action/' + id, this.httpHeader)
+      .delete<Action>(this.endpoint + '/acoes/' + id, this.httpHeader)
       .pipe(retry(1), catchError(this.processError));
   }
 

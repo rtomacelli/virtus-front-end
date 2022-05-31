@@ -27,7 +27,7 @@ import { ActionService } from 'src/app/service/action.service';
 
 export class ListActionComponent implements OnInit {
 
-  Actions: any = [];
+  Acoes: any = [];
 
   constructor(public actionService: ActionService) {}
   
@@ -37,7 +37,7 @@ export class ListActionComponent implements OnInit {
 
   fetchActions() {
     return this.actionService.getAction().subscribe((res: {}) => {
-      this.Actions = res;
+      this.Acoes = res;
       setTimeout(() => {
         $('#datatableexample').DataTable({
           pagingType: 'full_numbers',
@@ -52,7 +52,7 @@ export class ListActionComponent implements OnInit {
   }
 
   delete(id: any) {
-    if (window.confirm('Deseja realmente excluir este escritório?')) {
+    if (window.confirm('Deseja realmente excluir esta Ação?')) {
       this.actionService.deleteAction(id).subscribe((res) => {
         this.fetchActions();
       });

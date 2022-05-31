@@ -15,7 +15,11 @@ export class Status {
 
 export class StatusService {
 
-  endpoint = GlobalConstants.apiURL;
+  /*/
+  endpoint = GlobalConstants.finalApiURL;
+	/*/
+  endpoint = GlobalConstants.testApiURL;
+  //*/
 
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
@@ -26,20 +30,20 @@ export class StatusService {
 
   getStatus(): Observable<Status> {
     return this.httpClient
-      .get<Status>(this.endpoint + '/status')
+      .get<Status>(this.endpoint + '/estados')
       .pipe(retry(1), catchError(this.processError));
   }
 
   getSingleStatus(id: any): Observable<Status> {
     return this.httpClient
-      .get<Status>(this.endpoint + '/status/' + id)
+      .get<Status>(this.endpoint + '/estados/' + id)
       .pipe(retry(1), catchError(this.processError));
   }
 
   addStatus(data: any): Observable<Status> {
     return this.httpClient
       .post<Status>(
-        this.endpoint + '/status',
+        this.endpoint + '/estados',
         JSON.stringify(data),
         this.httpHeader
       )
@@ -49,7 +53,7 @@ export class StatusService {
   updateStatus(id: any, data: any): Observable<Status> {
     return this.httpClient
       .put<Status>(
-        this.endpoint + '/status/' + id,
+        this.endpoint + '/estados/' + id,
         JSON.stringify(data),
         this.httpHeader
       )
@@ -58,7 +62,7 @@ export class StatusService {
 
   deleteStatus(id: any) {
     return this.httpClient
-      .delete<Status>(this.endpoint + '/status/' + id, this.httpHeader)
+      .delete<Status>(this.endpoint + '/estados/' + id, this.httpHeader)
       .pipe(retry(1), catchError(this.processError));
   }
 

@@ -6,7 +6,7 @@
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Nome</mat-label>
-      <input matInput placeholder="Informe o nome do usuário" [(ngModel)]="usuario.name" name="name" type="text">
+      <input matInput placeholder="Informe o nome do usuário" [(ngModel)]="usuario.nome" name="nome" type="text">
     </mat-form-field>
 
     <br />
@@ -18,13 +18,13 @@
     <br />
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Telefone</mat-label>
-      <input matInput placeholder="(XX) 99999-9999." [(ngModel)]="usuario.mobile" name="email" type="tel">
+      <input matInput placeholder="(XX) 99999-9999." [(ngModel)]="usuario.telefone" name="telefone" type="tel">
     </mat-form-field>
 
     <br />
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Usuário</mat-label>
-      <input matInput placeholder="Digite o nome do usuário." [(ngModel)]="usuario.username" name="email" type="text">
+      <input matInput placeholder="Digite o nome do usuário." [(ngModel)]="usuario.username" name="username" type="text">
     </mat-form-field>
 
     <br />
@@ -34,16 +34,16 @@
     </mat-form-field>
 
     <br />
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" *ngIf = "Papeis">
       <mat-label>Papel</mat-label>
       <mat-select>
-        <mat-option *ngFor="let role of Roles" [value]="role.id">{{role.name}}</mat-option>
+        <mat-option *ngFor="let papel of Papeis" [value]="papel.papel_id" name="papel">{{papel.nome}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <section>
-      <button class="btn btn-primary"  (click)="addUser(usuario)">Enviar</button>
+      <button class="btn btn-primary" (click)="addUser(usuario)">Enviar</button>
     </section>
-    
+
   </form>
 </div>

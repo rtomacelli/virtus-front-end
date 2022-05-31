@@ -10,7 +10,7 @@ import { UserService } from "../../../service/user.service";
 export class EditUserComponent implements OnInit {
 
   id = this.actRoute.snapshot.params['id'];
-  userObj: any = {};
+  usuarioForm: any = {};
 
   constructor(
     public userService: UserService,
@@ -20,7 +20,7 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getSingleUser(this.id).subscribe((res: {}) => {
-      this.userObj = res;
+      this.usuarioForm = res;
     });
   }
 

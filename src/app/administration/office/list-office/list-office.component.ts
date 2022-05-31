@@ -19,10 +19,12 @@ import { OfficeService } from 'src/app/service/office.service';
   ],
 })
 
-
 export class ListOfficeComponent implements OnInit {
 
   Offices: any = [];
+
+  columnsToDisplay       = ['id', 'nome', 'abreviatura', 'descricao', 'chefe_nome'];
+  columnsName            = ['id', 'Nome', 'Abreviatura', 'Descrição', 'Chefe'];
 
   constructor(public officeService: OfficeService) {}
   
@@ -52,6 +54,20 @@ export class ListOfficeComponent implements OnInit {
         this.fetchOffices();
       });
     }
+  }
+
+  toggleRow(element: { expanded: boolean }) {
+    // Uncommnet to open only single row at once
+    // ELEMENT_DATA.forEach(row => {
+    //   row.expanded = false;
+    // })
+    element.expanded = !element.expanded;
+  }
+
+  manageAllRows(flag: boolean) {
+    this.Offices.forEach((row) => {
+      row.expanded = flag;
+    });
   }
 
 }

@@ -8,9 +8,9 @@ export class User {
   username?: string;
   password?: string;
   email?: string;
-  mobile?: string;
-  name?: string;
-  role_id?: number;
+  telefone?: string;
+  nome?: string;
+  papel_id?: number;
 }
 
 @Injectable({
@@ -19,7 +19,12 @@ export class User {
 
 export class UserService {
 
-  endpoint = GlobalConstants.apiURL;
+  /*/
+  endpoint = GlobalConstants.finalApiURL;
+	/*/
+  endpoint = GlobalConstants.testApiURL;
+  //*/
+  
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({
@@ -29,20 +34,20 @@ export class UserService {
 
   getUsers(): Observable<User> {
     return this.httpClient
-      .get<User>(this.endpoint + '/user/list')
+      .get<User>(this.endpoint + '/usuarios/')
       .pipe(retry(1), catchError(this.processError));
   }
 
   getSingleUser(id: any): Observable<User> {
     return this.httpClient
-      .get<User>(this.endpoint + '/user/' + id)
+      .get<User>(this.endpoint + '/usuarios/' + id)
       .pipe(retry(1), catchError(this.processError));
   }
 
   addUser(data: any): Observable<User> {
     return this.httpClient
       .post<User>(
-        this.endpoint + '/user',
+        this.endpoint + '/usuarios',
         JSON.stringify(data),
         this.httpHeader
       )
@@ -52,7 +57,7 @@ export class UserService {
   updateUser(id: any, data: any): Observable<User> {
     return this.httpClient
       .put<User>(
-        this.endpoint + '/user/' + id,
+        this.endpoint + '/usuarios/' + id,
         JSON.stringify(data),
         this.httpHeader
       )
@@ -61,7 +66,7 @@ export class UserService {
 
   deleteUser(id: any) {
     return this.httpClient
-      .delete<User>(this.endpoint + '/user/' + id, this.httpHeader)
+      .delete<User>(this.endpoint + '/usuarios/' + id, this.httpHeader)
       .pipe(retry(1), catchError(this.processError));
   }
 

@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-list-user',
@@ -29,7 +30,9 @@ import { UserService } from 'src/app/service/user.service';
 
     Users: any = [];
 
-    constructor(public userService: UserService) {}
+    constructor(
+      public userService: UserService
+      ) {}
     
     ngOnInit() {
       this.fetchUsers();
@@ -51,9 +54,9 @@ import { UserService } from 'src/app/service/user.service';
       );
     }
   
-    delete(id: any) {
-      if (window.confirm('Deseja realmente excluir este escritório?')) {
-        this.userService.deleteUser(id).subscribe((res) => {
+    delete(usuario: any) {
+      if (window.confirm('Deseja realmente excluir o usuário ' + usuario.nome + ' ?')) {
+        this.userService.deleteUser(usuario.id).subscribe((res) => {
           this.fetchUsers();
         });
       }

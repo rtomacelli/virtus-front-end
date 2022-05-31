@@ -1,0 +1,23 @@
+<div class="container" style="max-width: 50%;">
+
+  <form class="example-form">
+
+    <h1 class="mb-3 mt-5 text-center">Adicionar papel</h1>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome do usuário" [(ngModel)]="papelObj.name" name="name" type="text">
+    </mat-form-field>
+
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput placeholder="Informe a descrição"  [(ngModel)]="papelObj.description"></textarea>
+    </mat-form-field>
+
+    <section>
+      <button class="btn btn-primary" (click)="addPapel(papelObj)">Enviar</button>
+    </section>
+    
+  </form>
+</div>

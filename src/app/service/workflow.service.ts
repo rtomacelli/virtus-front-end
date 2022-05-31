@@ -18,7 +18,12 @@ export class Workflow {
 
 export class WorkflowService {
 
-  endpoint = GlobalConstants.apiURL;
+  /*/
+  endpoint = GlobalConstants.finalApiURL;
+	/*/
+  endpoint = GlobalConstants.testApiURL;
+  //*/
+  
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({

@@ -16,7 +16,12 @@ export class Feature {
 
 export class FeatureService {
 
-  endpoint = GlobalConstants.apiURL;
+  /*/
+  endpoint = GlobalConstants.finalApiURL;
+	/*/
+  endpoint = GlobalConstants.testApiURL;
+  //*/
+
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({
@@ -26,20 +31,20 @@ export class FeatureService {
 
   getFeature(): Observable<Feature> {
     return this.httpClient
-      .get<Feature>(this.endpoint + '/feature/list')
+      .get<Feature>(this.endpoint + '/funcionalidades')
       .pipe(retry(1), catchError(this.processError));
   }
 
   getSingleFeature(id: any): Observable<Feature> {
     return this.httpClient
-      .get<Feature>(this.endpoint + '/feature/' + id)
+      .get<Feature>(this.endpoint + '/funcionalidades/' + id)
       .pipe(retry(1), catchError(this.processError));
   }
 
   addFeature(data: any): Observable<Feature> {
     return this.httpClient
       .post<Feature>(
-        this.endpoint + '/feature',
+        this.endpoint + '/funcionalidades',
         JSON.stringify(data),
         this.httpHeader
       )
@@ -49,7 +54,7 @@ export class FeatureService {
   updateFeature(id: any, data: any): Observable<Feature> {
     return this.httpClient
       .put<Feature>(
-        this.endpoint + '/feature/' + id,
+        this.endpoint + '/funcionalidades/' + id,
         JSON.stringify(data),
         this.httpHeader
       )
@@ -58,7 +63,7 @@ export class FeatureService {
 
   deleteFeature(id: any) {
     return this.httpClient
-      .delete<Feature>(this.endpoint + '/feature/' + id, this.httpHeader)
+      .delete<Feature>(this.endpoint + '/funcionalidades/' + id, this.httpHeader)
       .pipe(retry(1), catchError(this.processError));
   }
 

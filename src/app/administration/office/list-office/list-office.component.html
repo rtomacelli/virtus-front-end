@@ -1,20 +1,44 @@
-<table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Nome</th>
-      <th>Abreviatura</th>
-      <th>Descrição</th>
-      <th>Chefe</th>
+<div class="wrapper">
+
+  <h1>Escritorios</h1>
+  <!--
+  <button (click)="manageAllRows(true)">Expand All</button>
+  <button (click)="manageAllRows(false)">Collpase All</button>
+-->
+  <table mat-table [dataSource]="Offices" multiTemplateDataRows class="mat-elevation-z8">
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay, let i = index">
+      <th mat-header-cell *matHeaderCellDef> {{columnsName[i]}} </th>
+      <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    </ng-container>
+
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+        <div class="example-element-detail" [@detailExpand]="element.expanded ? 'expanded' : 'collapsed'">
+          <table class="detail-table">
+            <tr>
+              <th class="celulaDetalhesUsuarioEscritorio">Nome</th>
+              <th class="celulaDetalhesUsuarioEscritorio">Email</th>
+              <th class="celulaDetalhesUsuarioEscritorio">Telefone</th>
+              <th class="celulaDetalhesUsuarioEscritorio">&nbsp;</th>
+            </tr>
+            <ng-container *ngFor="let usuario of element.usuarios" >
+              <tr>
+              <td class="celulaDetalhesUsuarioEscritorio">{{ usuario.nome }}</td>
+              <td class="celulaDetalhesUsuarioEscritorio">{{ usuario.email }}</td>
+              <td class="celulaDetalhesUsuarioEscritorio">{{ usuario.telefone }}</td>
+              <td class="celulaDetalhesUsuarioEscritorio">&nbsp;</td>
+            </tr>
+            </ng-container>
+          </table>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row" [class.example-expanded-row]="element.expanded" (click)="toggleRow(element)">
     </tr>
-  </thead>
-  <tbody>
-   <tr *ngFor="let office of Offices">
-         <td>{{office.id}}</td>
-         <td>{{office.nome}}</td>
-         <td>{{office.abreviatura}}</td>
-         <td>{{office.descricao}}</td>
-         <td>{{office.chefe_id}}</td>
-     </tr>
-  </tbody>
-</table>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+
+</div>

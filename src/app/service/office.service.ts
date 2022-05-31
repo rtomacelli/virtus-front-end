@@ -25,7 +25,12 @@ export class Office {
 
 export class OfficeService  {
 
-  endpoint = GlobalConstants.apiURL;
+  /*/
+  endpoint = GlobalConstants.finalApiURL;
+	/*/
+  endpoint = GlobalConstants.testApiURL;
+  //*/
+  
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({
@@ -35,13 +40,13 @@ export class OfficeService  {
 
   getOffice(): Observable<Office> {
     return this.httpClient
-      .get<Office>(this.endpoint + '/office/list')
+      .get<Office>(this.endpoint + '/escritorios/')
       .pipe(retry(1), catchError(this.processError));
   }
 
   getSingleOffice(id: any): Observable<Office> {
     return this.httpClient
-      .get<Office>(this.endpoint + '/office/' + id)
+      .get<Office>(this.endpoint + '/escritorios/' + id)
       .pipe(retry(1), catchError(this.processError));
   }
 
@@ -58,7 +63,7 @@ export class OfficeService  {
   updateOffice(id: any, data: any): Observable<Office> {
     return this.httpClient
       .put<Office>(
-        this.endpoint + '/office/' + id,
+        this.endpoint + '/escritorios/' + id,
         JSON.stringify(data),
         this.httpHeader
       )
@@ -67,7 +72,7 @@ export class OfficeService  {
 
   deleteOffice(id: any) {
     return this.httpClient
-      .delete<Office>(this.endpoint + '/office/' + id, this.httpHeader)
+      .delete<Office>(this.endpoint + '/escritorios/' + id, this.httpHeader)
       .pipe(retry(1), catchError(this.processError));
   }
 

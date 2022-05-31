@@ -1,35 +1,37 @@
 <div class="container" style="max-width: 500px;">
     <h3 class="mb-3 mt-5 text-center">Editar usuário</h3>
+
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" [(ngModel)]="usuarioForm.nome" class="form-control"  name="Nome">
+    </mat-form-field>
+
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Usuário</mat-label>
+      <input matInput type="text" [(ngModel)]="usuarioForm.username" class="form-control"  name="Usuario">
+    </mat-form-field>
+  
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" [(ngModel)]="usuarioForm.email" class="form-control"  name="email">
+    </mat-form-field>
+
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Telefone</mat-label>
+      <input matInput type="text" [(ngModel)]="usuarioForm.telefone" class="form-control"  name="Telefone">
+    </mat-form-field>
+
+    <br />
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Papel</mat-label>
+      <input matInput type="text" [(ngModel)]="usuarioForm.papel" class="form-control" name="Papel">
+    </mat-form-field>
   
     <div class="form-group">
-        <input type="text" [(ngModel)]="userObj.username" class="form-control" placeholder="Username">
-    </div>
-
-    <div class="form-group">
-        <input type="password" [(ngModel)]="userObj.password" class="form-control" placeholder="Password">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="userObj.email" class="form-control" placeholder="Email">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="userObj.mobile" class="form-control" placeholder="Mobile">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="userObj.name" class="form-control" placeholder="Name">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="userObj.role_id" class="form-control" placeholder="Role id">
-    </div>
-
-    <div class="form-group">
-        <input type="text" [(ngModel)]="userObj.author_id" class="form-control" placeholder="Author id">
-    </div>
-  
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="updateUser(userObj.id, userObj)">Update User</button>
+      <button class="btn btn-success btn-lg btn-block" (click)="updateUser(usuarioForm.id, usuarioForm)">Update User</button>
     </div>  
 </div>

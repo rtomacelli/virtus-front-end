@@ -6,15 +6,20 @@
       <th>Username</th>
       <th>Telefone</th>
       <th>Papel</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
-   <tr *ngFor="let user of Users">
-         <td>{{user.id}}</td>
-         <td>{{user.name}}</td>
-         <td>{{user.username}}</td>
-         <td>{{user.mobile}}</td>
-         <td>{{user.role_id}}</td>
+   <tr *ngFor="let usuario of Users">
+         <td>{{usuario.id}}</td>
+         <td>{{usuario.nome}}</td>
+         <td>{{usuario.username}}</td>
+         <td>{{usuario.telefone}}</td>
+         <td>{{usuario.papel}}</td>
+         <td>
+            <mat-icon aria-hidden="false" aria-label="Excluir usuário"  (click)="delete(usuario)">delete</mat-icon> &nbsp;&nbsp;
+            <a routerLink="/user/edit/{{ usuario.id }}"><mat-icon aria-hidden="false" aria-label="Editar usuário">mode_edit</mat-icon></a>
+        </td>
      </tr>
   </tbody>
 </table>
