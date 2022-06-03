@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { Sidenav } from './sidenav/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { CdkTableModule } from '@angular/cdk/table';
 
 import { DataTablesModule } from 'angular-datatables';
 
@@ -139,13 +140,14 @@ import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.compon
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule,
-    PrevicMaterialModule,
-    BrowserAnimationsModule,
+    CdkTableModule,
     DataTablesModule,
     HttpClientModule,
-    NgxMatSelectSearchModule,
-    MatFormFieldModule
+    AppRoutingModule,
+    MatFormFieldModule,
+    PrevicMaterialModule,
+    BrowserAnimationsModule,
+    NgxMatSelectSearchModule
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
