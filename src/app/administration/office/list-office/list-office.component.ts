@@ -1,7 +1,16 @@
-import { HttpClient } from '@angular/common/http';
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-import { OfficeService } from 'src/app/service/office.service';
+import {Component, OnInit} from '@angular/core';
+import {User} from 'src/app/service/user.service';
+import {OfficeService} from 'src/app/service/office.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+
+export interface Offices {
+  id?:number;
+  nome?: string;
+  abreviatura?: string;
+  descricao?: string;
+  chefe_id?: number;
+  usuarios?:User[];  
+}
 
 @Component({
   selector: 'app-list-office',
@@ -9,27 +18,34 @@ import { OfficeService } from 'src/app/service/office.service';
   styleUrls: ['./list-office.component.css'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({ height: '0px', minHeight: '0' })),
-      state('expanded', style({ height: '*' })),
-      transition(
-        'expanded <=> collapsed',
-        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
-      ),
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
 })
 
+
 export class ListOfficeComponent implements OnInit {
 
-  Offices: any = [];
-
-  columnsToDisplay       = ['id', 'nome', 'abreviatura', 'descricao', 'chefe_nome'];
-  columnsName            = ['id', 'Nome', 'Abreviatura', 'Descrição', 'Chefe'];
+  Offices:                    any = [];
+  columnsToDisplay :          string[]  = ['id', 'nome', 'abreviatura', 'descricao', 'chefe_nome', 'acoes'];
+  columnsToDisplayWithExpand: string[]  = ['id', 'nome', 'abreviatura', 'descricao', 'chefe_nome', 'acoes'];
+  expandedElement: Offices | null;
 
   constructor(public officeService: OfficeService) {}
   
   ngOnInit() {
     this.fetchOffices();
+    this.Offices.action = 'editar';
+  }
+
+  delete(id: any) {
+    if (window.confirm('Deseja realmente excluir este escritório?')) {
+      this.officeService.deleteOffice(id).subscribe((res) => {
+        this.officeService.getOffice();
+      });
+    }
   }
 
   fetchOffices() {
@@ -46,28 +62,6 @@ export class ListOfficeComponent implements OnInit {
     },
     (error) => console.error(error)
     );
-  }
-
-  delete(id: any) {
-    if (window.confirm('Deseja realmente excluir este escritório?')) {
-      this.officeService.deleteOffice(id).subscribe((res) => {
-        this.fetchOffices();
-      });
-    }
-  }
-
-  toggleRow(element: { expanded: boolean }) {
-    // Uncommnet to open only single row at once
-    // ELEMENT_DATA.forEach(row => {
-    //   row.expanded = false;
-    // })
-    element.expanded = !element.expanded;
-  }
-
-  manageAllRows(flag: boolean) {
-    this.Offices.forEach((row) => {
-      row.expanded = flag;
-    });
   }
 
 }

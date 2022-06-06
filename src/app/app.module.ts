@@ -65,6 +65,8 @@ import { EditPerfilComponent } from './administration/perfil/edit-perfil/edit-pe
 import { ListPerfilComponent } from './administration/perfil/list-perfil/list-perfil.component';
 
 import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.component';
+import { ViewOfficeComponent } from './administration/office/view-office/view-office.component';
+import { LinkOfficeUserComponent } from './administration/office/link-office-user/link-office-user.component';
 
 @NgModule({
   declarations: [
@@ -132,6 +134,8 @@ import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.compon
 
     // Sandbox
     ExpandedRowComponent,
+      ViewOfficeComponent,
+      LinkOfficeUserComponent,
 
   ],
   entryComponents: [

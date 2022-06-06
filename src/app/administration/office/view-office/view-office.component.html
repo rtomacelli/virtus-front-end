@@ -1,0 +1,53 @@
+<div class="container" style="max-width: 500px;">
+  <h1 class="mb-3 mt-5 text-center">Detalhes do escritório de {{ officeObj.nome }}</h1>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <label for="nome">Nome</label>
+    <input matInput placeholder="Digite o nome do Escritório." [(ngModel)]="officeObj.nome" name="nome" type="text">
+  </mat-form-field>
+
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <label for="nome">Abreviatura</label>
+    <input matInput placeholder="Digite a abreviatura do Escritório." [(ngModel)]="officeObj.abreviatura"
+      name="abreviatura" type="text">
+  </mat-form-field>
+
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <label for="descricao">Descricao</label>
+    <input matInput placeholder="Informe a descrição do Escritório." [(ngModel)]="officeObj.descricao" name="descricao"
+      type="text">
+  </mat-form-field>
+
+
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <label for="chefe">Chefe</label>
+    <input matInput placeholder="Digite o nome do Escritório." [(ngModel)]="officeObj.chefe_nome" name="chefe" type="text">
+  </mat-form-field>
+
+  <h2 class="text-center">Funcionários</h2>
+  <table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of officeObj.usuarios">
+        <td>{{usuario.nome}}</td>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.telefone}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <mat-card-content>
+    <div style="text-align: center;">
+      <button class="btn btn-primary" routerLink="/office/list">Voltar</button>
+    </div>
+  </mat-card-content>
+</div>
+<br />

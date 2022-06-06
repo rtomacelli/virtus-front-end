@@ -4,11 +4,11 @@ var fs = require('fs');
 // TODO
 // prtfis = [ 'Administrador', 'Chefe', 'Supervisor', 'Auditor', 'Visualizador', 'Desenvolvedor' ];
 
-function generateUsers() {
+function generateUsers(size) {
 
     let users = []
   
-    for (let id=1; id <= 30; id++) {
+    for (let id=1; id <= size; id++) {
   
         let id = i;
         let email     = faker.internet.email();
@@ -26,11 +26,11 @@ function generateUsers() {
     return { "data": users }
   }
 
-  let dataObj = generateUsers();
+  let dataObj = generateUsers(10);
 
 var database = { usuarios: [], escritorios: [], perfis: [], funcionalidades: [], estados: [], acoes: [], workflows: [] };
 
- for (var i = 1; i <= 50; i++) {
+ for (var i = 1; i <= 10; i++) {
     database.usuarios.push({
         id: i,
         email:    faker.internet.email(),
@@ -53,7 +53,7 @@ for (var i = 1; i <= 4; i++) {
         chefe_id:    faker.random.number(10),
         chefe_nome:  faker.name.findName(),
         expanded:    false,
-        usuarios: faker.random.objectElement(generateUsers()),
+        usuarios:    faker.random.objectElement(generateUsers(4)),
     });
 }
 
@@ -77,8 +77,8 @@ for (var i = 1; i <= 4; i++) {
 for (var i = 1; i <= 4; i++) {
     database.estados.push({
         id: i,
-        name:          faker.name.findName(),
-        description:     faker.lorem.words(5),
+        name:         faker.name.findName(),
+        description:  faker.lorem.words(5),
         stereotype:   faker.lorem.words(5),
     });
 }
@@ -103,7 +103,6 @@ for (var i = 1; i <= 4; i++) {
         tipo_de_entidade: i,
         inicia_em:        faker.date.soon(1),
         finaliza_em:      faker.date.soon(10),
-
     });
 }
 

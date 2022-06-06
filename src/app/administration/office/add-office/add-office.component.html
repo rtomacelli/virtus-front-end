@@ -5,29 +5,30 @@
     <h1 class="mb-3 mt-5 text-center">Adicionar Escritório</h1>
 
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Escritório</mat-label>
-      <input matInput placeholder="Informe o nome da escritório" [(ngModel)]="officeObj.nome"  formControlName="name" name="nome" type="text">
+      <label for="nome">Escritório</label>
+      <input [(ngModel)]="officeObj.nome" type="text" name="nome" matInput placeholder="Digite o nome do Escritório.">
     </mat-form-field>
 
     <br />
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Abreviatura</mat-label>
-      <input matInput placeholder="Informe a abreviatura" [(ngModel)]="officeObj.abreviatura" name="abreviatura"
-        type="text">
+      <label for="abreviatura">Abreviatura</label>
+      <input [(ngModel)]="officeObj.nome" type="text" name="abreviatura" matInput placeholder="Digite  a abreviatura.">
     </mat-form-field>
 
     <br />
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Descrição</mat-label>
-      <textarea matInput placeholder="Informe a descrição" [(ngModel)]="officeObj.descricao" name="descricao"></textarea>
+      <label for="descricao">Descrição</label>
+        <textarea [(ngModel)]="officeObj.descricao" type="text" name="descricao" matInput placeholder="Digite a descrição"></textarea>
     </mat-form-field>
 
     <br />
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width">
       <mat-label>Chefe</mat-label>
-      <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" name="chefe_id">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">{{option.name}}</mat-option>
+      <input type="text" placeholder="Selecione" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.nome">
+          {{option.nome}}
+        </mat-option>
       </mat-autocomplete>
     </mat-form-field>
 

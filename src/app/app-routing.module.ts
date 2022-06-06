@@ -19,6 +19,7 @@ import { DashboardOfficeComponent } from './administration/office/dashboard-offi
 import { AddOfficeComponent } from './administration/office/add-office/add-office.component';
 import { EditOfficeComponent } from './administration/office/edit-office/edit-office.component';
 import { ListOfficeComponent } from './administration/office/list-office/list-office.component';
+import { ViewOfficeComponent } from './administration/office/view-office/view-office.component';
 
 import { DashboardStatusComponent } from './administration/status/dashboard-status/dashboard-status.component';
 import { AddStatusComponent } from './administration/status/add-status/add-status.component';
@@ -63,6 +64,7 @@ const routes: Routes = [
   { path: 'office/dashboard', component: DashboardOfficeComponent },
   { path: 'office/add', component: AddOfficeComponent },
   { path: 'office/edit/:id', component: EditOfficeComponent },
+  { path: 'office/view/:id', component: ViewOfficeComponent },
   { path: 'office/list', component: ListOfficeComponent },
 
   { path: 'status/dashboard', component: DashboardStatusComponent },

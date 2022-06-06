@@ -1,1 +1,408 @@
-{"usuarios":[{"id":1,"email":"Sadako_Martins@hotmail.com","nome":"Milson Carvalho","telefone":"(70) 2728-8473","username":"Elen_Macedo65","papel_id":6,"papel":"Técnico Marketing Frente"},{"id":2,"email":"Shirleide_Melo@bol.com.br","nome":"Valéria Silva","telefone":"+55 (41) 5954-1540","username":"Adda.Martins79","papel_id":7,"papel":"Administrador Usabilidade Central"},{"id":3,"email":"Marlene.Carvalho85@live.com","nome":"Sra. Flormira Nogueira","telefone":"(15) 83069-9688","username":"Benny_Reis32","papel_id":10,"papel":"Executivo Mercados Líder"},{"id":4,"email":"Rejane.Saraiva@yahoo.com","nome":"Joce Saraiva","telefone":"(91) 14840-8846","username":"Ilza.Batista","papel_id":1,"papel":"Representante Identidade Líder"},{"id":5,"email":"Edilena_Xavier55@bol.com.br","nome":"Flávia Reis","telefone":"(80) 3167-7640","username":"Lindemberg_Barros23","papel_id":5,"papel":"Facilitador Interações Cliente"},{"id":6,"email":"Tereza.Souza@gmail.com","nome":"Celsi Moreira","telefone":"(21) 0045-5334","username":"Ginaldo.Reis","papel_id":3,"papel":"Coordenador Implementação Legado"},{"id":7,"email":"Elma.Franco@hotmail.com","nome":"Romulo Franco Filho","telefone":"+55 (83) 9727-9909","username":"Stanislav.Carvalho","papel_id":10,"papel":"Arquiteto Fatores Nacional"},{"id":8,"email":"Romeu_Franco@live.com","nome":"Valdirene Franco","telefone":"(45) 6239-9256","username":"Natal_Souza27","papel_id":1,"papel":"Ligação Operações Legado"},{"id":9,"email":"Fatima.Nogueira@gmail.com","nome":"Celly Carvalho","telefone":"+55 (28) 7887-1544","username":"Euvaldo81","papel_id":4,"papel":"Coordenador Fatores Investidor"},{"id":10,"email":"Vando5@hotmail.com","nome":"Cássio Martins","telefone":"(68) 1985-1216","username":"Adnilson_Saraiva","papel_id":6,"papel":"Orquestrador Mobilidade Internacional"},{"id":11,"email":"Darcio_Braga@yahoo.com","nome":"Waldenor Pereira","telefone":"+55 (35) 2981-8016","username":"Nadir73","papel_id":1,"papel":"Designer Táticas Global"},{"id":12,"email":"Matilde.Barros@gmail.com","nome":"Marizete Carvalho","telefone":"(39) 8762-3805","username":"Edimar50","papel_id":2,"papel":"Associado Identidade Dinâmico"},{"id":13,"email":"Bernadete_Macedo@gmail.com","nome":"Heraldo Moraes","telefone":"(60) 96901-7601","username":"Ubiratan_Carvalho48","papel_id":10,"papel":"Ligação Rede Sênior"},{"id":14,"email":"Rosiene.Costa82@live.com","nome":"Sra. Dione Souza","telefone":"(42) 75162-7409","username":"Nair.Saraiva","papel_id":9,"papel":"Produtor Identidade Internacional"},{"id":15,"email":"Sabrina_Oliveira@live.com","nome":"Ednei Silva","telefone":"+55 (34) 4494-3693","username":"Lívia.Reis","papel_id":0,"papel":"Desenvolvedor Soluções Direto"},{"id":16,"email":"Walkiria33@yahoo.com","nome":"Sr. Adirson Oliveira","telefone":"(32) 84280-1466","username":"Cristian7","papel_id":10,"papel":"Designer Paradigma Frente"},{"id":17,"email":"Adauto.Costa58@gmail.com","nome":"Marta Melo","telefone":"+55 (07) 4502-2095","username":"Jacob9","papel_id":8,"papel":"Produtor Branding Produtos"},{"id":18,"email":"Conceiao_Xavier@live.com","nome":"Mires Batista","telefone":"(84) 27581-1149","username":"Plácido85","papel_id":3,"papel":"Especialista Qualidade Nacional"},{"id":19,"email":"Miquias.Barros@hotmail.com","nome":"Oldaque Saraiva","telefone":"(91) 6642-7598","username":"Vanda_Franco","papel_id":7,"papel":"Desenvolvedor Táticas Direto"},{"id":20,"email":"Delile.Martins69@yahoo.com","nome":"Ariovaldo Silva","telefone":"+55 (49) 7137-3782","username":"Lígia_Souza","papel_id":8,"papel":"Técnico Integração Legado"},{"id":21,"email":"Zilda_Braga25@hotmail.com","nome":"Otaviano Melo","telefone":"(98) 86306-9956","username":"Durvalino_Barros","papel_id":2,"papel":"Técnico Branding Investidor"},{"id":22,"email":"Dercio.Silva@bol.com.br","nome":"Ione Costa Filho","telefone":"(94) 38314-9554","username":"Anis10","papel_id":4,"papel":"Executivo Táticas Nacional"},{"id":23,"email":"Djanira_Braga28@gmail.com","nome":"Carmencita Macedo","telefone":"(97) 2872-2008","username":"Eroaldo40","papel_id":2,"papel":"Técnico Soluções Regional"},{"id":24,"email":"Jussara.Oliveira@bol.com.br","nome":"Sra. Lucas Albuquerque","telefone":"(61) 3059-6216","username":"Celiio.Carvalho13","papel_id":0,"papel":"Associado Marketing Distrito"},{"id":25,"email":"Kenedy_Xavier@gmail.com","nome":"Raffael Xavier Neto","telefone":"(44) 45809-9691","username":"Urika.Santos92","papel_id":10,"papel":"Desenvolvedor Resposta Frente"},{"id":26,"email":"Caio_Souza@yahoo.com","nome":"Edinar Reis","telefone":"(33) 9653-8908","username":"Anis45","papel_id":8,"papel":"Planejador Contas Chefe"},{"id":27,"email":"Deilson_Franco@bol.com.br","nome":"Bernadete Moreira","telefone":"+55 (85) 2941-8193","username":"Consuelo37","papel_id":2,"papel":"Oficial Dados Regional"},{"id":28,"email":"Albina41@bol.com.br","nome":"Evaldo Moraes","telefone":"(17) 0432-2471","username":"Gilfran.Nogueira0","papel_id":6,"papel":"Oficial Contas Produtos"},{"id":29,"email":"Sokuchin_Pereira74@bol.com.br","nome":"Érica Nogueira","telefone":"(48) 87442-6600","username":"Céphora.Martins32","papel_id":4,"papel":"Administrador Criativo Corporativo"},{"id":30,"email":"Gilca.Saraiva@hotmail.com","nome":"Militão Franco","telefone":"+55 (75) 8926-4939","username":"Celina_Batista","papel_id":8,"papel":"Especialista Aplicações Investidor"},{"id":31,"email":"Evelyn.Santos9@bol.com.br","nome":"Isidório Costa Neto","telefone":"+55 (44) 6468-1099","username":"Mikhael.Costa","papel_id":1,"papel":"Arquiteto Resposta Nacional"},{"id":32,"email":"Durval59@yahoo.com","nome":"Jimena Oliveira","telefone":"(27) 02903-7613","username":"Iara_Silva82","papel_id":1,"papel":"Engenheiro Operações Internacional"},{"id":33,"email":"Elizeu.Carvalho@gmail.com","nome":"Jacira Martins","telefone":"+55 (20) 8101-9191","username":"Viviani51","papel_id":3,"papel":"Administrador Métricas Sênior"},{"id":34,"email":"Yosxio_Albuquerque@hotmail.com","nome":"Deborah Reis","telefone":"+55 (39) 2886-0777","username":"Adenir.Carvalho5","papel_id":6,"papel":"Analista Qualidade Legado"},{"id":35,"email":"Mitico22@bol.com.br","nome":"Dinarte Carvalho Jr.","telefone":"+55 (58) 3552-2254","username":"Thami63","papel_id":1,"papel":"Planejador Métricas Corporativo"},{"id":36,"email":"Luciano89@yahoo.com","nome":"Srta. Agatha Albuquerque","telefone":"(08) 4792-5679","username":"Adolfo.Batista27","papel_id":3,"papel":"Orquestrador Fatores Global"},{"id":37,"email":"Maurico.Costa@gmail.com","nome":"Nadja Reis","telefone":"(86) 2383-6522","username":"Estela_Reis89","papel_id":9,"papel":"Executivo Pesquisa Chefe"},{"id":38,"email":"Acio63@gmail.com","nome":"Celina Pereira","telefone":"(69) 2122-9991","username":"Benedito_Santos1","papel_id":8,"papel":"Desenvolvedor Pesquisa Líder"},{"id":39,"email":"Salmo.Santos@hotmail.com","nome":"Elianay Pereira","telefone":"+55 (11) 6248-3332","username":"Jivanildo_Moreira96","papel_id":7,"papel":"Planejador Interações Líder"},{"id":40,"email":"Lin_Albuquerque@yahoo.com","nome":"Teodoro Souza","telefone":"+55 (31) 3639-1330","username":"Zulamar_Franco36","papel_id":10,"papel":"Oficial Segurança Sênior"},{"id":41,"email":"Ctia.Carvalho8@live.com","nome":"Walpheu Santos","telefone":"+55 (59) 3352-9035","username":"Hunald42","papel_id":10,"papel":"Supervisor Contas Corporativo"},{"id":42,"email":"Venina_Braga24@bol.com.br","nome":"Arnesto Martins","telefone":"(93) 62240-6016","username":"Abelardo8","papel_id":3,"papel":"Agente Aplicações Global"},{"id":43,"email":"Dalmir_Xavier25@bol.com.br","nome":"Rubem Barros","telefone":"+55 (34) 4118-9775","username":"Renan_Pereira52","papel_id":9,"papel":"Oficial Branding Líder"},{"id":44,"email":"Gilmar.Costa@yahoo.com","nome":"Hilca Pereira","telefone":"(06) 52720-9275","username":"Rozania.Reis8","papel_id":2,"papel":"Orquestrador Segurança Cliente"},{"id":45,"email":"Americo_Xavier@yahoo.com","nome":"Karin Saraiva","telefone":"(91) 4915-6087","username":"Waldecir_Macedo4","papel_id":10,"papel":"Gerente Divisão Líder"},{"id":46,"email":"Marily.Xavier58@hotmail.com","nome":"Izabel Martins","telefone":"+55 (61) 7424-0129","username":"Petrônio.Carvalho43","papel_id":0,"papel":"Desenvolvedor Marca Investidor"},{"id":47,"email":"Joce_Souza@bol.com.br","nome":"Magda Moreira","telefone":"(61) 39748-8855","username":"César89","papel_id":0,"papel":"Executivo Resposta Legado"},{"id":48,"email":"Gilca.Braga@bol.com.br","nome":"Claudecy Albuquerque","telefone":"(62) 73653-4437","username":"Julio66","papel_id":10,"papel":"Diretor Divisão Líder"},{"id":49,"email":"Iata.Franco71@bol.com.br","nome":"Celio Silva","telefone":"+55 (49) 8669-9602","username":"Gerardo7","papel_id":7,"papel":"Administrador Dados Interno"},{"id":50,"email":"Lucimara.Saraiva@gmail.com","nome":"Rejane Braga Jr.","telefone":"+55 (23) 0418-9385","username":"Luciana_Moraes","papel_id":7,"papel":"Gerente Resposta Direto"}],"escritorios":[{"id":1,"nome":"Natasha Pereira","abreviatura":"Gilvane Melo","descricao":"ipsam esse corrupti ipsum incidunt","chefe_id":10,"chefe_nome":"Margarete Nogueira Filho","expanded":false,"usuarios":[{"id":1,"nome":"Amós Carvalho","email":"Rosana.Souza22@gmail.com","telefone":"(18) 7174-1340"},{"id":1,"nome":"Yanina Macedo","email":"Mires_Moraes@live.com","telefone":"+55 (89) 5670-3418"},{"id":1,"nome":"Rosiene Nogueira","email":"Isabel17@live.com","telefone":"+55 (40) 6264-8209"},{"id":1,"nome":"Bonifácio Pereira","email":"Mariella18@yahoo.com","telefone":"(17) 90118-2155"},{"id":1,"nome":"Neuza Xavier","email":"Urika61@gmail.com","telefone":"(39) 6946-3288"},{"id":1,"nome":"Oraldo Costa","email":"Bruno83@bol.com.br","telefone":"+55 (89) 2974-4257"},{"id":1,"nome":"Iracema Souza","email":"Vanderli.Costa@gmail.com","telefone":"(42) 2239-8753"},{"id":1,"nome":"Srta. Altivanir Barros","email":"Dorval16@gmail.com","telefone":"+55 (27) 8473-4462"},{"id":1,"nome":"Geny Barros","email":"Elie29@yahoo.com","telefone":"(33) 15216-9767"},{"id":1,"nome":"Elijah Moraes","email":"Walker.Saraiva@bol.com.br","telefone":"(42) 5127-3197"},{"id":1,"nome":"Chozum Moraes","email":"Ricarda85@live.com","telefone":"+55 (57) 9261-6264"},{"id":1,"nome":"Odair Albuquerque","email":"Edilom_Carvalho@hotmail.com","telefone":"(67) 81822-9072"},{"id":1,"nome":"Asturio Melo","email":"Bolvar78@live.com","telefone":"(22) 9369-0011"},{"id":1,"nome":"Natália Albuquerque","email":"Odival_Batista@hotmail.com","telefone":"(33) 43128-4532"},{"id":1,"nome":"Nemesio Oliveira","email":"Jeffrey89@gmail.com","telefone":"(05) 51218-5763"},{"id":1,"nome":"Lucicleide Costa","email":"Martin_Moreira16@gmail.com","telefone":"(52) 1047-5935"},{"id":1,"nome":"Clélia Saraiva","email":"Christine78@gmail.com","telefone":"(90) 5202-5697"},{"id":1,"nome":"Enochx Batista","email":"Andrevaldo_Xavier@bol.com.br","telefone":"(03) 36534-2861"},{"id":1,"nome":"Eliene Albuquerque Neto","email":"Kiyoko18@gmail.com","telefone":"+55 (19) 3004-1685"},{"id":1,"nome":"Ramilton Batista","email":"Su_Nogueira45@yahoo.com","telefone":"(28) 6131-1352"},{"id":1,"nome":"Sra. Josildo Nogueira","email":"Leny23@hotmail.com","telefone":"(23) 0783-6110"},{"id":1,"nome":"Amílcar Carvalho","email":"Jrgen_Oliveira95@bol.com.br","telefone":"+55 (53) 7958-2701"},{"id":1,"nome":"Dr. Marinês Silva","email":"Joedir53@live.com","telefone":"(19) 5611-2480"},{"id":1,"nome":"Judson Oliveira","email":"Jevetic_Albuquerque@yahoo.com","telefone":"(06) 78039-4981"},{"id":1,"nome":"Rosana Moraes Neto","email":"Rachel.Martins@bol.com.br","telefone":"(16) 89987-5880"},{"id":1,"nome":"Honero Oliveira","email":"Avani58@live.com","telefone":"(87) 9736-1441"},{"id":1,"nome":"Sálvio Saraiva","email":"Wilian72@yahoo.com","telefone":"(42) 7469-6482"},{"id":1,"nome":"James Carvalho","email":"Lindemberg40@hotmail.com","telefone":"(57) 96589-4715"},{"id":1,"nome":"Maila Batista","email":"Clezio.Carvalho@bol.com.br","telefone":"(07) 14471-6564"},{"id":1,"nome":"Arnaldo Costa","email":"Eronides_Oliveira14@hotmail.com","telefone":"(88) 15229-8773"}]},{"id":2,"nome":"Srta. Matilde Carvalho","abreviatura":"Rynaldo Macedo","descricao":"eius est soluta laborum fugiat","chefe_id":1,"chefe_nome":"Fábio Barros Neto","expanded":false,"usuarios":[{"id":2,"nome":"Elizethe Albuquerque","email":"Herminio33@gmail.com","telefone":"(97) 11599-5924"},{"id":2,"nome":"Nardelle Melo","email":"Rose.Moraes@yahoo.com","telefone":"(69) 5520-4004"},{"id":2,"nome":"Kilder Carvalho","email":"Loide.Braga38@bol.com.br","telefone":"+55 (68) 5450-9211"},{"id":2,"nome":"Shingi Barros","email":"Ireno.Pereira72@hotmail.com","telefone":"(91) 3748-9759"},{"id":2,"nome":"Evertom Xavier","email":"Walquiria19@bol.com.br","telefone":"(92) 8769-4597"},{"id":2,"nome":"Sra. Josefina Batista","email":"Yumi48@bol.com.br","telefone":"(54) 3596-1094"},{"id":2,"nome":"Cássio Albuquerque","email":"Roberio_Reis52@live.com","telefone":"(29) 5092-0338"},{"id":2,"nome":"Welson Nogueira","email":"Cristovao28@yahoo.com","telefone":"+55 (47) 2706-8977"},{"id":2,"nome":"Scheila Saraiva","email":"Jozivaldo.Silva@gmail.com","telefone":"(23) 92477-9004"},{"id":2,"nome":"Hans Braga","email":"Adilson_Moraes16@hotmail.com","telefone":"(50) 9708-3952"},{"id":2,"nome":"Nidia Batista","email":"Anita.Silva@bol.com.br","telefone":"(92) 01266-1073"},{"id":2,"nome":"Hormino Martins","email":"Heloiza.Souza@gmail.com","telefone":"(12) 02869-7916"},{"id":2,"nome":"Markus Xavier","email":"Taiane.Silva@gmail.com","telefone":"(99) 06771-1681"},{"id":2,"nome":"Soraya Nogueira","email":"Katia_Franco54@bol.com.br","telefone":"(65) 47902-3678"},{"id":2,"nome":"Rocío Silva","email":"Sara40@live.com","telefone":"+55 (21) 0786-2807"},{"id":2,"nome":"Marilson Xavier","email":"Wanderson.Santos21@gmail.com","telefone":"+55 (74) 4777-5908"},{"id":2,"nome":"Barbara Barros","email":"Sheila84@live.com","telefone":"(83) 28480-5204"},{"id":2,"nome":"Sra. Garbo Costa","email":"Karla.Carvalho26@live.com","telefone":"(18) 23110-0895"},{"id":2,"nome":"Guilherme Souza","email":"Sara_Costa43@gmail.com","telefone":"(72) 53122-1610"},{"id":2,"nome":"Istadeu Moraes","email":"Izamar.Souza8@yahoo.com","telefone":"+55 (63) 5034-1146"},{"id":2,"nome":"Érica Martins","email":"Pedro93@hotmail.com","telefone":"+55 (72) 4549-2658"},{"id":2,"nome":"Gleuza Carvalho","email":"Rosane.Melo32@yahoo.com","telefone":"(26) 7472-9111"},{"id":2,"nome":"Mailde Moreira","email":"Aldenir67@live.com","telefone":"(32) 17864-5719"},{"id":2,"nome":"Luiza Saraiva","email":"Janivan_Moraes84@gmail.com","telefone":"(85) 5766-9680"},{"id":2,"nome":"Joselito Xavier","email":"Kenner.Moraes@live.com","telefone":"(57) 82303-7877"},{"id":2,"nome":"Dr. Larissa Xavier","email":"Anastacio.Nogueira85@live.com","telefone":"+55 (42) 1905-6512"},{"id":2,"nome":"Ednilton Silva","email":"Selma.Oliveira92@live.com","telefone":"+55 (71) 4110-3416"},{"id":2,"nome":"Inacio Oliveira Jr.","email":"Lorena34@live.com","telefone":"+55 (27) 6505-4182"},{"id":2,"nome":"Srta. Luisa Saraiva","email":"Hercio.Santos80@bol.com.br","telefone":"(09) 18210-6209"},{"id":2,"nome":"Branca Souza Jr.","email":"Adelcio.Oliveira@yahoo.com","telefone":"(26) 61054-8600"}]},{"id":3,"nome":"Dr. Cruz Reis","abreviatura":"Liliana Franco","descricao":"quis qui ut ut in","chefe_id":4,"chefe_nome":"Judith Silva","expanded":false,"usuarios":[{"id":3,"nome":"Jeovana Xavier","email":"Ariston.Moraes47@yahoo.com","telefone":"(03) 84518-9926"},{"id":3,"nome":"Valdelício Pereira Filho","email":"Adevar69@yahoo.com","telefone":"(55) 0888-6173"},{"id":3,"nome":"Josenilde Moraes","email":"Cleto76@yahoo.com","telefone":"(51) 92413-4633"},{"id":3,"nome":"Teadeu Melo","email":"Lin_Carvalho98@hotmail.com","telefone":"(92) 35133-9268"},{"id":3,"nome":"Glauco Franco","email":"Dulce_Barros9@live.com","telefone":"(19) 48249-9685"},{"id":3,"nome":"Lourdes Martins","email":"Rosemary_Barros@yahoo.com","telefone":"(67) 2539-3285"},{"id":3,"nome":"Meire Barros","email":"Cirilo_Xavier61@gmail.com","telefone":"+55 (20) 0727-4220"},{"id":3,"nome":"Rosária Pereira Neto","email":"Atamir44@yahoo.com","telefone":"(69) 1807-1610"},{"id":3,"nome":"Luanna Braga","email":"Elan87@hotmail.com","telefone":"(41) 4312-4245"},{"id":3,"nome":"Flavia Oliveira","email":"Lailson_Souza68@yahoo.com","telefone":"+55 (36) 7490-6439"},{"id":3,"nome":"Marisa Saraiva","email":"Erdice.Melo@gmail.com","telefone":"+55 (34) 6124-3869"},{"id":3,"nome":"Sra. Mailde Barros","email":"Gildete61@yahoo.com","telefone":"(30) 41558-2659"},{"id":3,"nome":"Sra. Zilda Nogueira","email":"Elizete_Oliveira34@hotmail.com","telefone":"+55 (18) 2302-9609"},{"id":3,"nome":"Nora Carvalho","email":"Andria3@gmail.com","telefone":"+55 (43) 6726-4346"},{"id":3,"nome":"Celcina Saraiva","email":"Luigi.Melo@live.com","telefone":"(65) 2762-6643"},{"id":3,"nome":"Antonia Franco","email":"Jiucelia_Saraiva64@bol.com.br","telefone":"(08) 22210-1494"},{"id":3,"nome":"Adelzir Moreira","email":"Josu.Pereira@live.com","telefone":"(39) 9052-3373"},{"id":3,"nome":"Cassimiro Moreira","email":"Mrcia.Barros@live.com","telefone":"+55 (62) 2627-6052"},{"id":3,"nome":"Emmanuel Batista","email":"Hudson_Carvalho@bol.com.br","telefone":"+55 (89) 7729-6129"},{"id":3,"nome":"Aozeni Reis","email":"Analice_Reis@gmail.com","telefone":"+55 (31) 7644-0444"},{"id":3,"nome":"Olga Braga","email":"Eini_Franco56@hotmail.com","telefone":"+55 (47) 7668-2206"},{"id":3,"nome":"Evertom Martins","email":"Jumara_Nogueira57@hotmail.com","telefone":"(43) 9767-4853"},{"id":3,"nome":"Eliane Costa","email":"Agnaldo_Reis13@bol.com.br","telefone":"(07) 0991-2934"},{"id":3,"nome":"Rene Barros","email":"Viviani21@yahoo.com","telefone":"(64) 10444-1046"},{"id":3,"nome":"Roknei Nogueira","email":"Cariovaldo86@gmail.com","telefone":"(14) 2590-5930"},{"id":3,"nome":"Josafa Moraes Jr.","email":"Ana87@bol.com.br","telefone":"+55 (86) 6762-9686"},{"id":3,"nome":"Felix Batista","email":"Selma_Carvalho95@hotmail.com","telefone":"(26) 1675-5732"},{"id":3,"nome":"Elielton Carvalho","email":"Amilton_Albuquerque@gmail.com","telefone":"(03) 48816-2764"},{"id":3,"nome":"Lazara Melo","email":"Gabrielle59@hotmail.com","telefone":"(56) 17425-4367"},{"id":3,"nome":"Jailton Costa","email":"Mrio_Xavier@hotmail.com","telefone":"+55 (65) 2820-7343"}]},{"id":4,"nome":"Dulce Melo","abreviatura":"Josafat Moreira","descricao":"iste sed et rerum tempore","chefe_id":0,"chefe_nome":"Sheila Martins","expanded":false,"usuarios":[{"id":4,"nome":"Idalia Martins","email":"Cinara.Xavier@live.com","telefone":"(97) 99193-1348"},{"id":4,"nome":"Demário Braga","email":"Elenilza78@hotmail.com","telefone":"(81) 00383-5455"},{"id":4,"nome":"Telma Albuquerque","email":"Filomena.Barros51@yahoo.com","telefone":"(97) 32884-6306"},{"id":4,"nome":"Yeh Macedo","email":"Glorineide.Costa12@bol.com.br","telefone":"(88) 9259-3188"},{"id":4,"nome":"Silvino Reis","email":"Wuneni79@live.com","telefone":"+55 (86) 5556-5664"},{"id":4,"nome":"Andre Oliveira","email":"Valdivina.Batista98@bol.com.br","telefone":"(32) 4321-0874"},{"id":4,"nome":"Dirk Saraiva Filho","email":"Katsumi.Santos@bol.com.br","telefone":"(95) 65759-3596"},{"id":4,"nome":"Octavio Oliveira","email":"Giseli84@yahoo.com","telefone":"+55 (79) 9161-0033"},{"id":4,"nome":"Florisvaldo Batista","email":"Filadelfo_Carvalho@yahoo.com","telefone":"(68) 8678-2535"},{"id":4,"nome":"Antonia Melo","email":"Richard.Carvalho@live.com","telefone":"+55 (11) 6592-7263"},{"id":4,"nome":"Alexsander Moraes","email":"Thaiza.Saraiva18@yahoo.com","telefone":"(80) 82628-8262"},{"id":4,"nome":"Dr. Alan Martins","email":"Celsi_Santos80@yahoo.com","telefone":"(88) 0606-5128"},{"id":4,"nome":"Reynaldo Barros","email":"Telma.Xavier23@hotmail.com","telefone":"+55 (74) 8294-3657"},{"id":4,"nome":"Cíntia Albuquerque","email":"Dianary12@hotmail.com","telefone":"(93) 36068-6135"},{"id":4,"nome":"Floriano Oliveira","email":"Martha_Martins49@gmail.com","telefone":"(97) 43783-3986"},{"id":4,"nome":"Breno Martins","email":"Elizethe97@live.com","telefone":"(49) 4054-4809"},{"id":4,"nome":"Srta. Ivonete Moraes","email":"Rvia_Reis52@yahoo.com","telefone":"(22) 0950-9924"},{"id":4,"nome":"Marina Oliveira Filho","email":"Bolvar_Moreira@bol.com.br","telefone":"(75) 47717-1939"},{"id":4,"nome":"Moacyr Carvalho Filho","email":"Mathew21@live.com","telefone":"(93) 9782-8073"},{"id":4,"nome":"Sra. Elislabelle Reis","email":"Glucia85@bol.com.br","telefone":"(09) 6912-4447"},{"id":4,"nome":"Natalia Souza Jr.","email":"ndrea6@yahoo.com","telefone":"(28) 1021-4845"},{"id":4,"nome":"Gilverton Moreira Neto","email":"Jailton4@hotmail.com","telefone":"(24) 4428-0375"},{"id":4,"nome":"Irlene Santos","email":"Celcina.Moreira35@hotmail.com","telefone":"+55 (34) 7783-4082"},{"id":4,"nome":"Marcia Batista","email":"Abro_Albuquerque73@hotmail.com","telefone":"(45) 69161-7271"},{"id":4,"nome":"Srta. Jorge Xavier","email":"Annia_Carvalho@gmail.com","telefone":"+55 (90) 3771-9899"},{"id":4,"nome":"Dr. Jesse Nogueira","email":"Giovana_Melo@live.com","telefone":"(05) 53993-9374"},{"id":4,"nome":"Walquiria Costa","email":"Wedson5@yahoo.com","telefone":"(65) 5717-3494"},{"id":4,"nome":"Elan Saraiva","email":"Sady.Costa71@live.com","telefone":"+55 (47) 7382-5603"},{"id":4,"nome":"Manasses Braga","email":"Ktia.Xavier15@hotmail.com","telefone":"(46) 9622-3528"},{"id":4,"nome":"Dourinaldo Braga","email":"Joelma14@bol.com.br","telefone":"+55 (74) 1316-9782"}]}],"perfis":[{"perfil_id":1,"name":"Estrategista A infraestrutura Interno","description":"voluptas nostrum maxime omnis similique quo est nemo laudantium occaecati"},{"perfil_id":2,"name":"Ligação Resposta Corporativo","description":"est quia quis vero et architecto et voluptatem quia saepe"},{"perfil_id":3,"name":"Engenheiro Grupo Interno","description":"numquam eos voluptas cumque ipsum aliquid molestiae consectetur harum accusantium"},{"perfil_id":4,"name":"Associado Segurança Produtos","description":"nemo ea qui fuga voluptatem architecto adipisci odio repellat nihil"},{"perfil_id":5,"name":"Agente Interações Central","description":"aperiam quibusdam ducimus id reiciendis eum ut enim incidunt quasi"},{"perfil_id":6,"name":"Engenheiro Mercados Direto","description":"voluptatem explicabo dolores fuga voluptatum aut deserunt qui quisquam ducimus"},{"perfil_id":7,"name":"Assistente Paradigma Dinâmico","description":"commodi beatae dicta tempore eos dolore nobis voluptatum ipsa amet"},{"perfil_id":8,"name":"Diretor Contas Corporativo","description":"aperiam dignissimos repellat consequatur corrupti non consequatur error est quo"},{"perfil_id":9,"name":"Engenheiro Diretivas Regional","description":"sint est eaque voluptas consequatur id dolore ut id molestiae"},{"perfil_id":10,"name":"Coordenador Criativo Sênior","description":"nihil sint totam et sit sunt impedit voluptatibus tempore vel"}],"funcionalidades":[{"id":1,"nome":"Alcir Melo","codigo":1,"descricao":"qui quis omnis libero aut"},{"id":2,"nome":"Marily Braga","codigo":2,"descricao":"sint sit ut amet excepturi"},{"id":3,"nome":"Neiva Pereira Filho","codigo":3,"descricao":"deleniti deleniti dolores voluptas ducimus"},{"id":4,"nome":"Mariella Albuquerque","codigo":4,"descricao":"qui alias doloribus consequuntur illum"}],"estados":[{"id":1,"name":"Waldemar Pereira","description":"modi quo at magnam qui","stereotype":"iure magnam sequi illum numquam"},{"id":2,"name":"Jilvan Carvalho","description":"commodi illo nisi ullam laboriosam","stereotype":"doloribus necessitatibus repudiandae voluptate et"},{"id":3,"name":"Ho Macedo Neto","description":"adipisci ducimus vel sunt facilis","stereotype":"ad error modi explicabo et"},{"id":4,"name":"Jaqueline Pereira","description":"cumque quos qui eum recusandae","stereotype":"aut fuga voluptatum necessitatibus numquam"}],"acoes":[{"id":1,"nome":"Cicero Oliveira","origin_status_id":"Caique Carvalho","destination_status_id":"atque","other_than":false,"descricao":"consequatur"},{"id":2,"nome":"Thaisa Carvalho","origin_status_id":"Mercedes Souza","destination_status_id":"voluptatibus","other_than":false,"descricao":"neque"},{"id":3,"nome":"Daniella Saraiva","origin_status_id":"Mercedes Xavier","destination_status_id":"velit","other_than":false,"descricao":"doloremque"},{"id":4,"nome":"Viviani Reis","origin_status_id":"Maisa Souza","destination_status_id":"aut","other_than":true,"descricao":"numquam"}],"workflows":[{"id":1,"workflow":"Erica Oliveira","descricao":"laudantium quo ut molestiae in","tipo_de_entidade":1,"inicia_em":"2022-05-31T04:49:00.684Z","finaliza_em":"2022-06-04T10:57:34.357Z"},{"id":2,"workflow":"Sirlei Nogueira Filho","descricao":"illum sit sunt est saepe","tipo_de_entidade":2,"inicia_em":"2022-05-31T10:02:18.989Z","finaliza_em":"2022-06-06T18:29:08.471Z"},{"id":3,"workflow":"Julia Braga","descricao":"quo impedit amet excepturi fugiat","tipo_de_entidade":3,"inicia_em":"2022-05-31T23:36:49.867Z","finaliza_em":"2022-06-05T21:51:25.787Z"},{"id":4,"workflow":"Donizete Moraes","descricao":"voluptatem aut voluptas quos deserunt","tipo_de_entidade":4,"inicia_em":"2022-05-31T11:41:14.582Z","finaliza_em":"2022-06-02T02:05:35.011Z"}]}
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "Aristides_Carvalho@yahoo.com",
+      "nome": "Guo Costa Filho",
+      "telefone": "(89) 2750-7920",
+      "username": "Katsuo_Moraes",
+      "papel_id": 4,
+      "papel": "Especialista Mobilidade Sênior"
+    },
+    {
+      "id": 2,
+      "email": "Tibor4@bol.com.br",
+      "nome": "Gilsom Barros",
+      "telefone": "(67) 3866-3800",
+      "username": "Érica_Batista",
+      "papel_id": 3,
+      "papel": "Gerente Branding Frente"
+    },
+    {
+      "id": 3,
+      "email": "Amlia45@hotmail.com",
+      "nome": "Delicia Barros",
+      "telefone": "+55 (73) 4867-4518",
+      "username": "Leone12",
+      "papel_id": 0,
+      "papel": "Arquiteto Marca Sênior"
+    },
+    {
+      "id": 4,
+      "email": "Katias84@live.com",
+      "nome": "Glorineide Reis",
+      "telefone": "(90) 77729-2009",
+      "username": "Maria_Pereira",
+      "papel_id": 4,
+      "papel": "Agente Branding Dinâmico"
+    },
+    {
+      "id": 5,
+      "email": "Leontino.Carvalho16@yahoo.com",
+      "nome": "Dr. Lucimara Batista",
+      "telefone": "(70) 2326-7980",
+      "username": "Martiniano86",
+      "papel_id": 10,
+      "papel": "Assistente Grupo Corporativo"
+    },
+    {
+      "id": 6,
+      "email": "Djalma_Franco31@gmail.com",
+      "nome": "Romualdo Reis",
+      "telefone": "+55 (49) 3210-3717",
+      "username": "Rider99",
+      "papel_id": 8,
+      "papel": "Engenheiro Configuração Chefe"
+    },
+    {
+      "id": 7,
+      "email": "Mariangela.Batista85@yahoo.com",
+      "nome": "Edésio Barros",
+      "telefone": "+55 (50) 9439-9670",
+      "username": "Rosely_Souza",
+      "papel_id": 8,
+      "papel": "Planejador Mobilidade Regional"
+    },
+    {
+      "id": 8,
+      "email": "Deoclecio_Reis28@gmail.com",
+      "nome": "Sergyo Moreira",
+      "telefone": "+55 (57) 3990-8572",
+      "username": "Edna.Macedo",
+      "papel_id": 6,
+      "papel": "Consultor Prestação de contas Internacional"
+    },
+    {
+      "id": 9,
+      "email": "Jeovane.Carvalho19@hotmail.com",
+      "nome": "Sr. Ludyenne Carvalho",
+      "telefone": "(75) 79264-3402",
+      "username": "Oriovaldo.Xavier11",
+      "papel_id": 3,
+      "papel": "Planejador Qualidade Diretor"
+    },
+    {
+      "id": 10,
+      "email": "Grcia.Moraes@gmail.com",
+      "nome": "Ligeria Xavier",
+      "telefone": "(24) 62362-4239",
+      "username": "Izilda.Carvalho",
+      "papel_id": 7,
+      "papel": "Especialista Interações Direto"
+    }
+  ],
+  "escritorios": [
+    {
+      "id": 1,
+      "nome": "Brasilia",
+      "abreviatura": "BSB",
+      "descricao": "Escritório de Brasilia",
+      "chefe_id": 3,
+      "chefe_nome": "Gregorio Macedo",
+      "expanded": false,
+      "usuarios": [
+        {
+          "id": 1,
+          "nome": "Heloiza Pereira",
+          "email": "Thiers75@live.com",
+          "telefone": "(62) 26852-9769"
+        },
+        {
+          "id": 1,
+          "nome": "Andréia Saraiva",
+          "email": "Leunidas_Carvalho@hotmail.com",
+          "telefone": "(48) 3380-1513"
+        },
+        {
+          "id": 1,
+          "nome": "Felipe Carvalho",
+          "email": "Paulino.Silva71@hotmail.com",
+          "telefone": "(17) 7599-5706"
+        },
+        {
+          "id": 1,
+          "nome": "Katsumi Macedo",
+          "email": "Consuelo.Martins@hotmail.com",
+          "telefone": "+55 (45) 4480-7559"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Rio de Janeiro",
+      "abreviatura": "RJ",
+      "descricao": "Escritório do Rio de Janeiro",
+      "chefe_id": 4,
+      "chefe_nome": "Dr. Severina Batista",
+      "expanded": false,
+      "usuarios": [
+        {
+          "id": 2,
+          "nome": "Edilson Melo",
+          "email": "Mathew.Braga@hotmail.com",
+          "telefone": "+55 (70) 5518-7672"
+        },
+        {
+          "id": 2,
+          "nome": "Kunihiro Braga Filho",
+          "email": "Melisa9@gmail.com",
+          "telefone": "(17) 45263-1727"
+        },
+        {
+          "id": 2,
+          "nome": "Lucilene Carvalho",
+          "email": "Janette_Saraiva@bol.com.br",
+          "telefone": "+55 (07) 4788-6866"
+        },
+        {
+          "id": 2,
+          "nome": "Viviana Macedo",
+          "email": "Edeni.Pereira98@gmail.com",
+          "telefone": "(36) 3340-7282"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "São Paulo",
+      "abreviatura": "SP",
+      "descricao": "Escritório de São Paulo",
+      "chefe_id": 5,
+      "chefe_nome": "Ricarda Macedo",
+      "expanded": false,
+      "usuarios": [
+        {
+          "id": 3,
+          "nome": "Cármen Souza",
+          "email": "Cristiana_Braga49@gmail.com",
+          "telefone": "(72) 17546-1108"
+        },
+        {
+          "id": 3,
+          "nome": "Cármen Carvalho",
+          "email": "Mauritius34@yahoo.com",
+          "telefone": "+55 (55) 1408-5241"
+        },
+        {
+          "id": 3,
+          "nome": "Yip Moreira",
+          "email": "Ginez_Saraiva@live.com",
+          "telefone": "(43) 59405-4076"
+        },
+        {
+          "id": 3,
+          "nome": "Tania Costa",
+          "email": "Marcele.Carvalho77@bol.com.br",
+          "telefone": "(37) 29179-0975"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "João Pessoa",
+      "abreviatura": "PB",
+      "descricao": "Escritório de João Pessoa",
+      "chefe_id": 6,
+      "chefe_nome": "Dijosilene Cohen",
+      "expanded": false,
+      "usuarios": [
+        {
+          "id": 4,
+          "nome": "Édino Moreira",
+          "email": "Eudes.Braga60@yahoo.com",
+          "telefone": "+55 (36) 7067-2927"
+        },
+        {
+          "id": 4,
+          "nome": "Avani Carvalho",
+          "email": "Amadeu.Albuquerque63@live.com",
+          "telefone": "+55 (94) 7554-4767"
+        },
+        {
+          "id": 4,
+          "nome": "Iara Santos",
+          "email": "Nilton_Franco@gmail.com",
+          "telefone": "+55 (29) 2653-5991"
+        },
+        {
+          "id": 4,
+          "nome": "Mitsuru Batista",
+          "email": "Yassuyoshi.Reis@yahoo.com",
+          "telefone": "(07) 9661-0104"
+        }
+      ]
+    }
+  ],
+  "perfis": [
+    {
+      "perfil_id": 1,
+      "name": "Representante Divisão Corporativo",
+      "description": "consequuntur amet harum aperiam natus totam eligendi explicabo veniam rerum"
+    },
+    {
+      "perfil_id": 2,
+      "name": "Orquestrador Otimização Central",
+      "description": "cumque ullam neque aliquam incidunt quasi aut dolore perspiciatis ut"
+    },
+    {
+      "perfil_id": 3,
+      "name": "Ligação Divisão Investidor",
+      "description": "et dolorem praesentium eius maiores quae sit soluta atque saepe"
+    },
+    {
+      "perfil_id": 4,
+      "name": "Gerente A infraestrutura Líder",
+      "description": "qui quae laudantium velit et id quia ut minus non"
+    },
+    {
+      "perfil_id": 5,
+      "name": "Diretor Integração Cliente",
+      "description": "dolores quaerat et rerum ut impedit cum molestias doloremque dolores"
+    },
+    {
+      "perfil_id": 6,
+      "name": "Consultor Táticas Nacional",
+      "description": "numquam earum aliquam quo hic earum voluptatem temporibus alias nam"
+    },
+    {
+      "perfil_id": 7,
+      "name": "Técnico Comunicações Investidor",
+      "description": "quaerat quo quia earum quia voluptatem est ea vel illum"
+    },
+    {
+      "perfil_id": 8,
+      "name": "Consultor Táticas Chefe",
+      "description": "quia perferendis veniam aliquam consequatur in consectetur explicabo in repellendus"
+    },
+    {
+      "perfil_id": 9,
+      "name": "Arquiteto Funcionalidade Cliente",
+      "description": "dolores maiores natus molestias dolorum est veniam consectetur adipisci aut"
+    },
+    {
+      "perfil_id": 10,
+      "name": "Agente Dados Regional",
+      "description": "est dolorem adipisci ad nobis a blanditiis et pariatur voluptatem"
+    }
+  ],
+  "funcionalidades": [
+    {
+      "id": 1,
+      "nome": "Nuno Reis Filho",
+      "codigo": 1,
+      "descricao": "ratione vitae molestiae esse consequatur"
+    },
+    {
+      "id": 2,
+      "nome": "Linneu Saraiva",
+      "codigo": 2,
+      "descricao": "suscipit iusto iste qui fugit"
+    },
+    {
+      "id": 3,
+      "nome": "Iracilda Carvalho",
+      "codigo": 3,
+      "descricao": "neque accusamus quo et ut"
+    },
+    {
+      "id": 4,
+      "nome": "Murilo Pereira",
+      "codigo": 4,
+      "descricao": "accusantium laudantium ut consequatur accusamus"
+    }
+  ],
+  "estados": [
+    {
+      "id": 1,
+      "name": "Oscar Braga",
+      "description": "harum sit quos fugiat est",
+      "stereotype": "quia est atque molestiae nihil"
+    },
+    {
+      "id": 2,
+      "name": "Gleisson Batista",
+      "description": "quia qui laboriosam nulla ut",
+      "stereotype": "ea et consequatur quo et"
+    },
+    {
+      "id": 3,
+      "name": "Thalita Oliveira",
+      "description": "voluptatum perferendis ipsum in perferendis",
+      "stereotype": "qui voluptatibus culpa non molestias"
+    },
+    {
+      "id": 4,
+      "name": "Sumiko Melo",
+      "description": "unde ut aut mollitia quis",
+      "stereotype": "facilis animi quis ea maiores"
+    }
+  ],
+  "acoes": [
+    {
+      "id": 1,
+      "nome": "Joseilda Silva",
+      "origin_status_id": "Sr. Cristiani Saraiva",
+      "destination_status_id": "recusandae",
+      "other_than": true,
+      "descricao": "impedit"
+    },
+    {
+      "id": 2,
+      "nome": "Cibele Costa Jr.",
+      "origin_status_id": "Bernadete Moraes Filho",
+      "destination_status_id": "illum",
+      "other_than": false,
+      "descricao": "corporis"
+    },
+    {
+      "id": 3,
+      "nome": "Doralice Batista",
+      "origin_status_id": "Dayani Pereira",
+      "destination_status_id": "sint",
+      "other_than": true,
+      "descricao": "expedita"
+    },
+    {
+      "id": 4,
+      "nome": "Leny Braga",
+      "origin_status_id": "Liana Moraes",
+      "destination_status_id": "nulla",
+      "other_than": true,
+      "descricao": "ipsam"
+    }
+  ],
+  "workflows": [
+    {
+      "id": 1,
+      "workflow": "Nahashon Nogueira",
+      "descricao": "quia nemo est et et",
+      "tipo_de_entidade": 1,
+      "inicia_em": "2022-06-06T02:05:50.869Z",
+      "finaliza_em": "2022-06-13T14:14:42.018Z"
+    },
+    {
+      "id": 2,
+      "workflow": "Benilde Barros",
+      "descricao": "voluptatem et ut voluptas delectus",
+      "tipo_de_entidade": 2,
+      "inicia_em": "2022-06-05T21:50:13.395Z",
+      "finaliza_em": "2022-06-10T10:28:30.250Z"
+    },
+    {
+      "id": 3,
+      "workflow": "Taiane Macedo",
+      "descricao": "et est omnis et aperiam",
+      "tipo_de_entidade": 3,
+      "inicia_em": "2022-06-05T17:54:04.112Z",
+      "finaliza_em": "2022-06-11T01:40:14.209Z"
+    },
+    {
+      "id": 4,
+      "workflow": "Heloiza Martins",
+      "descricao": "corrupti alias iste omnis voluptatem",
+      "tipo_de_entidade": 4,
+      "inicia_em": "2022-06-05T17:17:36.292Z",
+      "finaliza_em": "2022-06-05T21:25:25.900Z"
+    }
+  ]
+}

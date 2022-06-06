@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { retry, catchError } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { retry, catchError, tap } from 'rxjs/operators';
+import { Observable, throwError, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalConstants } from '../global-constants';
 
@@ -37,6 +37,7 @@ export class UserService {
       .get<User>(this.endpoint + '/usuarios/')
       .pipe(retry(1), catchError(this.processError));
   }
+
 
   getSingleUser(id: any): Observable<User> {
     return this.httpClient
