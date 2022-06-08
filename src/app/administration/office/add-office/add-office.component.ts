@@ -1,7 +1,7 @@
 import { Component, Injectable, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, Subscription } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { tap, startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
 
 // https://stackoverflow.com/questions/57852645/angular-material-autocomplete-from-api

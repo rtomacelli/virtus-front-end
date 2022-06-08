@@ -1,5 +1,138 @@
-id,abreviatura,chefe_id,descricao,nome
-1,BSB,3,"Escritório de Brasilia",Brasilia
-2,RJ,4,"Escritório do Rio de Janeiro","Rio de Janeiro"
-3,SP,5,"Escritório de São Paulo","São Paulo"
-4,PB,6,"Escritório de João Pessoa","João Pessoa"
+"escritorios": [
+    {
+      "id": 1,
+      "nome": "Brasilia",
+      "abreviatura": "BSB",
+      "descricao": "Escritório de Brasilia",
+      "chefe_id": 10,
+      "chefe_nome": "André Costa",
+      "usuarios": [
+        {
+          "id": 1,
+          "nome": "Dorval Souza",
+          "email": "Rosalvo57@live.com",
+          "telefone": "+55 (34) 5464-4594"
+        },
+        {
+          "id": 1,
+          "nome": "Aldenir Batista Neto",
+          "email": "Linneu.Moreira37@live.com",
+          "telefone": "+55 (25) 8261-0262"
+        },
+        {
+          "id": 1,
+          "nome": "Christine Melo",
+          "email": "Matias32@hotmail.com",
+          "telefone": "(57) 67942-9674"
+        },
+        {
+          "id": 1,
+          "nome": "Magali Oliveira",
+          "email": "Edirez69@hotmail.com",
+          "telefone": "+55 (05) 4504-8786"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Rio de Janeiro",
+      "abreviatura": "RJ",
+      "descricao": "Escritório do Rio de Janeiro",
+      "chefe_id": 5,
+      "chefe_nome": "Obede Barros",
+      "usuarios": [
+        {
+          "id": 2,
+          "nome": "Rose Carvalho",
+          "email": "Odenir.Costa@bol.com.br",
+          "telefone": "(02) 2776-2876"
+        },
+        {
+          "id": 2,
+          "nome": "Silvia Macedo",
+          "email": "Mario_Reis1@live.com",
+          "telefone": "(91) 7444-2009"
+        },
+        {
+          "id": 2,
+          "nome": "Robério Macedo Jr.",
+          "email": "Regiane20@hotmail.com",
+          "telefone": "+55 (22) 7201-5877"
+        },
+        {
+          "id": 2,
+          "nome": "Jose Reis",
+          "email": "Junis.Pereira66@bol.com.br",
+          "telefone": "(20) 6716-6799"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "São Paulo",
+      "abreviatura": "SP",
+      "descricao": "Escritório de São Paulo",
+      "chefe_id": 4,
+      "chefe_nome": "Hilca Moreira",
+      "usuarios": [
+        {
+          "id": 3,
+          "nome": "Regina Silva",
+          "email": "Francisca5@live.com",
+          "telefone": "(62) 75156-1975"
+        },
+        {
+          "id": 3,
+          "nome": "Otavio Barros",
+          "email": "Romildo_Santos5@live.com",
+          "telefone": "(31) 0780-8552"
+        },
+        {
+          "id": 3,
+          "nome": "Brigida Franco",
+          "email": "James.Braga59@gmail.com",
+          "telefone": "(10) 3029-5445"
+        },
+        {
+          "id": 3,
+          "nome": "Marinete Carvalho",
+          "email": "Renata.Franco35@live.com",
+          "telefone": "+55 (60) 1605-5348"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "João Pessoa",
+      "abreviatura": "PB",
+      "descricao": "Escritório de João Pessoa",
+      "chefe_id": 3,
+      "chefe_nome": "Germino Saraiva",
+      "usuarios": [
+        {
+          "id": 4,
+          "nome": "Reinis Xavier",
+          "email": "Amilcar_Saraiva@yahoo.com",
+          "telefone": "+55 (81) 9306-7376"
+        },
+        {
+          "id": 4,
+          "nome": "Nubia Souza",
+          "email": "Inocncio85@yahoo.com",
+          "telefone": "(53) 7416-4717"
+        },
+        {
+          "id": 4,
+          "nome": "Volcei Batista",
+          "email": "Isabel65@live.com",
+          "telefone": "(61) 81258-0084"
+        },
+        {
+          "id": 4,
+          "nome": "Marla Melo",
+          "email": "Schosiro.Santos@gmail.com",
+          "telefone": "(65) 1179-9178"
+        }
+      ]
+    }
+  ]

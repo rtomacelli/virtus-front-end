@@ -42,6 +42,7 @@ import { EditPerfilComponent } from './administration/perfil/edit-perfil/edit-pe
 import { ListPerfilComponent } from './administration/perfil/list-perfil/list-perfil.component';
 
 import { ExpandedRowComponent } from './sandbox/expanded-row/expanded-row.component';
+import { LinkOfficeUserComponent } from './administration/office/link-office-user/link-office-user.component';
 
 const routes: Routes = [
   
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'office/edit/:id', component: EditOfficeComponent },
   { path: 'office/view/:id', component: ViewOfficeComponent },
   { path: 'office/list', component: ListOfficeComponent },
+  { path: 'office/link', component: LinkOfficeUserComponent },
 
   { path: 'status/dashboard', component: DashboardStatusComponent },
   { path: 'status/add', component: AddStatusComponent },

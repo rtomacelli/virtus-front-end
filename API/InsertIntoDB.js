@@ -30,7 +30,7 @@ function generateUsers(size) {
 
 var database = { usuarios: [], escritorios: [], perfis: [], funcionalidades: [], estados: [], acoes: [], workflows: [] };
 
- for (var i = 1; i <= 10; i++) {
+ for (var i = 1; i <= 50; i++) {
     database.usuarios.push({
         id: i,
         email:    faker.internet.email(),
@@ -52,7 +52,6 @@ for (var i = 1; i <= 4; i++) {
         descricao:   faker.lorem.words(5),
         chefe_id:    faker.random.number(10),
         chefe_nome:  faker.name.findName(),
-        expanded:    false,
         usuarios:    faker.random.objectElement(generateUsers(4)),
     });
 }

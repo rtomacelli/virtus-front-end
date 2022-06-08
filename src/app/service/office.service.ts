@@ -52,7 +52,7 @@ export class OfficeService  {
   addOffice(data: any): Observable<Office> {
     return this.httpClient
       .post<Office>(
-        this.endpoint + '/office',
+        this.endpoint + '/escritorios',
         JSON.stringify(data),
         this.httpHeader
       )

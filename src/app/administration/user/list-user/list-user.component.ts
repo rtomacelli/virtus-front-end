@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import {
   animate,
   state,
@@ -8,7 +7,6 @@ import {
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
-import { data } from 'jquery';
 
 @Component({
   selector: 'app-list-user',

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from "../../../service/user.service";
 import { PerfilService } from "../../../service/perfil.service";
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-user',
@@ -10,6 +11,13 @@ import { PerfilService } from "../../../service/perfil.service";
 })
 
 export class AddUserComponent implements OnInit {
+
+  usuarioForm = new FormGroup({
+    nome: new FormControl(''), 
+    abreviatura: new FormControl(''),
+    descricao: new FormControl(''),
+    chefe_id: new FormControl(''),
+  });
 
   @Input() usuario = { username: '', password: '', email: '', telefone: '', nome: '', papel_id: 0}
   Papeis: any = [];
