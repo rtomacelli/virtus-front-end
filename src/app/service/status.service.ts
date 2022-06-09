@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GlobalConstants } from '../global-constants';
+import { environment } from 'src/environments/environment';
+
 export class Status {
   name?: string;
   description?: string;
@@ -15,11 +16,7 @@ export class Status {
 
 export class StatusService {
 
-  /*/
-  endpoint = GlobalConstants.finalApiURL;
-	/*/
-  endpoint = GlobalConstants.testApiURL;
-  //*/
+  endpoint = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) {}
   httpHeader = {

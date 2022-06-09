@@ -5,7 +5,7 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'http://my-prod-url'
+  apiUrl: 'http://localhost:8080'
 };
 
 /*

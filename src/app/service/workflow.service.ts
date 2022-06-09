@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GlobalConstants } from '../global-constants';
+import { environment } from 'src/environments/environment';
 
 export class Workflow {
   name?: string;
@@ -18,11 +18,7 @@ export class Workflow {
 
 export class WorkflowService {
 
-  /*/
-  endpoint = GlobalConstants.finalApiURL;
-	/*/
-  endpoint = GlobalConstants.testApiURL;
-  //*/
+  endpoint = environment.apiUrl;
   
   constructor(private httpClient: HttpClient) {}
   httpHeader = {

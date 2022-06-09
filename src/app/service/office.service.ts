@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GlobalConstants } from '../global-constants';
 import { User } from './user.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +24,7 @@ export class Office {
 
 export class OfficeService  {
 
-  /*/
-  endpoint = GlobalConstants.finalApiURL;
-	/*/
-  endpoint = GlobalConstants.testApiURL;
-  //*/
+  endpoint = environment.apiUrl;
   
   constructor(private httpClient: HttpClient) {}
   httpHeader = {

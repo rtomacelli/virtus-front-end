@@ -1,42 +1,6 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "email": "Paola.Albuquerque35@bol.com.br",
-      "nome": "Huguetti Macedo",
-      "telefone": "(40) 8303-5352",
-      "username": "Wellington_Moraes",
-      "papel_id": 10,
-      "papel": "Analista Marca Global"
-    },
-    {
-      "id": 2,
-      "email": "Karina.Pereira11@hotmail.com",
-      "nome": "Faiçal Costa",
-      "telefone": "(13) 4259-4344",
-      "username": "Alana_Costa18",
-      "papel_id": 3,
-      "papel": "Supervisor Interações Diretor"
-    },
-    {
-      "id": 3,
-      "email": "Jevetic_Franco@yahoo.com",
-      "nome": "Viviani Barros",
-      "telefone": "+55 (57) 0676-2718",
-      "username": "Ricarda_Braga",
-      "papel_id": 6,
-      "papel": "Executivo Resposta Corporativo"
-    },
-    {
-      "id": 4,
-      "email": "Juliane.Carvalho@live.com",
-      "nome": "Evertom Oliveira",
-      "telefone": "(12) 1000-5944",
-      "username": "Gisélia.Barros",
-      "papel_id": 10,
-      "papel": "Planejador Rede Produtos"
-    },
-    {
       "id": 5,
       "email": "Marcela.Souza16@bol.com.br",
       "nome": "Eini Albuquerque Jr.",

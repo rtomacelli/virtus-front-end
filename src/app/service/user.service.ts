@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { retry, catchError, tap } from 'rxjs/operators';
 import { Observable, throwError, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GlobalConstants } from '../global-constants';
+import { environment } from 'src/environments/environment';
 
 export class User {
   username?: string;
@@ -19,11 +19,7 @@ export class User {
 
 export class UserService {
 
-  /*/
-  endpoint = GlobalConstants.finalApiURL;
-	/*/
-  endpoint = GlobalConstants.testApiURL;
-  //*/
+  endpoint = environment.apiUrl;
   
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
@@ -34,7 +30,7 @@ export class UserService {
 
   getUsers(): Observable<User> {
     return this.httpClient
-      .get<User>(this.endpoint + '/usuarios/')
+      .get<User>(this.endpoint + '/user/list')
       .pipe(retry(1), catchError(this.processError));
   }
 
